@@ -1,0 +1,11 @@
+[user]
+	name = Dmitry Sadovnychyi
+	email = git@dmit.ro
+[color]
+	ui = 1
+[push]
+	default = simple
+[core]
+	editor = atom --wait
+[help]
+	autocorrect = 1

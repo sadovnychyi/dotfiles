@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# Eternal bash history on the disk, but limited to 32³ entries in the memory
+export HISTSIZE=32768
+export HISTFILESIZE=
+export HISTTIMEFORMAT="[%F %T] "
+
+# Omit duplicates and commands that begin with a space from history.
+export HISTCONTROL="ignoreboth"
+
+# Prefer US English and use UTF-8.
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+
+# Always enable colored `grep` output.
+export GREP_OPTIONS="--color=auto"
+
+# Ask twice before exisitng shell on Ctrl + D
+export IGNOREEOF=1
+
+# Setting for the new UTF-8 terminal support
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+export DOCKER_HOST=tcp://192.168.59.103:2376
+export DOCKER_CERT_PATH=~/.boot2docker/certs/boot2docker-vm
+export DOCKER_TLS_VERIFY=1
+
+export CLICOLOR=1
+export GIT_PS1_SHOWDIRTYSTATE=1
