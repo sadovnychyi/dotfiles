@@ -1,4 +1,20 @@
-# dotfiles
+# What are dotfiles?
+
+Dotfiles are files in your home directory that begin with a dot, by default they are hidden and used to set configuration settings for bash, git, code editors, etc.
+
+# Why would I want my dotfiles on GitHub?
+
+* **Backup**, **restore**, and **sync** the prefs and settings for your toolbox. Your dotfiles might be the most important files on your machine.
+* **Learn** from the community. Discover new tools for your toolbox and new tricks for the ones you already use.
+* **Share** what you've learned with the rest of us.
+
+# Installation
+
+You only need to execute a makefile which will symlink all files in your home directory **replacing any existing files**.
+
+```bash
+make
+```
 
 # Requirements
 
@@ -17,8 +33,8 @@ Non-default shortcuts are highlighted in bold.
 
 Keystroke                         | Description
 ---------------------------------:|---------------------------------------------
-Ctrl + a                          | Go to the beginning of the line (Home) TODO: cmd + arrow left
-Ctrl + e                          | Go to the End of the line (End) TODO: cmd + arrow right
+Ctrl + a                          | Go to the beginning of the line (Home)
+Ctrl + e                          | Go to the End of the line (End)
 Ctrl + p, Arrow Up                | Previous command
 Ctrl + n, Arrow Down              | Next command
 Alt + b, **Option + Arrow Left**  | Back (left) one word
@@ -37,7 +53,7 @@ Alt + u                           | UPPER capitalize every character from the cu
 Alt + l                           | Lower the case of every character from the cursor to the end of the current word
 Alt + c                           | Capitalize the character under the cursor and move to the end of the word
 Alt + r                           | Cancel the changes and put back the line as it was in the history (revert)
-ctrl + _                          | Undo
+Ctrl + _                          | Undo
 TAB                               | Tab completion for file/directory names
 Ctrl + r                          | Recall the last command including the specified character(s) searches the command history as you type
 Ctrl + p, Arrow Up                | Previous command in history (i.e. walk back through the command history)
