@@ -28,3 +28,5 @@ export DOCKER_TLS_VERIFY=1
 
 export CLICOLOR=1
 export GIT_PS1_SHOWDIRTYSTATE=1
+
+export APPENGINE_LIB='/usr/local/google_appengine'

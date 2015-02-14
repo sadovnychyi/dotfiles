@@ -53,4 +53,13 @@ if [ -d ~/google-cloud-sdk ]; then
   source ~/google-cloud-sdk/completion.bash.inc
 fi
 
-export PS1="\[\033]0;\w\007\]\[\033[1;35m\]\w\[\033[0m\] \[\033[33m\]$(__git_ps1 "(%s) ")\[\033[0m\]✈ \[\033[1;92m\]"
+RESET="\[\017\]"
+RED="\[\033[31;1m\]"
+YELLOW="\[\033[33;1m\]"
+WHITE="\[\033[37;1m\]"
+GREEN="\[\033[1;92m\]"
+PURPLE="\[\033[1;35m\]"
+
+SELECT="if [ \$? = 0 ]; then echo \"${WHITE}✈\"; else echo \"${RED}✈\"; fi"
+
+export PS1="${RESET}${PURPLE}\w${YELLOW}\$(__git_ps1) \`${SELECT}\` ${GREEN}"
