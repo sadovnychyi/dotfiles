@@ -62,4 +62,48 @@ PURPLE="\[\033[1;35m\]"
 
 SELECT="if [ \$? = 0 ]; then echo \"${WHITE}✈\"; else echo \"${RED}✈\"; fi"
 
-export PS1="${RESET}${PURPLE}\w${YELLOW}\$(__git_ps1) \`${SELECT}\` ${GREEN}"
+__path_ps1() {
+  local short_path_length=30
+  local short_path_keep=3
+  local ret=""
+  local tilde="~"
+  local p="${PWD/#$HOME/$tilde}"
+  local mask="…"
+  local -i max_len=$(( ${COLUMNS:-80} * short_path_length / 100 ))
+
+  if (( ${#p} <= max_len )); then
+    ret="${p}"
+  else
+    # Len is over max len, show at least short_path_keep leading dirs and
+    # current directory
+    local tmp=${p//\//}
+    local -i delims=$(( ${#p} - ${#tmp} ))
+
+    for (( dir=0; dir < short_path_keep; dir++ )); do
+      (( dir == delims )) && break
+      local left="${p#*/}"
+      local name="${p:0:${#p} - ${#left}}"
+      p="${left}"
+      ret="${ret}${name%/}/"
+    done
+
+    if (( delims <= short_path_keep )); then
+      # No dirs between short_path_keep leading dirs and current dir
+      ret="${ret}${p##*/}"
+    else
+      local base="${p##*/}"
+
+      p="${p:0:${#p} - ${#base}}"
+
+      [[ ${ret} != "/" ]] && ret="${ret%/}" # strip trailing slash
+
+      local -i len_left=$(( max_len - ${#ret} - ${#base} - ${#mask} ))
+
+      ret="${ret}${mask}${p:${#p} - ${len_left}}${base}"
+    fi
+  fi
+  # Escape special chars
+  echo "${ret//\\/\\\\}"
+}
+
+export PS1="${RESET}${PURPLE}\$(__path_ps1)${YELLOW}\$(__git_ps1) \`${SELECT}\` ${GREEN}"
