@@ -1,0 +1,72 @@
+"*":
+  "exception-reporting":
+    userId: "dc2e19ca-6857-7757-3c3c-f76a9fd54a2d"
+  metrics:
+    userId: "60b89a6037297e5bcf6d40e23e36a449cc080afa"
+  "release-notes":
+    viewedVersion: "0.95.0"
+  welcome:
+    showOnStartup: false
+  editor:
+    fontSize: 12
+    showInvisibles: true
+    scrollPastEnd: true
+    useShadowDOM: true
+    invisibles:
+      eol: " "
+      cr: "↩"
+  core:
+    ignoredNames: [
+      ".git"
+      ".svn"
+      ".DS_Store"
+      ".pyc"
+    ]
+    projectHome: "~/code"
+    disabledPackages: [
+      "atom-ctags"
+    ]
+    followSymlinks: true
+    themes: [
+      "one-dark-ui"
+      "monokai"
+    ]
+  linter:
+    showErrorInline: false
+    showInfoMessages: true
+    showHighlighting: false
+    statusBar: "Show error of the selected line"
+  "autocomplete-plus": {}
+  "linter-flake8":
+    executableDir: "/usr/local/bin/"
+    ignoreErrorCodes: [
+      "E111"
+      "E121"
+      "E501"
+      "E711"
+      "E712"
+    ]
+    maxComplexity: 15
+  "linter-jshint": {}
+  "project-manager": {}
+  "tree-view":
+    hideVcsIgnoredFiles: true
+  autosave: {}
+  "file-icons": {}
+  "grammar-selector": {}
+  "git-diff": {}
+  "fuzzy-finder": {}
+  notifications: {}
+  whitespace:
+    ignoreWhitespaceOnCurrentLine: false
+  "atom-beautify":
+    analytics: false
+  "highlight-line":
+    hideHighlightOnSelect: true
+  tabs: {}
+  "spell-check": {}
+  "linter-coffeelint": {}
+  "atom-ctags": {}
+".python.source":
+  editor:
+    tabLength: 2
