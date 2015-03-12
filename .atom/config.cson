@@ -38,9 +38,10 @@
     statusBar: "Show error of the selected line"
   "autocomplete-plus": {}
   "linter-flake8":
-    executableDir: "/usr/local/bin/"
+    executableDir: "/Library/Frameworks/Python.framework/Versions/2.7/bin/"
     ignoreErrorCodes: [
       "E111"
+      "E114"
       "E121"
       "E501"
       "E711"
