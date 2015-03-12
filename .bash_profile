@@ -54,6 +54,9 @@ if [ -d ~/google-cloud-sdk ]; then
   source ~/google-cloud-sdk/completion.bash.inc
 fi
 
+# Setting PATH for Python 2.7
+PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+
 RESET="\[\017\]"
 RED="\[\033[31;1m\]"
 YELLOW="\[\033[33;1m\]"
