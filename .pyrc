@@ -1,0 +1,36 @@
+import string
+import re
+import difflib
+from cStringIO import StringIO
+import textwrap
+import unicodedata
+import datetime
+import collections
+from pprint import pprint
+import decimal
+import itertools
+import random
+import functools
+import os
+import glob
+import shutil
+import cPickle as pickle
+import zlib
+import gzip
+import zipfile
+import csv
+import hashlib
+import htmllib
+import ftplib
+import httplib
+import SimpleHTTPServer
+import BaseHTTPServer
+import unittest
+import pdb
+import timeit
+import trace
+import sys
+import rlcompleter
+import readline
+
+readline.parse_and_bind('bind ^I rl_complete')
