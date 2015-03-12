@@ -5,9 +5,6 @@ for file in ~/.bash_{export,alias}
 done
 unset file
 
-# Whenever displaying the prompt, write the previous line to disk
-PROMPT_COMMAND="history -a"
-
 for option in autocd globstar cdspell cmdhist histappend nocaseglob
   # autocd:     a command name that is the name of a directory is executed as
   #             if it were the argument to the cd command
@@ -36,6 +33,10 @@ if which brew > /dev/null
   if [ -f "$(brew --prefix)/etc/bash_completion.d/git-promt.sh" ]
     then source "$(brew --prefix)/etc/bash_completion.d/git-promt.sh"
   fi
+  # Load the docker autocomplete script
+  if [ -f "$(brew --prefix)/etc/bash_completion.d/docker" ]
+    then source "$(brew --prefix)/etc/bash_completion.d/docker"
+  fi
 fi
 
 # Grunt autocomplete
@@ -59,6 +60,8 @@ YELLOW="\[\033[33;1m\]"
 WHITE="\[\033[37;1m\]"
 GREEN="\[\033[1;92m\]"
 PURPLE="\[\033[1;35m\]"
+
+PATH_IN_TITLE="\[\033]0;\w\007\]"
 
 SELECT="if [ \$? = 0 ]; then echo \"${WHITE}✈\"; else echo \"${RED}✈\"; fi"
 
@@ -106,4 +109,7 @@ __path_ps1() {
   echo "${ret//\\/\\\\}"
 }
 
-export PS1="${RESET}${PURPLE}\$(__path_ps1)${YELLOW}\$(__git_ps1) \`${SELECT}\` ${GREEN}"
+# Whenever displaying the prompt, write the previous line to disk
+PROMPT_COMMAND="history -a;"
+
+export PS1="${PATH_IN_TITLE}${RESET}${PURPLE}\$(__path_ps1)${YELLOW}\$(__git_ps1) \`${SELECT}\` ${GREEN}"
