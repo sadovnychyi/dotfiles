@@ -63,3 +63,10 @@ alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v exten
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
+
+alias chromestop="killall -STOP \"Google Chrome\""
+alias chromecont="killall -CONT \"Google Chrome\""
+alias atomstop="killall -STOP \"Atom\""
+alias atomcont="killall -CONT \"Atom\""
+
+alias drmi="docker images|grep \<none\>|awk '{print $3}' | xargs docker rmi"
