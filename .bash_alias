@@ -69,4 +69,4 @@ alias chromecont="killall -CONT \"Google Chrome\""
 alias atomstop="killall -STOP \"Atom\""
 alias atomcont="killall -CONT \"Atom\""
 
-alias drmi="docker images|grep \<none\>|awk '{print $3}' | xargs docker rmi"
+alias drmi="docker rmi -f $(docker images | grep "<none>" | awk "{print \$3}")"

@@ -30,6 +30,7 @@ export CLICOLOR=1
 export GIT_PS1_SHOWDIRTYSTATE=1
 
 export APPENGINE_LIB='/usr/local/google_appengine'
+export PYTHONPATH="${APPENGINE_LIB}"
 
 export PYTHONSTARTUP="${HOME}/.pyrc"
 export PYTHONIOENCODING='UTF-8'

@@ -8,13 +8,13 @@
   welcome:
     showOnStartup: false
   editor:
-    fontSize: 12
     showInvisibles: true
     scrollPastEnd: true
     useShadowDOM: true
     invisibles:
       eol: " "
       cr: "↩"
+    fontSize: 12
   core:
     ignoredNames: [
       ".git"
@@ -25,6 +25,7 @@
     projectHome: "~/code"
     disabledPackages: [
       "atom-ctags"
+      "linter-coffeelint"
     ]
     followSymlinks: true
     themes: [

@@ -6,7 +6,7 @@
 [push]
 	default = simple
 [core]
-	editor = atom --wait
+	editor = nano
 [help]
 	autocorrect = 1
 [filter "hawser"]
