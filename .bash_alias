@@ -69,4 +69,15 @@ alias chromecont="killall -CONT \"Google Chrome\""
 alias atomstop="killall -STOP \"Atom\""
 alias atomcont="killall -CONT \"Atom\""
 
-alias drmi="docker rmi -f $(docker images | grep "<none>" | awk "{print \$3}")"
+alias vi=pyvim
+
+# alias drmi="docker rmi -f $(docker images | grep "<none>" | awk "{print \$3}")"
+
+cdf() {
+  target=`osascript -e 'tell application "Finder" to if (count of Finder windows) > 0 then get POSIX path of (target of front Finder window as text)'`
+  if [ "$target" != "" ]; then
+    cd "$target"; pwd
+  else
+    echo 'No Finder window found' >&2
+  fi
+}

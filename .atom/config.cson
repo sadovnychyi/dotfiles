@@ -13,7 +13,7 @@
     useShadowDOM: true
     invisibles:
       eol: " "
-      cr: "↩"
+      cr: " "
     fontSize: 12
   core:
     ignoredNames: [
@@ -22,11 +22,7 @@
       ".DS_Store"
       ".pyc"
     ]
-    projectHome: "~/code"
-    disabledPackages: [
-      "atom-ctags"
-      "linter-coffeelint"
-    ]
+    projectHome: "~"
     followSymlinks: true
     themes: [
       "one-dark-ui"
@@ -37,9 +33,13 @@
     showInfoMessages: true
     showHighlighting: false
     statusBar: "Show error of the selected line"
-  "autocomplete-plus": {}
+    ignoredLinterErrors: [
+      "scss-lint"
+    ]
+  "autocomplete-plus":
+    defaultProvider: "Symbol"
   "linter-flake8":
-    executableDir: "/Library/Frameworks/Python.framework/Versions/2.7/bin/"
+    executableDir: "/usr/local/bin/"
     ignoreErrorCodes: [
       "E111"
       "E114"
@@ -63,12 +63,21 @@
     ignoreWhitespaceOnCurrentLine: false
   "atom-beautify":
     analytics: false
+    css_newline_between_rules: true
+    html_end_with_newline: true
+    js_end_with_newline: true
+    muteAllErrors: true
+    muteUnsupportedLanguageErrors: true
   "highlight-line":
     hideHighlightOnSelect: true
   tabs: {}
   "spell-check": {}
   "linter-coffeelint": {}
-  "atom-ctags": {}
+  "atom-ctags":
+    autoBuildTagsWhenActive: true
+    buildTimeout: 20000
+  "autocomplete-python":
+    extraPaths: "$PROJECT/env/lib/python2.7/site-packages;/usr/local/google_appengine;/usr/local/google_appengine/lib/webapp2-2.5.2"
 ".python.source":
   editor:
     tabLength: 2

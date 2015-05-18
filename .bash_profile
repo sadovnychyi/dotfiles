@@ -54,9 +54,6 @@ if [ -d ~/google-cloud-sdk ]; then
   source ~/google-cloud-sdk/completion.bash.inc
 fi
 
-# Setting PATH for Python 2.7
-PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
-
 RESET="\[\017\]"
 RED="\[\033[31;1m\]"
 YELLOW="\[\033[33;1m\]"
@@ -113,6 +110,8 @@ __path_ps1() {
 }
 
 # Whenever displaying the prompt, write the previous line to disk
+# date -j -f "%Y-%m-%d %T" "2010-10-02 14:33:10" "+%s"
+# PROMPT_COMMAND='[[ $? == 0 ]] && history 1 | sed -r "s/\ +[0-9]+\ +//" >> .bash_history'
 PROMPT_COMMAND="history -a;"
 
 export PS1="${PATH_IN_TITLE}${RESET}${PURPLE}\$(__path_ps1)${YELLOW}\$(__git_ps1) \`${SELECT}\` ${GREEN}"
