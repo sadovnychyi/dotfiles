@@ -6,7 +6,8 @@ alias sudo='sudo '
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
-
+alias atom="atom ."
+alias open="open ."
 alias ls="ls -Fal"
 
 alias timer="echo 'Timer started. Stop with Ctrl-D.' && date && time cat && date"

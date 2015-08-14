@@ -29,30 +29,31 @@
       "monokai"
     ]
   linter:
-    showErrorInline: false
-    showInfoMessages: true
-    showHighlighting: false
-    statusBar: "Show error of the selected line"
-    ignoredLinterErrors: [
-      "scss-lint"
-    ]
+    showErrorTabProject: false
+    underlineIssues: false
+    showErrorTabFile: false
+    showErrorPanel: false
   "autocomplete-plus":
     defaultProvider: "Symbol"
+    backspaceTriggersAutocomplete: true
+    confirmCompletion: "tab"
   "linter-flake8":
     executableDir: "/usr/local/bin/"
     ignoreErrorCodes: [
       "E111"
       "E114"
       "E121"
+      "E402"
       "E501"
       "E711"
       "E712"
+      "E731"
     ]
     maxComplexity: 15
   "linter-jshint": {}
   "project-manager": {}
   "tree-view":
-    hideVcsIgnoredFiles: true
+    hideIgnoredNames: true
   autosave: {}
   "file-icons": {}
   "grammar-selector": {}
@@ -77,7 +78,27 @@
     autoBuildTagsWhenActive: true
     buildTimeout: 20000
   "autocomplete-python":
-    extraPaths: "$PROJECT/env/lib/python2.7/site-packages;/usr/local/google_appengine;/usr/local/google_appengine/lib/webapp2-2.5.2"
+    extraPaths: "$PROJECT/env/lib/python2.7/site-packages;/usr/local/google_appengine;/usr/local/google_appengine/lib/webapp2-2.5.2;~/venv/default/bin/python"
+    outputProviderErrors: true
+  "one-dark-ui": {}
+  term2:
+    colors: {}
+  minimap:
+    plugins:
+      bookmarks: true
+      selection: true
+      "find-and-replace": true
+  "atom-ternjs":
+    coffeeScript: true
+  "go-plus":
+    goPath: "~/Go"
+    goInstallation: "/usr/local/bin/go"
+    formatTool: "gofmt"
+    lintOnSave: false
+    environmentOverridesConfiguration: false
+    runCoverageOnSave: true
+  "linter-golinter":
+    executablePath: "/Users/sadovnychyi/go/bin/golint"
 ".python.source":
   editor:
     tabLength: 2
