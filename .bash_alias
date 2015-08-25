@@ -3,6 +3,9 @@
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
 
+# Folders sorted by disk space usage
+alias folders='find . -maxdepth 1 -type d -print0 | xargs -0 du -sk | sort -rn'
+
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
@@ -59,16 +62,8 @@ for method in GET HEAD POST PUT DELETE TRACE OPTIONS
   do alias "$method"="lwp-request -m '$method'"
 done
 
-# Kill all the tabs in Chrome to free up memory
-alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
-
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
-
-alias chromestop="killall -STOP \"Google Chrome\""
-alias chromecont="killall -CONT \"Google Chrome\""
-alias atomstop="killall -STOP \"Atom\""
-alias atomcont="killall -CONT \"Atom\""
 
 alias vi=pyvim
 
