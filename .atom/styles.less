@@ -2,15 +2,6 @@ atom-text-editor::shadow .line-number .icon-right {
   opacity: 1;
 }
 
-// atom-text-editor::shadow .entity.name.class {
-//   text-decoration: none;
-// }
-//
-// atom-text-editor::shadow .entity.other.inherited-class {
-//   text-decoration: none;
-// }
-
-
 atom-text-editor::shadow autocomplete-suggestion-list.select-list.popover-list .suggestion-description-content {
   white-space: pre;
 }
@@ -28,10 +19,9 @@ atom-text-editor::shadow .gutter .cursor-line, :host .gutter .cursor-line {
   opacity: 0.6;
 }
 
-// atom-text-editor::shadow .gutter .line-numbers {
-//   background-color: rgb(0, 0, 0) !important;
-// }
-
+atom-text-editor::shadow .gutter .line-numbers {
+  background-color: rgb(0, 0, 0) !important;
+}
 
 atom-text-editor::shadow .bracket-matcher .region {
   border: 1px solid lime;
@@ -44,4 +34,8 @@ atom-text-editor::shadow .bracket-matcher .region {
 
 atom-pane-container atom-pane {
   padding-top: 0;
+}
+
+.editor {
+  background-color: black;
 }
