@@ -13,6 +13,9 @@ alias atom="atom ."
 alias open="open ."
 alias ls="ls -Fal"
 
+# Remove unwanted formatting from text in the clipboard (also available as Shift + Cmd + V)
+alias pbclean='pbpaste | pbcopy'
+
 alias timer="echo 'Timer started. Stop with Ctrl-D.' && date && time cat && date"
 
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
