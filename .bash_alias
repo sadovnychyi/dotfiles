@@ -26,7 +26,8 @@ alias update="sudo softwareupdate -i -a
               npm install npm -g
               npm update -g
               sudo gem update --system
-              sudo gem update"
+              sudo gem update
+              gcloud components update"
 
 # IP addresses
 alias ip="echo 'Local:'
@@ -80,3 +81,5 @@ cdf() {
     echo 'No Finder window found' >&2
   fi
 }
+
+eval "$(thefuck --alias)"
