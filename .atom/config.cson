@@ -28,15 +28,19 @@
       "one-dark-ui"
       "monokai"
     ]
+    disabledPackages: [
+      "linter-scss-lint"
+    ]
   linter:
     showErrorTabProject: false
-    underlineIssues: false
     showErrorTabFile: false
     showErrorPanel: false
+    underlineIssues: false
   "autocomplete-plus":
     defaultProvider: "Symbol"
     backspaceTriggersAutocomplete: true
     confirmCompletion: "tab"
+    minimumWordLength: 0
   "linter-flake8":
     executableDir: "/usr/local/bin/"
     ignoreErrorCodes: [
@@ -79,6 +83,7 @@
     buildTimeout: 20000
   "autocomplete-python":
     extraPaths: "$PROJECT/env/lib/python2.7/site-packages;/usr/local/google_appengine;/usr/local/google_appengine/lib/webapp2-2.5.2;~/venv/default/bin/python"
+    useSnippets: "all"
     outputProviderErrors: true
   "one-dark-ui": {}
   term2:
@@ -91,14 +96,15 @@
   "atom-ternjs":
     coffeeScript: true
   "go-plus":
-    goPath: "~/Go"
+    goPath: "~/go"
     goInstallation: "/usr/local/bin/go"
     formatTool: "gofmt"
-    lintOnSave: false
     environmentOverridesConfiguration: false
-    runCoverageOnSave: true
+    lintOnSave: false
   "linter-golinter":
     executablePath: "/Users/sadovnychyi/go/bin/golint"
+  "go-oracle":
+    goPath: "~/go"
 ".python.source":
   editor:
     tabLength: 2
