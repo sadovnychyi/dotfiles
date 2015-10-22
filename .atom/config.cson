@@ -37,10 +37,10 @@
     showErrorPanel: false
     underlineIssues: false
   "autocomplete-plus":
-    defaultProvider: "Symbol"
     confirmCompletion: "tab"
     minimumWordLength: 0
     backspaceTriggersAutocomplete: true
+    enableBuiltinProvider: false
   "linter-flake8":
     executableDir: "/usr/local/bin/"
     ignoreErrorCodes: [
