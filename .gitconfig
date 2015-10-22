@@ -24,3 +24,5 @@
 	required = true
 [credential]
 	helper = osxkeychain
+[fetch]
+	prune = true
