@@ -38,9 +38,9 @@
     underlineIssues: false
   "autocomplete-plus":
     defaultProvider: "Symbol"
-    backspaceTriggersAutocomplete: true
     confirmCompletion: "tab"
     minimumWordLength: 0
+    backspaceTriggersAutocomplete: true
   "linter-flake8":
     executableDir: "/usr/local/bin/"
     ignoreErrorCodes: [
@@ -83,8 +83,8 @@
     buildTimeout: 20000
   "autocomplete-python":
     extraPaths: "$PROJECT/env/lib/python2.7/site-packages;/usr/local/google_appengine;/usr/local/google_appengine/lib/webapp2-2.5.2;~/venv/default/bin/python"
-    useSnippets: "all"
     outputProviderErrors: true
+    useSnippets: "all"
   "one-dark-ui": {}
   term2:
     colors: {}
