@@ -9,7 +9,8 @@ alias folders='find . -maxdepth 1 -type d -print0 | xargs -0 du -sk | sort -rn'
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
-alias atom="atom ."
+alias apm="apm-beta"
+alias atom="atom-beta ."
 alias open="open ."
 alias ls="ls -Fal"
 
