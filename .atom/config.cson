@@ -1,21 +1,38 @@
 "*":
-  "exception-reporting":
-    userId: "dc2e19ca-6857-7757-3c3c-f76a9fd54a2d"
-  metrics:
-    userId: "60b89a6037297e5bcf6d40e23e36a449cc080afa"
-  "release-notes":
-    viewedVersion: "0.95.0"
-  welcome:
-    showOnStartup: false
-  editor:
-    showInvisibles: true
-    scrollPastEnd: true
-    useShadowDOM: true
-    invisibles:
-      eol: " "
-      cr: " "
-    fontSize: 12
+  "atom-beautify":
+    analytics: false
+    css_newline_between_rules: true
+    html_end_with_newline: true
+    js_end_with_newline: true
+    muteAllErrors: true
+    muteUnsupportedLanguageErrors: true
+  "atom-ctags":
+    autoBuildTagsWhenActive: true
+    buildTimeout: 20000
+  "autocomplete-plus":
+    backspaceTriggersAutocomplete: true
+    confirmCompletion: "tab"
+    enableBuiltinProvider: false
+    includeCompletionsFromAllBuffers: false
+    minimumWordLength: 0
+  "autocomplete-python":
+    extraPaths: "/usr/local/google_appengine;/usr/local/google_appengine/lib/webapp2-2.5.2;"
+    outputDebug: true
+    outputProviderErrors: true
+    pythonPaths: "/usr/local/bin/python3"
+    useSnippets: "required"
+  autosave: {}
+  "cloud-debugger":
+    debuggeeId: "gcp:948740859141:3ac5ff71bb3b033a"
+  "color-picker":
+    abbreviateValues: true
+    automaticReplace: true
   core:
+    disabledPackages: [
+      "language-python"
+      "linter-scss-lint"
+    ]
+    followSymlinks: true
     ignoredNames: [
       ".git"
       ".svn"
@@ -23,26 +40,46 @@
       ".pyc"
     ]
     projectHome: "~"
-    followSymlinks: true
     themes: [
       "one-dark-ui"
-      "monokai"
+      "Chromodynamics"
     ]
-    disabledPackages: [
-      "linter-scss-lint"
-    ]
+  editor:
+    autoIndentOnPaste: false
+    backUpBeforeSaving: true
+    fontSize: 12
+    invisibles:
+      cr: " "
+      eol: " "
+    scrollPastEnd: true
+    showInvisibles: true
+    useShadowDOM: true
+  "exception-reporting":
+    userId: "dc2e19ca-6857-7757-3c3c-f76a9fd54a2d"
+  "file-icons": {}
+  "fuzzy-finder": {}
+  "git-diff": {}
+  "go-oracle":
+    goPath: "~/go"
+  "go-plus":
+    environmentOverridesConfiguration: false
+    formatTool: "gofmt"
+    goInstallation: "/usr/local/bin/go"
+    goPath: "~/go"
+    lintOnSave: false
+  "grammar-selector": {}
+  "highlight-line":
+    hideHighlightOnSelect: true
+  "highlight-selected":
+    onlyHighlightWholeWords: true
   linter:
-    showErrorTabProject: false
-    showErrorTabFile: false
     showErrorPanel: false
+    showErrorTabFile: false
+    showErrorTabProject: false
     underlineIssues: false
-  "autocomplete-plus":
-    confirmCompletion: "tab"
-    minimumWordLength: 0
-    backspaceTriggersAutocomplete: true
-    enableBuiltinProvider: false
+  "linter-coffeelint": {}
   "linter-flake8":
-    executableDir: "/usr/local/bin/"
+    executablePath: "/usr/local/bin/flake8"
     ignoreErrorCodes: [
       "E111"
       "E114"
@@ -54,57 +91,38 @@
       "E731"
     ]
     maxComplexity: 15
+  "linter-golinter":
+    executablePath: "/Users/sadovnychyi/go/bin/golint"
   "linter-jshint": {}
-  "project-manager": {}
-  "tree-view":
-    hideIgnoredNames: true
-  autosave: {}
-  "file-icons": {}
-  "grammar-selector": {}
-  "git-diff": {}
-  "fuzzy-finder": {}
-  notifications: {}
-  whitespace:
-    ignoreWhitespaceOnCurrentLine: false
-  "atom-beautify":
-    analytics: false
-    css_newline_between_rules: true
-    html_end_with_newline: true
-    js_end_with_newline: true
-    muteAllErrors: true
-    muteUnsupportedLanguageErrors: true
-  "highlight-line":
-    hideHighlightOnSelect: true
-  tabs: {}
-  "spell-check": {}
-  "linter-coffeelint": {}
-  "atom-ctags":
-    autoBuildTagsWhenActive: true
-    buildTimeout: 20000
-  "autocomplete-python":
-    extraPaths: "$PROJECT/env/lib/python2.7/site-packages;/usr/local/google_appengine;/usr/local/google_appengine/lib/webapp2-2.5.2;~/venv/default/bin/python"
-    outputProviderErrors: true
-    useSnippets: "all"
-  "one-dark-ui": {}
-  term2:
-    colors: {}
+  metrics:
+    userId: "60b89a6037297e5bcf6d40e23e36a449cc080afa"
   minimap:
     plugins:
       bookmarks: true
-      selection: true
       "find-and-replace": true
-  "atom-ternjs":
-    coffeeScript: true
-  "go-plus":
-    goPath: "~/go"
-    goInstallation: "/usr/local/bin/go"
-    formatTool: "gofmt"
-    environmentOverridesConfiguration: false
-    lintOnSave: false
-  "linter-golinter":
-    executablePath: "/Users/sadovnychyi/go/bin/golint"
-  "go-oracle":
-    goPath: "~/go"
+      selection: true
+  notifications: {}
+  "one-dark-ui": {}
+  "project-manager": {}
+  "release-notes":
+    viewedVersion: "0.95.0"
+  "spell-check": {}
+  swackets: {}
+  tabs:
+    enableVcsColoring: true
+    usePreviewTabs: true
+  term2:
+    colors: {}
+  "tree-view":
+    hideIgnoredNames: true
+  welcome:
+    showOnStartup: false
+  whitespace:
+    ignoreWhitespaceOnCurrentLine: false
+".python.regexp.source":
+  editor:
+    autoIndentOnPaste: true
 ".python.source":
   editor:
+    autoIndentOnPaste: true
     tabLength: 2

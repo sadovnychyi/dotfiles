@@ -1,37 +1,50 @@
-atom-text-editor::shadow .line-number .icon-right {
-  opacity: 1;
-}
-
 atom-text-editor::shadow .bookmarked {
-  background-color: rgb(27, 136, 231) !important;
+  background-color: rgba(27, 136, 231, 0.3) !important;
   opacity: 1 !important;
-}
-
-atom-text-editor::shadow .gutter .cursor-line {
-  background-color: #000000;
 }
 
 atom-text-editor::shadow .gutter .cursor-line {
   opacity: 0.6;
 }
 
-atom-text-editor::shadow .gutter .line-numbers {
+atom-text-editor::shadow .gutter {
   background-color: black !important;
 }
 
+atom-text-editor::shadow .gutter .line-number {
+  background-color: black !important;
+}
+
+atom-text-editor::shadow .gutter .line-number .icon-right {
+  padding: 0 .3em;
+}
+
 atom-text-editor::shadow .bracket-matcher .region {
-  border: 1px solid lime;
+  border-bottom: none;
   position: absolute;
+  background-color: rgba(99,99,99,.8);
 }
 
 .tab-bar .tab .title {
   text-align: left;
 }
 
+.editor {
+  background-color: black;
+}
+
 atom-pane-container atom-pane {
   padding-top: 0;
 }
 
-.editor {
-  background-color: black;
+atom-workspace atom-panel-container.left:empty {
+  padding-left: 0;
+}
+
+.tree-view .project-root.project-root:first-child {
+  padding-top: 0;
+}
+
+.tree-view::before {
+  margin-top: 0;
 }
