@@ -63,7 +63,7 @@ PURPLE="\[\033[1;35m\]"
 
 PATH_IN_TITLE="\[\033]0;\w\007\]"
 
-SELECT="if [ \$? = 0 ]; then echo \"${WHITE}✈\"; else echo \"${RED}✈\"; fi"
+# SELECT="if [ \$? = 0 ]; then echo \"${WHITE}✈\"; else echo \"${RED}✈\"; fi"
 
 __path_ps1() {
   local short_path_length=30
@@ -114,4 +114,5 @@ __path_ps1() {
 # PROMPT_COMMAND='[[ $? == 0 ]] && history 1 | sed -r "s/\ +[0-9]+\ +//" >> .bash_history'
 PROMPT_COMMAND="history -a;"
 
-export PS1="${PATH_IN_TITLE}${RESET}${PURPLE}\$(__path_ps1)${YELLOW}\$(__git_ps1) \`${SELECT}\` ${GREEN}"
+# export PS1="${PATH_IN_TITLE}${RESET}${PURPLE}\$(__path_ps1)${YELLOW}\$(__git_ps1)\`${SELECT}\` ${GREEN}"
+export PS1="${PATH_IN_TITLE}${RESET}${PURPLE}\$(__path_ps1)${YELLOW}\$(__git_ps1)${WHITE}·${GREEN}"
