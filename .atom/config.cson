@@ -19,7 +19,6 @@
     extraPaths: "/usr/local/google_appengine;/usr/local/google_appengine/lib/webapp2-2.5.2;"
     outputDebug: true
     outputProviderErrors: true
-    pythonPaths: "/usr/local/bin/python3"
     useSnippets: "required"
   autosave: {}
   "cloud-debugger":
@@ -66,7 +65,6 @@
     formatTool: "gofmt"
     goInstallation: "/usr/local/bin/go"
     goPath: "~/go"
-    lintOnSave: false
   "grammar-selector": {}
   "highlight-line":
     hideHighlightOnSelect: true
@@ -103,6 +101,8 @@
       selection: true
   notifications: {}
   "one-dark-ui": {}
+  pigments:
+    markerType: "dot"
   "project-manager": {}
   "release-notes":
     viewedVersion: "0.95.0"
@@ -110,7 +110,6 @@
   swackets: {}
   tabs:
     enableVcsColoring: true
-    usePreviewTabs: true
   term2:
     colors: {}
   "tree-view":
