@@ -8,6 +8,13 @@ Dotfiles are files in your home directory that begin with a dot, by default they
 * **Learn** from the community. Discover new tools for your toolbox and new tricks for the ones you already use.
 * **Share** what you've learned with the rest of us.
 
+# Description
+
+This is based on Bash 4, includes most of features from ZSH, including right prompt. I use standard OS X terminal with [TotalTerminal](http://totalterminal.binaryage.com/) extension which allows me to call it from anywhere with a shortcut. **Works** in full screen apps.
+
+<img width="654" alt="screen shot 2016-02-15 at 20 07 28" src="https://cloud.githubusercontent.com/assets/193864/13048285/d8ff9c0a-d41f-11e5-8d13-36aca8237331.png">
+
+
 # Installation
 
 You only need to execute a makefile which will symlink all files in your home directory **replacing any existing files**.
