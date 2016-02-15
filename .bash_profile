@@ -54,17 +54,6 @@ if [ -d ~/google-cloud-sdk ]; then
   source ~/google-cloud-sdk/completion.bash.inc
 fi
 
-RESET="\[\017\]"
-RED="\[\033[31;1m\]"
-YELLOW="\[\033[33;1m\]"
-WHITE="\[\033[37;1m\]"
-GREEN="\[\033[1;92m\]"
-PURPLE="\[\033[1;35m\]"
-
-PATH_IN_TITLE="\[\033]0;\w\007\]"
-
-# SELECT="if [ \$? = 0 ]; then echo \"${WHITE}✈\"; else echo \"${RED}✈\"; fi"
-
 __path_ps1() {
   local short_path_length=30
   local short_path_keep=3
@@ -109,10 +98,28 @@ __path_ps1() {
   echo "${ret//\\/\\\\}"
 }
 
-# Whenever displaying the prompt, write the previous line to disk
-# date -j -f "%Y-%m-%d %T" "2010-10-02 14:33:10" "+%s"
-# PROMPT_COMMAND='[[ $? == 0 ]] && history 1 | sed -r "s/\ +[0-9]+\ +//" >> .bash_history'
-PROMPT_COMMAND="history -a;"
+BLACK=$(tput setaf 0)
+RED=$(tput setaf 1)
+GREEN=$(tput setaf 2)
+YELLOW=$(tput setaf 3)
+LIME_YELLOW=$(tput setaf 190)
+POWDER_BLUE=$(tput setaf 153)
+BLUE=$(tput setaf 4)
+MAGENTA=$(tput setaf 5)
+CYAN=$(tput setaf 6)
+WHITE=$(tput setaf 7)
+BRIGHT=$(tput bold)
+NORMAL=$(tput sgr0)
+BLINK=$(tput blink)
+REVERSE=$(tput smso)
+UNDERLINE=$(tput smul)
+PATH_IN_TITLE="\[\033]0;\w\007\]"
 
-# export PS1="${PATH_IN_TITLE}${RESET}${PURPLE}\$(__path_ps1)${YELLOW}\$(__git_ps1)\`${SELECT}\` ${GREEN}"
-export PS1="${PATH_IN_TITLE}${RESET}${PURPLE}\$(__path_ps1)${YELLOW}\$(__git_ps1)${WHITE}·${GREEN}"
+__prompt() {
+  history -a
+  PS1="${PATH_IN_TITLE}${NORMAL}${BRIGHT}${MAGENTA}\$(__path_ps1)${WHITE}${NORMAL}·${NORMAL}${BRIGHT}${GREEN}"
+  rightPrompt="$(__git_ps1)"
+  printf "${NORMAL}${BLACK}%`tput cols`s`tput cr`" "$rightPrompt"
+}
+
+PROMPT_COMMAND=__prompt
