@@ -113,11 +113,19 @@ NORMAL=$(tput sgr0)
 BLINK=$(tput blink)
 REVERSE=$(tput smso)
 UNDERLINE=$(tput smul)
+
 PATH_IN_TITLE="\[\033]0;\w\007\]"
+
+_RESET="\[\017\]"
+_RED="\[\033[31;1m\]"
+_YELLOW="\[\033[33;1m\]"
+_WHITE="\[\033[37;1m\]"
+_GREEN="\[\033[1;92m\]"
+_MAGENTA="\[\033[1;35m\]"
 
 __prompt() {
   history -a
-  PS1="${PATH_IN_TITLE}${NORMAL}${BRIGHT}${MAGENTA}\$(__path_ps1)${WHITE}${NORMAL}·${NORMAL}${BRIGHT}${GREEN}"
+  PS1="${PATH_IN_TITLE}${_RESET}${_MAGENTA}\$(__path_ps1)${_WHITE}·${_GREEN}"
   rightPrompt="$(__git_ps1)"
   printf "${NORMAL}${BLACK}%`tput cols`s`tput cr`" "$rightPrompt"
 }
