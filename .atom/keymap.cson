@@ -19,3 +19,13 @@
 # 'body':
 #   'ctrl-tab': 'pane:show-next-item'
 #   'ctrl-shift-tab': 'pane:show-previous-item'
+
+'body':
+  'ctrl-tab ^ctrl': 'unset!'
+  'ctrl-tab': 'pane:show-next-item'
+  'ctrl-shift-tab ^ctrl': 'unset!'
+  'ctrl-shift-tab': 'pane:show-previous-item'
+
+'.platform-darwin atom-text-editor':
+  'cmd-f2': 'bookmarks:jump-to-next-bookmark'
+  'f2': 'bookmarks:toggle-bookmark'

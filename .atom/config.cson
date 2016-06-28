@@ -1,11 +1,18 @@
 "*":
+  "Sublime-Style-Column-Selection":
+    selectKeyTrigger: "Ctrl"
   "atom-beautify":
-    analytics: false
-    css_newline_between_rules: true
-    html_end_with_newline: true
-    js_end_with_newline: true
-    muteAllErrors: true
-    muteUnsupportedLanguageErrors: true
+    css:
+      newline_between_rules: true
+    general:
+      _analyticsUserId: "ce1bdbae-1fe3-4b6a-8754-11dc0eb1c5eb"
+      analytics: false
+      muteAllErrors: true
+      muteUnsupportedLanguageErrors: true
+    html:
+      end_with_newline: true
+    js:
+      end_with_newline: true
   "atom-ctags":
     autoBuildTagsWhenActive: true
     buildTimeout: 20000
@@ -13,12 +20,13 @@
     backspaceTriggersAutocomplete: true
     confirmCompletion: "tab"
     enableBuiltinProvider: false
-    includeCompletionsFromAllBuffers: false
     minimumWordLength: 0
   "autocomplete-python":
     extraPaths: "/usr/local/google_appengine;/usr/local/google_appengine/lib/webapp2-2.5.2;"
     outputDebug: true
     outputProviderErrors: true
+    pythonPaths: "$PROJECT/env/bin/python;/usr/local/bin/python3"
+    showTooltips: true
     useSnippets: "required"
   autosave: {}
   "cloud-debugger":
@@ -27,9 +35,24 @@
     abbreviateValues: true
     automaticReplace: true
   core:
+    allowPendingPaneItems: false
+    customFileTypes:
+      "source.ini": [
+        ".buckconfig"
+        ".flowconfig"
+      ]
+      "source.json": [
+        ".arcconfig"
+        "BUCK.autodeps"
+      ]
+      "source.python": [
+        "BUCK"
+      ]
     disabledPackages: [
       "language-python"
-      "linter-scss-lint"
+      "linter-jscs"
+      "hyperclick"
+      "activate-power-mode"
     ]
     followSymlinks: true
     ignoredNames: [
@@ -46,7 +69,7 @@
   editor:
     autoIndentOnPaste: false
     backUpBeforeSaving: true
-    fontSize: 12
+    fontSize: 13
     invisibles:
       cr: " "
       eol: " "
@@ -56,8 +79,13 @@
   "exception-reporting":
     userId: "dc2e19ca-6857-7757-3c3c-f76a9fd54a2d"
   "file-icons": {}
+  "file-watcher":
+    promptWhenFileHasChangedOnDisk: false
   "fuzzy-finder": {}
   "git-diff": {}
+  "go-debug":
+    limitCommandsToGo: true
+    panelInitialVisible: false
   "go-oracle":
     goPath: "~/go"
   "go-plus":
@@ -82,6 +110,8 @@
       "E111"
       "E114"
       "E121"
+      "E131"
+      "E129"
       "E402"
       "E501"
       "E711"
@@ -91,6 +121,9 @@
     maxComplexity: 15
   "linter-golinter":
     executablePath: "/Users/sadovnychyi/go/bin/golint"
+  "linter-js-standard":
+    lintMarkdownFiles: true
+    showEslintRules: true
   "linter-jshint": {}
   metrics:
     userId: "60b89a6037297e5bcf6d40e23e36a449cc080afa"
@@ -100,10 +133,77 @@
       "find-and-replace": true
       selection: true
   notifications: {}
+  nuclide:
+    "nuclide-home":
+      showHome: false
+    "nuclide-python": {}
+    use:
+      "nuclide-adb-logcat": false
+      "nuclide-arcanist": false
+      "nuclide-blame": false
+      "nuclide-blame-provider-hg": false
+      "nuclide-blame-ui": false
+      "nuclide-buck-files": false
+      "nuclide-buck-toolbar": false
+      "nuclide-busy-signal": false
+      "nuclide-clang-atom": false
+      "nuclide-clipboard-path": false
+      "nuclide-code-format": false
+      "nuclide-code-highlight": false
+      "nuclide-console": false
+      "nuclide-current-working-directory": false
+      "nuclide-datatip": false
+      "nuclide-debugger-atom": false
+      "nuclide-debugger-hhvm": false
+      "nuclide-debugger-lldb-client": false
+      "nuclide-debugger-node": false
+      "nuclide-diagnostics-store": false
+      "nuclide-diagnostics-ui": false
+      "nuclide-diff-view": false
+      "nuclide-file-tree": false
+      "nuclide-file-watcher": false
+      "nuclide-find-references": false
+      "nuclide-format-js": false
+      "nuclide-fuzzy-filename-provider": false
+      "nuclide-gadgets": false
+      "nuclide-hack": false
+      "nuclide-hack-symbol-provider": false
+      "nuclide-health": false
+      "nuclide-hg-repository": false
+      "nuclide-hhvm-toolbar": false
+      "nuclide-home": false
+      "nuclide-ios-simulator-logs": false
+      "nuclide-language-hack": false
+      "nuclide-move-pane": false
+      "nuclide-navigation-stack": false
+      "nuclide-objc": false
+      "nuclide-ocaml": false
+      "nuclide-open-filenames-provider": false
+      "nuclide-outline-view": false
+      "nuclide-python": false
+      "nuclide-quick-open": false
+      "nuclide-react-native": false
+      "nuclide-react-native-inspector": false
+      "nuclide-recent-files-provider": false
+      "nuclide-recent-files-service": false
+      "nuclide-related-files": false
+      "nuclide-remote-ctags": false
+      "nuclide-remote-projects": false
+      "nuclide-service-monitor": false
+      "nuclide-side-bar": false
+      "nuclide-test-runner": false
+      "nuclide-tunnel-vision": false
+      "nuclide-ui": false
+      "nuclide-url-hyperclick": false
+      "nuclide-working-sets": false
   "one-dark-ui": {}
   pigments:
     markerType: "dot"
   "project-manager": {}
+  "python-yapf":
+    checkOnSave: false
+    yapfPath: "/usr/local/bin/yapf"
+    yapfStyle: "{based_on_style: google, indent_width: 2, CONTINUATION_INDENT_WIDTH: 2}"
   "release-notes":
     viewedVersion: "0.95.0"
   "spell-check": {}
