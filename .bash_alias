@@ -19,6 +19,9 @@ alias pbclean='pbpaste | pbcopy'
 
 alias timer="echo 'Timer started. Stop with Ctrl-D.' && date && time cat && date"
 
+# Clear which *really* clears the terminal, instead of appending bunch of new lines
+alias clear="printf '\33c'"
+
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 alias update="sudo softwareupdate -i -a
               brew update
