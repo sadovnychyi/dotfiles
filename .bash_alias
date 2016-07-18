@@ -20,7 +20,7 @@ alias pbclean='pbpaste | pbcopy'
 alias timer="echo 'Timer started. Stop with Ctrl-D.' && date && time cat && date"
 
 # Clear which *really* clears the terminal, instead of appending bunch of new lines
-alias clear="printf '\33c'"
+alias clear="printf '\33c\e[3J'"
 
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 function upgrade() {
