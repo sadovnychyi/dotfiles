@@ -123,11 +123,54 @@ _WHITE="\[\033[37;1m\]"
 _GREEN="\[\033[1;92m\]"
 _MAGENTA="\[\033[1;35m\]"
 
-__prompt() {
-  history -a
-  PS1="${PATH_IN_TITLE}${_RESET}${_MAGENTA}\$(__path_ps1)${_WHITE}·${_GREEN}"
-  rightPrompt="$(__git_ps1)"
-  printf "${NORMAL}${BLACK}%`tput cols`s`tput cr`" "$rightPrompt"
+function timer_start {
+  timer=${timer:-$SECONDS}
 }
 
+function timer_stop {
+  timer_show=$(($SECONDS - $timer))
+  unset timer
+}
+
+function timer_show_for_humans {
+  local T=${timer_show}
+  local D=$((T/60/60/24))
+  local H=$((T/60/60%24))
+  local M=$((T/60%60))
+  local S=$((T%60))
+  (( $D > 0 )) && printf '%dd ' $D
+  (( $H > 0 )) && printf '%dh ' $H
+  (( $M > 0 )) && printf '%dm ' $M
+  printf '%ds\n' $S
+}
+
+__prompt() {
+  timer_stop
+  if ((timer_show > 10 )); then
+    printf "${NORMAL}${BLACK}%$(tput cols)s$(tput cr)\n" "$(timer_show_for_humans)"
+  fi
+
+  current_short_path=$(__path_ps1)
+
+  history -a
+  PS1="${PATH_IN_TITLE}${_RESET}${_MAGENTA}\${current_short_path}${_WHITE}·${_GREEN}"
+
+  gitBranch=$(__git_ps1)
+  if [[ $gitBranch ]]; then
+      rightPrompt=$gitBranch
+  elif [ "$current_short_path" != $(pwd) ]; then
+      rightPrompt=$(pwd)
+  else
+      rightPrompt=""
+  fi
+  printf "${NORMAL}${BLACK}%$(tput cols)s$(tput cr)" "$rightPrompt"
+}
+
+__prompt_after() {
+  printf "${NORMAL}${BLACK}%$(tput cols)s$(tput cr)${NORMAL}" "$(date +%H:%M:%S)"
+}
+
+trap 'timer_start' DEBUG
+
+PS0="$(__prompt_after)"
 PROMPT_COMMAND=__prompt
