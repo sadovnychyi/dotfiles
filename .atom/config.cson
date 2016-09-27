@@ -24,9 +24,7 @@
   "autocomplete-python":
     extraPaths: "/usr/local/google_appengine;/usr/local/google_appengine/lib/webapp2-2.5.2;"
     outputDebug: true
-    outputProviderErrors: true
     pythonPaths: "$PROJECT/env/bin/python;/usr/local/bin/python3"
-    showTooltips: true
     useSnippets: "required"
   autosave: {}
   "cloud-debugger":
@@ -51,8 +49,9 @@
     disabledPackages: [
       "language-python"
       "linter-jscs"
-      "hyperclick"
       "activate-power-mode"
+      "metrics"
+      "welcome"
     ]
     followSymlinks: true
     ignoredNames: [
@@ -62,10 +61,13 @@
       ".pyc"
     ]
     projectHome: "~"
+    telemetryConsent: "no"
     themes: [
       "one-dark-ui"
       "Chromodynamics"
     ]
+    useCustomTitleBar: true
+    warnOnLargeFileLimit: 1
   editor:
     autoIndentOnPaste: false
     backUpBeforeSaving: true
@@ -105,7 +107,7 @@
     underlineIssues: false
   "linter-coffeelint": {}
   "linter-flake8":
-    executablePath: "/usr/local/bin/flake8"
+    executablePath: "/usr/local/bin/flake8-3;/usr/local/bin/flake8-2;"
     ignoreErrorCodes: [
       "E111"
       "E114"
@@ -117,6 +119,11 @@
       "E711"
       "E712"
       "E731"
+      "H101"
+      "H405"
+      "H404"
+      "H306"
+      "H301"
     ]
     maxComplexity: 15
   "linter-golinter":
