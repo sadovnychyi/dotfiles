@@ -12,7 +12,7 @@ alias ....="cd ../../.."
 alias apm="apm-beta"
 alias atom="atom-beta ."
 alias open="open ."
-alias ls="ls -Fal"
+alias ls="ls -Falh"
 
 # Remove unwanted formatting from text in the clipboard (also available as Shift + Cmd + V)
 alias pbclean='pbpaste | pbcopy'
@@ -88,4 +88,6 @@ cdf() {
   fi
 }
 
-eval "$(thefuck --alias)"
+update_macos_notes() {
+  brew list -l > ~/dotfiles/.macos && brew cask list -l >> ~/dotfiles/.macos
+}
