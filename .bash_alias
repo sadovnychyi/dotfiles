@@ -91,3 +91,38 @@ cdf() {
 update_macos_notes() {
   brew list -l > ~/dotfiles/.macos && brew cask list -l >> ~/dotfiles/.macos
 }
+
+
+function isnt_connected () {
+  scutil --nc status VPN | sed -n 1p | grep -qv Connected
+}
+
+function poll_until_connected () {
+  let loops=0 || true
+  let max_loops=120
+  while isnt_connected VPN; do
+    sleep 1
+    let loops=$loops+1
+    [ $loops -gt $max_loops ] && break
+  done
+  [ $loops -le $max_loops ]
+}
+
+vpn_up() {
+  gcloud compute instances start vpn --project=sadovnychyi --zone=asia-east1-c
+  sleep 10
+  scutil --nc start VPN --secret=notasecret
+  if poll_until_connected VPN; then
+    echo "Connected to $vpn!"
+    return
+  else
+    echo "I'm too impatient!"
+    scutil --nc stop VPN
+    return
+  fi
+}
+
+vpn_down() {
+  scutil --nc stop VPN
+  gcloud compute instances stop vpn --project=sadovnychyi --zone=asia-east1-c
+}
