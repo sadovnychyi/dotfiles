@@ -7,3 +7,4 @@ build:
 	@echo "Successfully created symbolic links in home directory."
 	@tput sgr0
 	@exec /usr/local/bin/bash -l
+	@ln -fs /Users/sadovnychyi/Google\ Drive/Sync/Popcorn\ Time/data /Users/sadovnychyi/Library/Application\ Support/Popcorn-Time/Default

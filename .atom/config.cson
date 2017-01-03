@@ -24,7 +24,7 @@
   "autocomplete-python":
     extraPaths: "/usr/local/google_appengine;/usr/local/google_appengine/lib/webapp2-2.5.2;"
     outputDebug: true
-    pythonPaths: "$PROJECT/env/bin/python;/usr/local/bin/python3"
+    pythonPaths: "/usr/local/bin/python3;$PROJECT/env/bin/python;/usr/local/bin/python3"
     useSnippets: "required"
   autosave: {}
   "cloud-debugger":
@@ -47,11 +47,13 @@
         "BUCK"
       ]
     disabledPackages: [
-      "language-python"
       "linter-jscs"
       "activate-power-mode"
       "metrics"
       "welcome"
+      "spell-check"
+      "linter-flake8"
+      "kite"
     ]
     followSymlinks: true
     ignoredNames: [
@@ -91,10 +93,15 @@
   "go-oracle":
     goPath: "~/go"
   "go-plus":
+    currentPanelHeight: "20vh"
+    disabledBundledPackages: [
+      "hyperclick"
+    ]
     environmentOverridesConfiguration: false
     formatTool: "gofmt"
     goInstallation: "/usr/local/bin/go"
     goPath: "~/go"
+    panelDisplayMode: "closed"
   "grammar-selector": {}
   "highlight-line":
     hideHighlightOnSelect: true
@@ -221,6 +228,11 @@
     colors: {}
   "tree-view":
     hideIgnoredNames: true
+  wakatime:
+    apikey: "Saved in your ~/.wakatime.cfg file"
+    showStatusBarIcon: false
+  "wakatime-hidden":
+    lastInit: 1483353639
   welcome:
     showOnStartup: false
   whitespace:

@@ -1,16 +1,12 @@
 import string
 import re
-import difflib
 try:
   from cStringIO import StringIO
 except ImportError:
   from io import StringIO
-import textwrap
-import unicodedata
 import datetime
 import collections
 from pprint import pprint
-import decimal
 import itertools
 import random
 import functools
@@ -21,27 +17,8 @@ try:
   import cPickle as pickle
 except ImportError:
   import pickle
-import zlib
-import gzip
-import zipfile
 import csv
 import hashlib
-try:
-  import htmllib
-except ImportError:
-  import html
-  import html.parser
-import ftplib
-try:
-  import httplib
-except ImportError:
-  import http
-  import http.client
-try:
-  import SimpleHTTPServer
-except ImportError:
-  import http.server
-import unittest
 import pdb
 import timeit
 import trace
@@ -62,9 +39,3 @@ except ImportError:
     print("Readline is not installed either. No tab completion is enabled.")
 
 #readline.parse_and_bind('bind ^I rl_complete')
-
-__all__ = [
-  string, re, difflib, StringIO, textwrap, unicodedata, datetime, collections,
-  pprint, decimal, itertools, random, functools, os, glob, shutil, pickle,
-  zlib, gzip, zipfile, csv, hashlib, ftplib, unittest, pdb, timeit, trace, sys,
-]
