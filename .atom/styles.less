@@ -33,12 +33,16 @@ atom-text-editor.editor .bracket-matcher .region {
   background-color: black;
 }
 
-atom-pane-container atom-pane {
-  padding-top: 0;
+atom-panel-container.header {
+  // padding-top: 0;
 }
 
 atom-workspace atom-panel-container.left:empty {
-  padding-left: 0;
+  // padding-left: 0;
+}
+
+atom-workspace atom-pane-container.panes {
+  padding-top: 0;
 }
 
 .tree-view .project-root.project-root:first-child {
@@ -54,4 +58,8 @@ atom-text-editor[data-grammar="source python"], :host {
     max-height: 30em;
     overflow: auto;
   }
+}
+
+atom-panel-container.header {
+  display: none;
 }

@@ -3,6 +3,7 @@
     selectKeyTrigger: "Ctrl"
   "atom-beautify":
     css:
+      indent_size: 2
       newline_between_rules: true
     general:
       _analyticsUserId: "ce1bdbae-1fe3-4b6a-8754-11dc0eb1c5eb"
@@ -13,6 +14,17 @@
       end_with_newline: true
     js:
       end_with_newline: true
+      indent_size: 2
+    json:
+      indent_size: 2
+    jsx:
+      indent_size: 2
+    less:
+      indent_size: 2
+    python:
+      indent_size: 2
+    scss:
+      indent_size: 2
   "atom-ctags":
     autoBuildTagsWhenActive: true
     buildTimeout: 20000
@@ -24,7 +36,9 @@
   "autocomplete-python":
     extraPaths: "/usr/local/google_appengine;/usr/local/google_appengine/lib/webapp2-2.5.2;"
     outputDebug: true
-    pythonPaths: "/usr/local/bin/python3;$PROJECT/env/bin/python;/usr/local/bin/python3"
+    outputProviderErrors: true
+    pythonPaths: "$PROJECT/temp/venv/bin/python;$PROJECT/env/bin/python;/usr/local/bin/python3;/usr/local/bin/python3"
+    useKite: false
     useSnippets: "required"
   autosave: {}
   "cloud-debugger":
@@ -34,6 +48,7 @@
     automaticReplace: true
   core:
     allowPendingPaneItems: false
+    closeEmptyWindows: false
     customFileTypes:
       "source.ini": [
         ".buckconfig"
@@ -69,9 +84,7 @@
       "Chromodynamics"
     ]
     useCustomTitleBar: true
-    warnOnLargeFileLimit: 1
   editor:
-    autoIndentOnPaste: false
     backUpBeforeSaving: true
     fontSize: 13
     invisibles:
@@ -79,6 +92,7 @@
       eol: " "
     scrollPastEnd: true
     showInvisibles: true
+    softWrap: true
     useShadowDOM: true
   "exception-reporting":
     userId: "dc2e19ca-6857-7757-3c3c-f76a9fd54a2d"
@@ -138,6 +152,7 @@
   "linter-js-standard":
     lintMarkdownFiles: true
     showEslintRules: true
+    style: "semi-standard"
   "linter-jshint": {}
   metrics:
     userId: "60b89a6037297e5bcf6d40e23e36a449cc080afa"
@@ -223,6 +238,7 @@
   "spell-check": {}
   swackets: {}
   tabs:
+    enableMruTabSwitching: false
     enableVcsColoring: true
   term2:
     colors: {}
@@ -232,7 +248,7 @@
     apikey: "Saved in your ~/.wakatime.cfg file"
     showStatusBarIcon: false
   "wakatime-hidden":
-    lastInit: 1483353639
+    lastInit: 1485853970
   welcome:
     showOnStartup: false
   whitespace:
