@@ -28,6 +28,8 @@
   "atom-ctags":
     autoBuildTagsWhenActive: true
     buildTimeout: 20000
+  "atom-typescript":
+    preferredQuoteCharacter: "'"
   "autocomplete-plus":
     backspaceTriggersAutocomplete: true
     confirmCompletion: "tab"
@@ -248,7 +250,7 @@
     apikey: "Saved in your ~/.wakatime.cfg file"
     showStatusBarIcon: false
   "wakatime-hidden":
-    lastInit: 1485853970
+    lastInit: 1486718859
   welcome:
     showOnStartup: false
   whitespace:
