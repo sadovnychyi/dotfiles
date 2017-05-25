@@ -123,11 +123,7 @@
     hideHighlightOnSelect: true
   "highlight-selected":
     onlyHighlightWholeWords: true
-  linter:
-    showErrorPanel: false
-    showErrorTabFile: false
-    showErrorTabProject: false
-    underlineIssues: false
+  linter: {}
   "linter-coffeelint": {}
   "linter-flake8":
     executablePath: "/usr/local/bin/flake8-3;/usr/local/bin/flake8-2;"
