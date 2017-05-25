@@ -39,14 +39,6 @@ if which brew > /dev/null
   fi
 fi
 
-# Grunt autocomplete
-if which grunt > /dev/null
-  then eval "$(grunt --completion=bash)"
-fi
-
-# Set git as alias for hub
-eval "$(hub alias -s)"
-
 if [ -d ~/google-cloud-sdk ]; then
   # The next line updates PATH for the Google Cloud SDK
   source ~/google-cloud-sdk/path.bash.inc

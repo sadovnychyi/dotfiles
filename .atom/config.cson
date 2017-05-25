@@ -85,7 +85,7 @@
       "one-dark-ui"
       "Chromodynamics"
     ]
-    useCustomTitleBar: true
+    titleBar: "custom"
   editor:
     backUpBeforeSaving: true
     fontSize: 13
