@@ -1,6 +1,14 @@
 "*":
   "Sublime-Style-Column-Selection":
     selectKeyTrigger: "Ctrl"
+  "api-docs":
+    go: true
+    "lodash~4": true
+    markdown: true
+    node: true
+    "python~3":
+      "6": true
+    "tensorflow~python": true
   "atom-beautify":
     css:
       indent_size: 2
@@ -12,6 +20,7 @@
       muteUnsupportedLanguageErrors: true
     html:
       end_with_newline: true
+      indent_size: 2
     js:
       end_with_newline: true
       indent_size: 2
@@ -25,6 +34,7 @@
       indent_size: 2
     scss:
       indent_size: 2
+      no_lead_zero: true
   "atom-ctags":
     autoBuildTagsWhenActive: true
     buildTimeout: 20000
@@ -38,7 +48,6 @@
   "autocomplete-python":
     extraPaths: "/usr/local/google_appengine;/usr/local/google_appengine/lib/webapp2-2.5.2;"
     outputDebug: true
-    outputProviderErrors: true
     pythonPaths: "$PROJECT/temp/venv/bin/python;$PROJECT/env/bin/python;/usr/local/bin/python3;/usr/local/bin/python3"
     useKite: false
     useSnippets: "required"
@@ -50,6 +59,7 @@
     automaticReplace: true
   core:
     allowPendingPaneItems: false
+    closeDeletedFileTabs: true
     closeEmptyWindows: false
     customFileTypes:
       "source.ini": [
@@ -69,8 +79,6 @@
       "metrics"
       "welcome"
       "spell-check"
-      "linter-flake8"
-      "kite"
     ]
     followSymlinks: true
     ignoredNames: [
@@ -85,7 +93,7 @@
       "one-dark-ui"
       "Chromodynamics"
     ]
-    useCustomTitleBar: true
+    titleBar: "hidden"
   editor:
     backUpBeforeSaving: true
     fontSize: 13
@@ -117,20 +125,18 @@
     formatTool: "gofmt"
     goInstallation: "/usr/local/bin/go"
     goPath: "~/go"
+    panel:
+      currentHeight: "24.761904761904763vh"
     panelDisplayMode: "closed"
   "grammar-selector": {}
   "highlight-line":
     hideHighlightOnSelect: true
   "highlight-selected":
     onlyHighlightWholeWords: true
-  linter:
-    showErrorPanel: false
-    showErrorTabFile: false
-    showErrorTabProject: false
-    underlineIssues: false
+  linter: {}
   "linter-coffeelint": {}
   "linter-flake8":
-    executablePath: "/usr/local/bin/flake8-3;/usr/local/bin/flake8-2;"
+    executablePath: "$PROJECT/env/bin/flake8;/usr/local/bin/flake8"
     ignoreErrorCodes: [
       "E111"
       "E114"
@@ -148,7 +154,6 @@
       "H306"
       "H301"
     ]
-    maxComplexity: 15
   "linter-golinter":
     executablePath: "/Users/sadovnychyi/go/bin/golint"
   "linter-js-standard":
@@ -156,6 +161,10 @@
     showEslintRules: true
     style: "semi-standard"
   "linter-jshint": {}
+  "linter-pylint":
+    rcFile: "%p/.pylintrc"
+  "linter-ui-default":
+    panelHeight: 69
   metrics:
     userId: "60b89a6037297e5bcf6d40e23e36a449cc080afa"
   minimap:
@@ -246,11 +255,12 @@
     colors: {}
   "tree-view":
     hideIgnoredNames: true
+    hideVcsIgnoredFiles: true
   wakatime:
     apikey: "Saved in your ~/.wakatime.cfg file"
     showStatusBarIcon: false
   "wakatime-hidden":
-    lastInit: 1486718859
+    lastInit: 1492428751
   welcome:
     showOnStartup: false
   whitespace:
