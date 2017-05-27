@@ -1,84 +1,188 @@
-total 0
-drwxr-xr-x  3 sadovnychyi  admin  102 Oct 20  2015 autoconf
-drwxr-xr-x  3 sadovnychyi  admin  102 Oct 20  2015 automake
-drwxr-xr-x  3 sadovnychyi  admin  102 Jun 28 19:41 bash
-drwxr-xr-x  3 sadovnychyi  admin  102 Apr  4 14:27 bash-completion
-drwxr-xr-x  3 sadovnychyi  admin  102 Jul 18 18:55 bazel
-drwxr-xr-x  3 sadovnychyi  admin  102 Jun 28 19:41 bfg
-drwxr-xr-x  3 sadovnychyi  admin  102 Apr 21 18:10 boost
-drwxr-xr-x  3 sadovnychyi  admin  102 Jan 25 14:04 boot2docker
-drwxr-xr-x  3 sadovnychyi  admin  102 Sep 15  2015 cctools
-drwxr-xr-x  3 sadovnychyi  admin  102 Jul 18 18:55 cmake
-drwxr-xr-x  3 sadovnychyi  admin  102 Jan 25 14:04 coreutils
-drwxr-xr-x  3 sadovnychyi  admin  102 Jun 28 19:41 docker
-drwxr-xr-x  3 sadovnychyi  admin  102 May 16 17:25 docker-compose
-drwxr-xr-x  3 sadovnychyi  admin  102 Apr 21 18:10 docker-machine
-drwxr-xr-x  3 sadovnychyi  admin  102 Apr  5 18:30 docker-machine-driver-xhyve
-drwxr-xr-x  3 sadovnychyi  admin  102 Jul 18 18:55 gdbm
-drwxr-xr-x  3 sadovnychyi  admin  102 Jul 18 18:55 gettext
-drwxr-xr-x  3 sadovnychyi  admin  102 Jul 18 18:55 git
-drwxr-xr-x  3 sadovnychyi  admin  102 Dec  1  2015 git-radar
-drwxr-xr-x  3 sadovnychyi  admin  102 Jul 18 18:55 glib
-drwxr-xr-x  3 sadovnychyi  admin  102 Apr 10  2015 gnu-sed
-drwxr-xr-x  3 sadovnychyi  admin  102 Apr  7 18:58 gnupg
-drwxr-xr-x  3 sadovnychyi  admin  102 May 16 17:25 go
-drwxr-xr-x  3 sadovnychyi  admin  102 Feb 25 11:53 graphviz
-drwxr-xr-x  3 sadovnychyi  admin  102 Jul 19 02:21 highlight
-drwxr-xr-x  3 sadovnychyi  admin  102 Jul 18 18:55 httpie
-drwxr-xr-x  3 sadovnychyi  admin  102 Jan 25 14:04 hub
-drwxr-xr-x  3 sadovnychyi  admin  102 Jul 18 18:55 keybase
-drwxr-xr-x  3 sadovnychyi  admin  102 Jun  3  2015 libffi
-drwxr-xr-x  3 sadovnychyi  admin  102 Jul 18 18:55 libpng
-drwxr-xr-x  3 sadovnychyi  admin  102 Apr 12 16:30 libsodium
-drwxr-xr-x  3 sadovnychyi  admin  102 Apr  4 14:27 libssh2
-drwxr-xr-x  3 sadovnychyi  admin  102 Jul 18 18:55 libtool
-drwxr-xr-x  3 sadovnychyi  admin  102 Apr  5 18:30 libyaml
-drwxr-xr-x  3 sadovnychyi  admin  102 Jul 19 02:21 lua
-drwxr-xr-x  3 sadovnychyi  admin  102 Aug  7  2015 makedepend
-drwxr-xr-x  3 sadovnychyi  admin  102 May 21 18:12 midnight-commander
-drwxr-xr-x  3 sadovnychyi  admin  102 Jul 18 18:55 mysql
-drwxr-xr-x  3 sadovnychyi  admin  102 Jul 18 18:55 node
-drwxr-xr-x  3 sadovnychyi  admin  102 May 16 17:25 openssl
-drwxr-xr-x  3 sadovnychyi  admin  102 Jul 18 18:55 p7zip
-drwxr-xr-x  3 sadovnychyi  admin  102 Jul 18 18:55 pcre
-drwxr-xr-x  3 sadovnychyi  admin  102 Aug 20  2015 pip-completion
-drwxr-xr-x  3 sadovnychyi  admin  102 Jul 18 18:55 pkg-config
-drwxr-xr-x  3 sadovnychyi  admin  102 Jul 19 02:05 python
-drwxr-xr-x  3 sadovnychyi  admin  102 Jul 18 18:55 python3
-drwxr-xr-x  3 sadovnychyi  admin  102 Apr  9  2015 readline
-drwxr-xr-x  3 sadovnychyi  admin  102 Jun  1 22:19 reaver
-drwxr-xr-x  3 sadovnychyi  admin  102 Jun  3  2015 s-lang
-drwxr-xr-x  3 sadovnychyi  admin  102 Apr 21 18:10 sip
-drwxr-xr-x  3 sadovnychyi  admin  102 Jul 18 17:40 sphinx-doc
-drwxr-xr-x  3 sadovnychyi  admin  102 May 21 18:12 sqlite
-drwxr-xr-x  3 sadovnychyi  admin  102 Oct 20  2015 sshfs
-drwxr-xr-x  4 sadovnychyi  admin  136 Jul 19 02:30 swig
-drwxr-xr-x  3 sadovnychyi  admin  102 Apr  4 14:27 unrar
-drwxr-xr-x  3 sadovnychyi  admin  102 Jul 18 18:55 wget
-drwxr-xr-x  3 sadovnychyi  admin  102 Jul 19 17:22 wifi-password
-drwxr-xr-x  3 sadovnychyi  admin  102 Apr  5 18:29 xhyve
-drwxr-xr-x  3 sadovnychyi  admin  102 Oct 26  2015 xz
-total 0
-drwxr-xr-x  5 sadovnychyi  wheel  170 Jul 19 04:39 alfred
-drwxr-xr-x  4 sadovnychyi  wheel  136 Jul 19 18:08 atom-beta
-drwxr-xr-x  5 sadovnychyi  wheel  170 Jul 19 16:56 dash
-drwxr-xr-x  4 sadovnychyi  wheel  136 Jul 19 17:36 github-desktop
-drwxr-xr-x  5 sadovnychyi  wheel  170 Jul 19 16:56 google-chrome-dev
-drwxr-xr-x  4 sadovnychyi  wheel  136 Jul 19 17:21 google-drive
-drwxr-xr-x  4 sadovnychyi  wheel  136 Jul 19 17:24 insomniax
-drwxr-xr-x  4 sadovnychyi  wheel  136 Jul 19 18:48 java
-drwxr-xr-x  5 sadovnychyi  wheel  170 Jul 19 17:18 licecap
-drwxr-xr-x  5 sadovnychyi  wheel  170 Jul 19 16:53 qlcolorcode
-drwxr-xr-x  5 sadovnychyi  wheel  170 Jul 19 16:53 qlimagesize
-drwxr-xr-x  5 sadovnychyi  wheel  170 Jul 19 16:53 qlmarkdown
-drwxr-xr-x  5 sadovnychyi  wheel  170 Jul 19 16:53 qlstephen
-drwxr-xr-x  4 sadovnychyi  wheel  136 Jul 19 17:01 qlvideo
-drwxr-xr-x  4 sadovnychyi  wheel  136 Jul 19 17:01 quicklook-json
-drwxr-xr-x  4 sadovnychyi  wheel  136 Jul 19 17:46 spectacle
-drwxr-xr-x  4 sadovnychyi  wheel  136 Jul 19 17:38 sqlitebrowser
-drwxr-xr-x  5 sadovnychyi  wheel  170 Jul 19 18:04 steam
-drwxr-xr-x  4 sadovnychyi  wheel  136 Jul 19 17:34 sublime-text
-drwxr-xr-x  3 sadovnychyi  wheel  102 Jul 19 17:26 totalterminal
-drwxr-xr-x  5 sadovnychyi  wheel  170 Jul 19 17:18 transmission
-drwxr-xr-x  4 sadovnychyi  wheel  136 Jul 19 17:30 vlc
-drwxr-xr-x  4 sadovnychyi  wheel  136 Jul 19 17:32 wineskin-winery
+#!/usr/bin/env bash
+
+# ~/.osx — https://mths.be/osx
+
+# Ask for the administrator password upfront
+sudo -v
+
+# Keep-alive: update existing `sudo` time stamp until `.osx` has finished
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+
+###############################################################################
+# General UI/UX                                                               #
+###############################################################################
+
+# Remove some built-in applications
+# sudo rm -rf Stickies.app Mail.app Maps.app Messages.app Notes.app \
+#   Game\ Center.app Chess.app FaceTime.app DVD\ Player.app Reminders.app \
+#   TextEdit.app Dashboard.app QuickTime\ Player.app
+
+
+# Set computer name (as done via System Preferences → Sharing)
+sudo scutil --set ComputerName "sadovnychyi"
+sudo scutil --set HostName "sadovnychyi"
+sudo scutil --set LocalHostName "sadovnychyi"
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "sadovnychyi"
+
+# Menu bar: hide the Time Machine, Volume, and User icons
+for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
+  defaults write "${domain}" dontAutoLoad -array \
+    "/System/Library/CoreServices/Menu Extras/TimeMachine.menu" \
+    "/System/Library/CoreServices/Menu Extras/Volume.menu" \
+    "/System/Library/CoreServices/Menu Extras/User.menu"
+done
+defaults write com.apple.systemuiserver menuExtras -array \
+  "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
+  "/System/Library/CoreServices/Menu Extras/AirPort.menu" \
+  "/System/Library/CoreServices/Menu Extras/Battery.menu" \
+  "/System/Library/CoreServices/Menu Extras/Clock.menu"
+
+# Always show scrollbars
+defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
+
+# Increase window resize speed for Cocoa applications
+defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
+
+# Expand save panel by default
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
+
+# Save to disk (not to iCloud) by default
+defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+
+# Expand print panel by default
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
+
+# Automatically quit printer app once the print jobs complete
+defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
+
+# Disable the “Are you sure you want to open this application?” dialog
+defaults write com.apple.LaunchServices LSQuarantine -bool false
+
+# Remove duplicates in the “Open With” menu (also see `lscleanup` alias)
+/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
+
+# Display ASCII control characters using caret notation in standard text views
+# Try e.g. `cd /tmp; unidecode "\x{0000}" > cc.txt; open -e cc.txt`
+defaults write NSGlobalDomain NSTextShowsControlCharacters -bool true
+
+# Disable the crash reporter
+defaults write com.apple.CrashReporter DialogType -string "none"
+
+# Disable Resume system-wide
+defaults write com.apple.systempreferences NSQuitAlwaysKeepsWindows -bool false
+
+# Reveal IP address, hostname, OS version, etc. when clicking the clock
+# in the login window
+sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
+
+###############################################################################
+# Finder                                                                      #
+###############################################################################
+
+# Finder: show status bar
+defaults write com.apple.finder ShowStatusBar -bool true
+
+# Finder: show path bar
+defaults write com.apple.finder ShowPathbar -bool true
+
+# Finder: allow text selection in Quick Look
+defaults write com.apple.finder QLEnableTextSelection -bool true
+
+# Display full POSIX path as Finder window title
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+
+# When performing a search, search the current folder by default
+defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+
+# Disable the warning when changing a file extension
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
+# Avoid creating .DS_Store files on network volumes
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+
+# Disable disk image verification
+defaults write com.apple.frameworks.diskimages skip-verify -bool true
+defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true
+defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true
+
+# Use list view in all Finder windows by default
+# Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`
+defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+
+# Disable the warning before emptying the Trash
+defaults write com.apple.finder WarnOnEmptyTrash -bool false
+
+# Expand the following File Info panes:
+# “General”, “Open with”, and “Sharing & Permissions”
+defaults write com.apple.finder FXInfoPanesExpanded -dict \
+  General -bool true \
+  OpenWith -bool true \
+  Privileges -bool true
+
+# Disable smart quotes as they’re annoying when typing code
+defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+
+# Disable smart dashes as they’re annoying when typing code
+defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+
+# Screenshots location
+defaults write com.apple.screencapture location ~/Downloads
+
+###############################################################################
+# Dock, Dashboard, and hot corners                                            #
+###############################################################################
+
+# Disable Dashboard
+defaults write com.apple.dashboard mcx-disabled -bool true
+
+# Don’t show Dashboard as a Space
+defaults write com.apple.dock dashboard-in-overlay -bool true
+
+# Don’t automatically rearrange Spaces based on most recent use
+defaults write com.apple.dock mru-spaces -bool false
+
+###############################################################################
+# Time Machine                                                                #
+###############################################################################
+
+# Prevent Time Machine from prompting to use new hard drives as backup volume
+defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
+
+###############################################################################
+# Activity Monitor                                                            #
+###############################################################################
+
+# Show the main window when launching Activity Monitor
+defaults write com.apple.ActivityMonitor OpenMainWindow -bool true
+
+# Visualize CPU usage in the Activity Monitor Dock icon
+defaults write com.apple.ActivityMonitor IconType -int 5
+
+# Show all processes in Activity Monitor
+defaults write com.apple.ActivityMonitor ShowCategory -int 0
+
+# Sort Activity Monitor results by CPU usage
+defaults write com.apple.ActivityMonitor SortColumn -string "CPUUsage"
+defaults write com.apple.ActivityMonitor SortDirection -int 0
+
+###############################################################################
+# Transmission.app                                                            #
+###############################################################################
+
+# Use `~/Downloads` to store incomplete downloads
+defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
+defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Downloads"
+
+# Don’t prompt for confirmation before downloading
+defaults write org.m0k.transmission DownloadAsk -bool false
+
+# Trash original torrent files
+defaults write org.m0k.transmission DeleteOriginalTorrent -bool true
+
+# Hide the donate message
+defaults write org.m0k.transmission WarningDonate -bool false
+# Hide the legal disclaimer
+defaults write org.m0k.transmission WarningLegal -bool false
