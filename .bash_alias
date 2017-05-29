@@ -22,6 +22,9 @@ alias timer="echo 'Timer started. Stop with Ctrl-D.' && date && time cat && date
 # Clear which *really* clears the terminal, instead of appending bunch of new lines
 alias clear="printf '\33c\e[3J'"
 
+# Set git as alias for hub
+eval "$(hub alias -s)"
+
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 function upgrade() {
   sudo softwareupdate -i -a
