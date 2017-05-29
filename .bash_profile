@@ -139,7 +139,7 @@ function timer_show_for_humans {
 __prompt() {
   timer_stop
   if ((timer_show > 10 )); then
-    printf "${NORMAL}${BLACK}%$(tput cols)s$(tput cr)\n" "$(timer_show_for_humans)"
+    printf "${NORMAL}${WHITE}%$(tput cols)s$(tput cr)\n" "$(timer_show_for_humans)"
   fi
 
   current_short_path=$(__path_ps1)
@@ -155,11 +155,11 @@ __prompt() {
   else
       rightPrompt=""
   fi
-  printf "${NORMAL}${BLACK}%$(tput cols)s$(tput cr)" "$rightPrompt"
+  printf "${NORMAL}${WHITE}%$(tput cols)s$(tput cr)" "$rightPrompt"
 }
 
 __prompt_after() {
-  printf "${NORMAL}${BLACK}%$(tput cols)s$(tput cr)${NORMAL}" "$(date +%H:%M:%S)"
+  printf "${NORMAL}${WHITE}%$(tput cols)s$(tput cr)${NORMAL}" "$(date +%H:%M:%S)"
 }
 
 trap 'timer_start' DEBUG
