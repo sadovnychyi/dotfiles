@@ -1,0 +1,180 @@
+#!/bin/bash
+
+# Based on https://github.com/iam4x/zsh-iterm-touchbar
+
+# GIT
+GIT_UNCOMMITTED="${GIT_UNCOMMITTED:-+}"
+GIT_UNSTAGED="${GIT_UNSTAGED:-!}"
+GIT_UNTRACKED="${GIT_UNTRACKED:-?}"
+GIT_STASHED="${GIT_STASHED:-$}"
+GIT_UNPULLED="${GIT_UNPULLED:-⇣}"
+GIT_UNPUSHED="${GIT_UNPUSHED:-⇡}"
+
+# Output name of current branch.
+git_current_branch() {
+  local ref
+  ref=$(command git symbolic-ref --quiet HEAD 2> /dev/null)
+  local ret=$?
+  if [[ $ret != 0 ]]; then
+    [[ $ret == 128 ]] && return  # no git repo.
+    ref=$(command git rev-parse --short HEAD 2> /dev/null) || return
+  fi
+  echo ${ref#refs/heads/}
+}
+
+# Uncommitted changes.
+# Check for uncommitted changes in the index.
+git_uncomitted() {
+  if ! $(git diff --quiet --ignore-submodules --cached); then
+    echo -n "${GIT_UNCOMMITTED}"
+  fi
+}
+
+# Unstaged changes.
+# Check for unstaged changes.
+git_unstaged() {
+  if ! $(git diff-files --quiet --ignore-submodules --); then
+    echo -n "${GIT_UNSTAGED}"
+  fi
+}
+
+# Untracked files.
+# Check for untracked files.
+git_untracked() {
+  if [ -n "$(git ls-files --others --exclude-standard)" ]; then
+    echo -n "${GIT_UNTRACKED}"
+  fi
+}
+
+# Stashed changes.
+# Check for stashed changes.
+git_stashed() {
+  if $(git rev-parse --verify refs/stash &>/dev/null); then
+    echo -n "${GIT_STASHED}"
+  fi
+}
+
+# Unpushed and unpulled commits.
+# Get unpushed and unpulled commits from remote and draw arrows.
+# git_unpushed_unpulled() {
+#   # check if there is an upstream configured for this branch
+#   command git rev-parse --abbrev-ref @'{u}' &>/dev/null || return
+#
+#   local count
+#   count="$(command git rev-list --left-right --count HEAD...@'{u}' 2>/dev/null)"
+#   # exit if the command failed
+#   (( !$? )) || return
+#
+#   # counters are tab-separated, split on tab and store as array
+#   count=(${(ps:\t:)count})
+#   local arrows left=${count[1]} right=${count[2]}
+#
+#   (( ${right:-0} > 0 )) && arrows+="${GIT_UNPULLED}"
+#   (( ${left:-0} > 0 )) && arrows+="${GIT_UNPUSHED}"
+#
+#   [ -n $arrows ] && echo -n "${arrows}"
+# }
+
+# F1-12: https://github.com/vmalloc/zsh-config/blob/master/extras/function_keys.zsh
+fnKeys=('\eOP' '\eOQ' '\eOR' '\eOS' '\e[15~' '\e[17~' '\e[18~' '\e[19~' '\e[20~' '\e[21~' '\e[23~' '\e[24~')
+touchBarState=''
+npmScripts=()
+lastPackageJsonPath=''
+
+function _clearTouchbar() {
+  echo -ne "\033]1337;PopKeyLabels\a"
+}
+
+function _unbindTouchbar() {
+  for fnKey in "$fnKeys[@]"; do
+    # bindkey -s "$fnKey" ''
+    bind '"$fnKey":""'
+  done
+}
+
+function _displayDefault() {
+  _clearTouchbar
+  _unbindTouchbar
+
+  touchBarState=''
+
+  # CURRENT_DIR
+  # -----------
+  echo -ne "\033]1337;SetKeyLabel=F1=$(echo $(pwd) | awk -F/ '{print $(NF-1)"/"$(NF)}')\a"
+  bind '"\eOP":"pwd\n"'
+
+  # GIT
+  # ---
+  # Check if the current directory is in a Git repository.
+  command git rev-parse --is-inside-work-tree &>/dev/null || return
+
+  # Check if the current directory is in .git before running git checks.
+  if [[ "$(git rev-parse --is-inside-git-dir 2> /dev/null)" == 'false' ]]; then
+
+    # Ensure the index is up to date.
+    git update-index --really-refresh -q &>/dev/null
+
+    # String of indicators
+    local indicators=''
+
+    indicators+="$(git_uncomitted)"
+    indicators+="$(git_unstaged)"
+    indicators+="$(git_untracked)"
+    indicators+="$(git_stashed)"
+    # indicators+="$(git_unpushed_unpulled)"
+
+    [ -n "${indicators}" ] && touchbarIndicators="🔥[${indicators}]" || touchbarIndicators="🙌";
+
+    echo -ne "\033]1337;SetKeyLabel=F2=ᛘ $(git_current_branch)\a"
+    echo -ne "\033]1337;SetKeyLabel=F3=$touchbarIndicators\a"
+    echo -ne "\033]1337;SetKeyLabel=F4=✉️ push\a";
+
+    # bind git actions
+    # bindkey -s '^[OQ' 'git branch -a \n'
+    bind '"\eOQ":"git branch -a \n"'
+    # bindkey -s '^[OR' 'git status \n'
+    bind '"\eOR":"git status \n"'
+    # bindkey -s '^[OS' "git push origin $(git_current_branch) \n"
+    bind '"\eOS":"git push origin $(git_current_branch) \n"'
+  fi
+
+  # PACKAGE.JSON
+  # ------------
+  if [[ -f package.json ]]; then
+    echo -ne "\033]1337;SetKeyLabel=F5=⚡️ npm-run\a"
+    bind '"${fnKeys[5]}":"_displayNpmScripts"'
+  fi
+}
+
+function _displayNpmScripts() {
+  # find available npm run scripts only if new directory
+  if [[ $lastPackageJsonPath != $(echo "$(pwd)/package.json") ]]; then
+    lastPackageJsonPath=$(echo "$(pwd)/package.json")
+    npmScripts=($(node -e "console.log(Object.keys($(npm run --json)).filter(name => !name.includes(':')).sort((a, b) => a.localeCompare(b)).filter((name, idx) => idx < 12).join(' '))"))
+  fi
+
+  _clearTouchbar
+  _unbindTouchbar
+
+  touchBarState='npm'
+
+  fnKeysIndex=1
+  for npmScript in "$npmScripts[@]"; do
+    fnKeysIndex=$((fnKeysIndex + 1))
+    # bindkey -s $fnKeys[$fnKeysIndex] "npm run $npmScript \n"
+    bind '"${fnKeys[$fnKeysIndex]}":"npm run $npmScript \n"'
+    echo -ne "\033]1337;SetKeyLabel=F$fnKeysIndex=$npmScript\a"
+  done
+
+  echo -ne "\033]1337;SetKeyLabel=F1=👈 back\a"
+  # bindkey "${fnKeys[1]}" _displayDefault
+  bind '"${fnKeys[1]}":"_displayDefault"'
+}
+
+precmd_iterm_touchbar() {
+  if [[ $touchBarState == 'npm' ]]; then
+    _displayNpmScripts
+  else
+    _displayDefault
+  fi
+}

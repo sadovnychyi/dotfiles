@@ -136,6 +136,8 @@ function timer_show_for_humans {
   printf '%ds\n' $S
 }
 
+source ~/dotfiles/touchbar.bash
+
 __prompt() {
   timer_stop
   if ((timer_show > 10 )); then
@@ -156,6 +158,7 @@ __prompt() {
       rightPrompt=""
   fi
   printf "${NORMAL}${WHITE}%$(tput cols)s$(tput cr)" "$rightPrompt"
+  precmd_iterm_touchbar
 }
 
 __prompt_after() {
