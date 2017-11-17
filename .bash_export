@@ -41,3 +41,4 @@ export PATH=$PATH:~/go_appengine
 export PATH=$PATH:/usr/local/sbin
 
 export PATH=$PATH:/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
