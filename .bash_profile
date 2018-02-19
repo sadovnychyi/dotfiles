@@ -162,10 +162,12 @@ __prompt() {
 }
 
 __prompt_after() {
-  printf "${NORMAL}${WHITE}%$(tput cols)s$(tput cr)${NORMAL}" "$(date +%H:%M:%S)"
+  printf "${NORMAL}${WHITE}%$(tput cols)s$(tput cr)${NORMAL}"
 }
 
 trap 'timer_start' DEBUG
 
 PS0="$(__prompt_after)"
 PROMPT_COMMAND=__prompt
+
+# test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
