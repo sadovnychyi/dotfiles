@@ -38,27 +38,40 @@
   "atom-ctags":
     autoBuildTagsWhenActive: true
     buildTimeout: 20000
+  "atom-ide-ui":
+    "atom-ide-datatip":
+      datatipDebounceDelay: 10
+      datatipInteractedWithDebounceDelay: 10
+    "atom-ide-diagnostics-ui": {}
+    hyperclick:
+      darwinTriggerKeys: "altKey,metaKey"
+    use:
+      "atom-ide-datatip": false
   "atom-typescript":
     preferredQuoteCharacter: "'"
+  "autocomplete-ansible":
+    pythonPaths: "/usr/local/bin/python3"
   "autocomplete-plus":
     backspaceTriggersAutocomplete: true
     confirmCompletion: "tab"
     enableBuiltinProvider: false
     minimumWordLength: 0
   "autocomplete-python":
-    extraPaths: "/usr/local/google_appengine;/usr/local/google_appengine/lib/webapp2-2.5.2;"
+    enableTouchBar: true
+    extraPaths: "/usr/local/google_appengine;/usr/local/google_appengine/lib/webapp2-2.5.2;$PROJECT/libs"
     outputDebug: true
-    pythonPaths: "$PROJECT/temp/venv/bin/python;$PROJECT/env/bin/python;/usr/local/bin/python3;/usr/local/bin/python3"
+    pythonPaths: "/Users/sadovnychyi/.local/share/virtualenvs/$PROJECT_NAME-j0y2kzYp/bin/python;$PROJECT/env/bin/python;/usr/local/bin/python3"
     useKite: false
     useSnippets: "required"
   autosave: {}
+  "bracket-matcher":
+    highlightMatchingLineNumber: true
   "cloud-debugger":
     debuggeeId: "gcp:948740859141:3ac5ff71bb3b033a"
   "color-picker":
     abbreviateValues: true
     automaticReplace: true
   core:
-    allowPendingPaneItems: false
     closeDeletedFileTabs: true
     closeEmptyWindows: false
     customFileTypes:
@@ -79,6 +92,14 @@
       "metrics"
       "welcome"
       "spell-check"
+      "linter"
+      "linter-ui-default"
+      "go-debug"
+      "go-plus"
+      "go-signature-statusbar"
+      "hyperclick"
+      "ide-typescript"
+      "language-javascript"
     ]
     followSymlinks: true
     ignoredNames: [
@@ -87,16 +108,15 @@
       ".DS_Store"
       ".pyc"
     ]
-    projectHome: "~"
+    openEmptyEditorOnStart: false
     telemetryConsent: "no"
     themes: [
       "one-dark-ui"
       "Chromodynamics"
     ]
-    titleBar: "hidden"
   editor:
     backUpBeforeSaving: true
-    fontSize: 13
+    fontFamily: "PragmataPro"
     invisibles:
       cr: " "
       eol: " "
@@ -109,6 +129,8 @@
   "file-icons": {}
   "file-watcher":
     promptWhenFileHasChangedOnDisk: false
+  "flow-ide":
+    onlyIfAppropriate: false
   "fuzzy-finder": {}
   "git-diff": {}
   "go-debug":
@@ -120,19 +142,28 @@
     currentPanelHeight: "20vh"
     disabledBundledPackages: [
       "hyperclick"
+      "linter"
     ]
     environmentOverridesConfiguration: false
+    format:
+      tool: "gofmt"
     formatTool: "gofmt"
     goInstallation: "/usr/local/bin/go"
     goPath: "~/go"
     panel:
-      currentHeight: "24.761904761904763vh"
+      currentHeight: "16.083333333333332vh"
+      displayMode: "closed"
+      focusOnFailure: false
     panelDisplayMode: "closed"
+    test:
+      coverageDisplayMode: "gutter"
+      coverageHighlightMode: "disabled"
   "grammar-selector": {}
   "highlight-line":
     hideHighlightOnSelect: true
   "highlight-selected":
     onlyHighlightWholeWords: true
+  "language-babel": {}
   linter: {}
   "linter-coffeelint": {}
   "linter-flake8":
@@ -165,7 +196,8 @@
     rcFile: "%p/.pylintrc"
   "linter-ui-default":
     decorateOnTreeView: "None"
-    panelHeight: 69
+    panelHeight: 217
+    showPanel: true
     statusBarPosition: "Right"
     statusBarRepresents: "Current File"
   metrics:
@@ -240,6 +272,8 @@
       "nuclide-url-hyperclick": false
       "nuclide-working-sets": false
   "one-dark-ui": {}
+  "one-vibrancy":
+    effect: "ultra-dark"
   pigments:
     markerType: "dot"
   "project-manager": {}
@@ -247,6 +281,8 @@
     checkOnSave: false
     yapfPath: "/usr/local/bin/yapf"
     yapfStyle: "{based_on_style: google, indent_width: 2, CONTINUATION_INDENT_WIDTH: 2}"
+  react:
+    skipUndoStackForAutoCloseInsertion: false
   "release-notes":
     viewedVersion: "0.95.0"
   "spell-check": {}
@@ -268,6 +304,18 @@
     showOnStartup: false
   whitespace:
     ignoreWhitespaceOnCurrentLine: false
+".babel.regexp.source":
+  editor:
+    autoIndent: true
+".css.source.styled":
+  editor:
+    autoIndent: true
+".js.jsx.source":
+  editor:
+    autoIndent: true
+".languagebabel.ttlextension":
+  editor:
+    autoIndent: true
 ".python.regexp.source":
   editor:
     autoIndentOnPaste: true
