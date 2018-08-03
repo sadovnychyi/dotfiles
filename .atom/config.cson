@@ -46,7 +46,7 @@
     hyperclick:
       darwinTriggerKeys: "altKey,metaKey"
     use:
-      "atom-ide-datatip": false
+      "atom-ide-datatip": "never"
   "atom-typescript":
     preferredQuoteCharacter: "'"
   "autocomplete-ansible":
@@ -59,7 +59,6 @@
   "autocomplete-python":
     enableTouchBar: true
     extraPaths: "/usr/local/google_appengine;/usr/local/google_appengine/lib/webapp2-2.5.2;$PROJECT/libs"
-    outputDebug: true
     pythonPaths: "/Users/sadovnychyi/.local/share/virtualenvs/$PROJECT_NAME-j0y2kzYp/bin/python;$PROJECT/env/bin/python;/usr/local/bin/python3"
     useKite: false
     useSnippets: "required"
@@ -72,6 +71,7 @@
     abbreviateValues: true
     automaticReplace: true
   core:
+    automaticallyUpdate: false
     closeDeletedFileTabs: true
     closeEmptyWindows: false
     customFileTypes:
@@ -95,11 +95,11 @@
       "linter"
       "linter-ui-default"
       "go-debug"
-      "go-plus"
       "go-signature-statusbar"
       "hyperclick"
       "ide-typescript"
       "language-javascript"
+      "language-python"
     ]
     followSymlinks: true
     ignoredNames: [
@@ -107,6 +107,7 @@
       ".svn"
       ".DS_Store"
       ".pyc"
+      "node_modules"
     ]
     openEmptyEditorOnStart: false
     telemetryConsent: "no"
@@ -114,6 +115,7 @@
       "one-dark-ui"
       "Chromodynamics"
     ]
+    useTreeSitterParsers: true
   editor:
     backUpBeforeSaving: true
     fontFamily: "PragmataPro"
@@ -129,6 +131,8 @@
   "file-icons": {}
   "file-watcher":
     promptWhenFileHasChangedOnDisk: false
+  "find-and-replace":
+    autocompleteSearches: true
   "flow-ide":
     onlyIfAppropriate: false
   "fuzzy-finder": {}
@@ -166,6 +170,9 @@
   "language-babel": {}
   linter: {}
   "linter-coffeelint": {}
+  "linter-eslint":
+    fixOnSave: true
+    useGlobalEslint: true
   "linter-flake8":
     executablePath: "$PROJECT/env/bin/flake8;/usr/local/bin/flake8"
     ignoreErrorCodes: [
@@ -319,6 +326,7 @@
 ".python.regexp.source":
   editor:
     autoIndentOnPaste: true
+    tabLength: 2
 ".python.source":
   editor:
     autoIndentOnPaste: true

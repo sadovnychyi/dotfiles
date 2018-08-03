@@ -46,6 +46,8 @@ if [ -d ~/google-cloud-sdk ]; then
   source ~/google-cloud-sdk/completion.bash.inc
 fi
 
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
 __path_ps1() {
   local short_path_length=30
   local short_path_keep=3
@@ -108,66 +110,16 @@ UNDERLINE=$(tput smul)
 
 PATH_IN_TITLE="\[\033]0;\w\007\]"
 
-_RESET="\[\017\]"
-_RED="\[\033[31;1m\]"
-_YELLOW="\[\033[33;1m\]"
-_WHITE="\[\033[37;1m\]"
-_GREEN="\[\033[1;92m\]"
-_MAGENTA="\[\033[1;35m\]"
-
-function timer_start {
-  timer=${timer:-$SECONDS}
-}
-
-function timer_stop {
-  timer_show=$(($SECONDS - $timer))
-  unset timer
-}
-
-function timer_show_for_humans {
-  local T=${timer_show}
-  local D=$((T/60/60/24))
-  local H=$((T/60/60%24))
-  local M=$((T/60%60))
-  local S=$((T%60))
-  (( $D > 0 )) && printf '%dd ' $D
-  (( $H > 0 )) && printf '%dh ' $H
-  (( $M > 0 )) && printf '%dm ' $M
-  printf '%ds\n' $S
-}
-
 source ~/dotfiles/touchbar.bash
 
 __prompt() {
-  timer_stop
-  if ((timer_show > 10 )); then
-    printf "${NORMAL}${WHITE}%$(tput cols)s$(tput cr)\n" "$(timer_show_for_humans)"
-  fi
-
   current_short_path=$(__path_ps1)
 
   history -a
-  PS1="${PATH_IN_TITLE}${_RESET}${_MAGENTA}\${current_short_path}${_WHITE}·${_GREEN}"
+  PS1="${PATH_IN_TITLE}${NORMAL}${BLUE}\${current_short_path}${WHITE}·${NORMAL}"
 
-  gitBranch=$(__git_ps1)
-  if [[ $gitBranch ]]; then
-      rightPrompt=$gitBranch
-  elif [ "$current_short_path" != $(pwd) ]; then
-      rightPrompt=$(pwd)
-  else
-      rightPrompt=""
-  fi
-  printf "${NORMAL}${WHITE}%$(tput cols)s$(tput cr)" "$rightPrompt"
+  # TODO: async
   precmd_iterm_touchbar
 }
 
-__prompt_after() {
-  printf "${NORMAL}${WHITE}%$(tput cols)s$(tput cr)${NORMAL}"
-}
-
-trap 'timer_start' DEBUG
-
-PS0="$(__prompt_after)"
 PROMPT_COMMAND=__prompt
-
-# test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
