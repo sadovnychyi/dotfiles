@@ -126,6 +126,8 @@ __prompt() {
   current_short_path=$(__path_ps1)
 
   history -a
+  history -n
+
   PS1="${PATH_IN_TITLE}${C_BLUE}${current_short_path}${C_GREEN}·${C_DEFAULT}"
 
   # TODO: async
@@ -133,3 +135,11 @@ __prompt() {
 }
 
 PROMPT_COMMAND=__prompt
+
+# https://github.com/dvorka/hstr/blob/master/CONFIGURATION.md
+# Do not prompt for confirmation when deleting history items, more colors
+export HH_CONFIG=noconfirm,hicolor
+# if this is interactive shell, then bind hh to Ctrl-r (for Vi mode check doc)
+if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hh -- \C-j"'; fi
+# if this is interactive shell, then bind 'kill last command' to Ctrl-x k
+if [[ $- =~ .*i.* ]]; then bind '"\C-xk": "\C-a hh -k \C-j"'; fi

@@ -5,8 +5,8 @@ export HISTSIZE=32768
 export HISTFILESIZE=
 export HISTTIMEFORMAT="[%F %T] "
 
-# Omit duplicates and commands that begin with a space from history.
-export HISTCONTROL="ignoreboth"
+# Omit commands that begin with a space from history.
+export HISTCONTROL="ignorespace"
 
 # Prefer US English and use UTF-8.
 export LANG="en_US.UTF-8"
