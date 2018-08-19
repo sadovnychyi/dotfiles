@@ -5,8 +5,8 @@ export HISTSIZE=32768
 export HISTFILESIZE=
 export HISTTIMEFORMAT="[%F %T] "
 
-# Omit commands that begin with a space from history.
-export HISTCONTROL="ignorespace"
+# Omit duplicates and commands that begin with a space from history.
+export HISTCONTROL="ignoreboth"
 
 # Prefer US English and use UTF-8.
 export LANG="en_US.UTF-8"
@@ -45,3 +45,5 @@ export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
 export SSH_AUTH_SOCK=$HOME/.sekey/ssh-agent.ssh
 export PATH="$HOME/.cargo/bin:$PATH"
+
+export JAVA_HOME="$(/usr/libexec/java_home)"
