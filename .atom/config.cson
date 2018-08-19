@@ -51,6 +51,8 @@
     preferredQuoteCharacter: "'"
   "autocomplete-ansible":
     pythonPaths: "/usr/local/bin/python3"
+  "autocomplete-java":
+    foldImports: false
   "autocomplete-plus":
     backspaceTriggersAutocomplete: true
     confirmCompletion: "tab"
