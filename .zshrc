@@ -17,11 +17,55 @@ export ZSH="/Users/sadovnychyi/.oh-my-zsh"
 
 # vim: filetype=sh
 
+__path_ps1() {
+  local short_path_length=30
+  local short_path_keep=3
+  local ret=""
+  local tilde="~"
+  local p="${PWD/#$HOME/$tilde}"
+  local mask="…"
+  local -i max_len=$(( ${COLUMNS:-80} * short_path_length / 100 ))
+
+  if (( ${#p} <= max_len )); then
+    ret="${p}"
+  else
+    # Len is over max len, show at least short_path_keep leading dirs and
+    # current directory
+    local tmp=${p//\//}
+    local -i delims=$(( ${#p} - ${#tmp} ))
+
+    for (( dir=0; dir < short_path_keep; dir++ )); do
+      (( dir == delims )) && break
+      local left="${p#*/}"
+      local name="${p:0:${#p} - ${#left}}"
+      p="${left}"
+      ret="${ret}${name%/}/"
+    done
+
+    if (( delims <= short_path_keep )); then
+      # No dirs between short_path_keep leading dirs and current dir
+      ret="${ret}${p##*/}"
+    else
+      local base="${p##*/}"
+
+      p="${p:0:${#p} - ${#base}}"
+
+      [[ ${ret} != "/" ]] && ret="${ret%/}" # strip trailing slash
+
+      local -i len_left=$(( max_len - ${#ret} - ${#base} - ${#mask} ))
+
+      ret="${ret}${mask}${p:${#p} - ${len_left}}${base}"
+    fi
+  fi
+  # Escape special chars
+  echo "%{$fg[blue]%}${ret//\\/\\\\}"
+}
+
 # Prompt symbol
 COMMON_PROMPT_SYMBOL="·"
 
 # Left Prompt
-PROMPT='$(prompt_host)$(prompt_current_dir)$(prompt_bg_jobs)$(prompt_return_status)'
+PROMPT='$(prompt_host)$(__path_ps1)$(prompt_bg_jobs)$(prompt_return_status)'
 
 # Right Prompt
 RPROMPT='$(prompt_git_status)'
@@ -39,11 +83,6 @@ prompt_host() {
   if [[ $AWS_VAULT ]]; then
     echo "%{$fg[yellow]%}$AWS_VAULT%{$reset_color%} "
   fi
-}
-
-# Current directory
-prompt_current_dir() {
-  echo -n "%{$fg[blue]%}%(4~|%-1~/…/%2~|%3~)"
 }
 
 # Prompt symbol
@@ -164,6 +203,11 @@ ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion)
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=32
 ZSH_AUTOSUGGEST_USE_ASYNC=true
 ZSH_AUTOSUGGEST_MANUAL_REBIND=true
+
+ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=green'
+ZSH_HIGHLIGHT_STYLES[precommand]='fg=green'
+ZSH_HIGHLIGHT_STYLES[path]='fg=yellow'
+
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
