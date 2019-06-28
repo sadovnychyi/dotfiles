@@ -13,6 +13,9 @@
     css:
       indent_size: 2
       newline_between_rules: true
+    executables:
+      black:
+        path: "cblack"
     general:
       _analyticsUserId: "ce1bdbae-1fe3-4b6a-8754-11dc0eb1c5eb"
       analytics: false
@@ -31,7 +34,11 @@
     less:
       indent_size: 2
     python:
+      default_beautifier: "black"
+      formatter: "yapf"
       indent_size: 2
+      max_line_length: 80
+      style_config: "chromium"
     scss:
       indent_size: 2
       no_lead_zero: true
@@ -39,6 +46,8 @@
     autoBuildTagsWhenActive: true
     buildTimeout: 20000
   "atom-ide-ui":
+    "atom-ide-code-format":
+      formatOnSave: true
     "atom-ide-datatip":
       datatipDebounceDelay: 10
       datatipInteractedWithDebounceDelay: 10
@@ -73,7 +82,6 @@
     abbreviateValues: true
     automaticReplace: true
   core:
-    automaticallyUpdate: false
     closeDeletedFileTabs: true
     closeEmptyWindows: false
     customFileTypes:
@@ -88,6 +96,7 @@
       "source.python": [
         "BUCK"
       ]
+    destroyEmptyPanes: false
     disabledPackages: [
       "linter-jscs"
       "activate-power-mode"
@@ -112,6 +121,9 @@
       "node_modules"
     ]
     openEmptyEditorOnStart: false
+    packagesWithKeymapsDisabled: [
+      "go-plus"
+    ]
     telemetryConsent: "no"
     themes: [
       "one-dark-ui"
@@ -121,6 +133,7 @@
   editor:
     backUpBeforeSaving: true
     fontFamily: "PragmataPro"
+    fontSize: 13
     invisibles:
       cr: " "
       eol: " "
@@ -137,18 +150,27 @@
     autocompleteSearches: true
   "flow-ide":
     onlyIfAppropriate: false
-  "fuzzy-finder": {}
+  "fuzzy-finder":
+    scoringSystem: "fast"
+    useRipGrep: true
   "git-diff": {}
+  github: {}
   "go-debug":
     limitCommandsToGo: true
     panelInitialVisible: false
   "go-oracle":
     goPath: "~/go"
   "go-plus":
+    autocomplete:
+      snippetMode: "nameAndType"
+    config:
+      compileOnSave: false
     currentPanelHeight: "20vh"
     disabledBundledPackages: [
       "hyperclick"
       "linter"
+      "go-debug"
+      "go-signature-statusbar"
     ]
     environmentOverridesConfiguration: false
     format:
@@ -156,6 +178,8 @@
     formatTool: "gofmt"
     goInstallation: "/usr/local/bin/go"
     goPath: "~/go"
+    guru:
+      highlightIdentifiers: false
     panel:
       currentHeight: "16.083333333333332vh"
       displayMode: "closed"
@@ -164,6 +188,7 @@
     test:
       coverageDisplayMode: "gutter"
       coverageHighlightMode: "disabled"
+      runTestsOnSave: false
   "grammar-selector": {}
   "highlight-line":
     hideHighlightOnSelect: true
@@ -173,10 +198,10 @@
   linter: {}
   "linter-coffeelint": {}
   "linter-eslint":
-    fixOnSave: true
-    useGlobalEslint: true
+    autofix:
+      fixOnSave: true
   "linter-flake8":
-    executablePath: "$PROJECT/env/bin/flake8;/usr/local/bin/flake8"
+    executablePath: "/Users/sadovnychyi/.local/share/virtualenvs/docflow-1ZrSR1c2/bin/flake8;$PROJECT/env/bin/flake8;/usr/local/bin/flake8"
     ignoreErrorCodes: [
       "E111"
       "E114"
@@ -193,6 +218,7 @@
       "H404"
       "H306"
       "H301"
+      "W503"
     ]
   "linter-golinter":
     executablePath: "/Users/sadovnychyi/go/bin/golint"
@@ -202,6 +228,7 @@
     style: "semi-standard"
   "linter-jshint": {}
   "linter-pylint":
+    executablePath: "/usr/local/bin/pylint"
     rcFile: "%p/.pylintrc"
   "linter-ui-default":
     decorateOnTreeView: "None"
@@ -286,6 +313,12 @@
   pigments:
     markerType: "dot"
   "project-manager": {}
+  "python-black":
+    binPath: "cblack"
+    fmtOnSave: false
+    lineLength: 80
+    showErrors: "flash"
+    skipStringNormalization: true
   "python-yapf":
     checkOnSave: false
     yapfPath: "/usr/local/bin/yapf"
@@ -302,8 +335,8 @@
   term2:
     colors: {}
   "tree-view":
-    hideIgnoredNames: true
-    hideVcsIgnoredFiles: true
+    autoReveal: true
+    squashDirectoryNames: true
   wakatime:
     apikey: "Saved in your ~/.wakatime.cfg file"
     showStatusBarIcon: false

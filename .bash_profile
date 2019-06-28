@@ -126,7 +126,6 @@ __prompt() {
   current_short_path=$(__path_ps1)
 
   history -a
-  history -n
 
   PS1="${PATH_IN_TITLE}${C_BLUE}${current_short_path}${C_GREEN}·${C_DEFAULT}"
 

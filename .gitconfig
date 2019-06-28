@@ -30,3 +30,7 @@
 	prune = true
 [commit]
 	gpgsign = false
+[pager]
+	diff = false
+[branch]
+	autosetuprebase = always
