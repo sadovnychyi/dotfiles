@@ -21,17 +21,13 @@ export ZSH="/Users/sadovnychyi/.oh-my-zsh"
 COMMON_PROMPT_SYMBOL="·"
 
 # Left Prompt
-PROMPT='$(common_host)$(common_current_dir)$(common_bg_jobs)$(common_return_status)'
+PROMPT='$(prompt_host)$(prompt_current_dir)$(prompt_bg_jobs)$(prompt_return_status)'
 
 # Right Prompt
-RPROMPT='$(common_git_status)'
-
-# Prompt with current SHA
-# PROMPT='$(common_host)$(common_current_dir)$(common_bg_jobs)$(common_return_status)'
-# RPROMPT='$(common_git_status) $(git_prompt_short_sha)'
+RPROMPT='$(prompt_git_status)'
 
 # Host
-common_host() {
+prompt_host() {
   if [[ -n $SSH_CONNECTION ]]; then
     me="%n@%m"
   elif [[ $LOGNAME != $USER ]]; then
@@ -46,17 +42,17 @@ common_host() {
 }
 
 # Current directory
-common_current_dir() {
-  echo -n "%{$fg[blue]%}%c"
+prompt_current_dir() {
+  echo -n "%{$fg[blue]%}%(4~|%-1~/…/%2~|%3~)"
 }
 
 # Prompt symbol
-common_return_status() {
-  echo -n "%(?.%F{magenta}.%F{red})$COMMON_PROMPT_SYMBOL%f"
+prompt_return_status() {
+  echo -n "%(?.%F{green}.%F{red})$COMMON_PROMPT_SYMBOL%f"
 }
 
 # Git status
-common_git_status() {
+prompt_git_status() {
   local message=""
   local message_color="%F{green}"
 
@@ -83,7 +79,7 @@ ZSH_THEME_GIT_PROMPT_SHA_BEFORE="%{%F{green}%}"
 ZSH_THEME_GIT_PROMPT_SHA_AFTER="%{$reset_color%} "
 
 # Background Jobs
-common_bg_jobs() {
+prompt_bg_jobs() {
   bg_status="%{$fg[yellow]%}%(1j.↓%j .)"
   echo -n $bg_status
 }
@@ -152,19 +148,22 @@ common_bg_jobs() {
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  # bundler
-  # dotenv
   osx
-  # rake
-  # rbenv
-  # ruby
+  python
+  node
   zsh-syntax-highlighting
   zsh-autosuggestions
+  zsh-apple-touchbar
 )
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+
+ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion)
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=32
+ZSH_AUTOSUGGEST_USE_ASYNC=true
+ZSH_AUTOSUGGEST_MANUAL_REBIND=true
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -208,3 +207,5 @@ cdf() {
     echo 'No Finder window found' >&2
   fi
 }
+
+source ~/dotfiles/touchbar.bash
