@@ -252,4 +252,6 @@ cdf() {
   fi
 }
 
-source ~/dotfiles/touchbar.bash
+# source ~/dotfiles/touchbar.bash
+# autoload -Uz add-zsh-hook
+# add-zsh-hook precmd precmd_iterm_touchbar

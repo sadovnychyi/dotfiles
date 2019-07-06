@@ -87,8 +87,7 @@ function _clearTouchbar() {
 
 function _unbindTouchbar() {
   for fnKey in "$fnKeys[@]"; do
-    # bindkey -s "$fnKey" ''
-    bind '"$fnKey":""'
+    bindkey -s "$fnKey" ''
   done
 }
 
@@ -101,7 +100,7 @@ function _displayDefault() {
   # CURRENT_DIR
   # -----------
   echo -ne "\033]1337;SetKeyLabel=F1=$(echo $(pwd) | awk -F/ '{print $(NF-1)"/"$(NF)}')\a"
-  bind '"\eOP":"pwd\n"'
+  # bind '"\eOP":"pwd\n"'
 
   # GIT
   # ---
@@ -130,20 +129,17 @@ function _displayDefault() {
     echo -ne "\033]1337;SetKeyLabel=F4=✉️ push\a";
 
     # bind git actions
-    # bindkey -s '^[OQ' 'git branch -a \n'
-    bind '"\eOQ":"git branch -a \n"'
-    # bindkey -s '^[OR' 'git status \n'
-    bind '"\eOR":"git status \n"'
-    # bindkey -s '^[OS' "git push origin $(git_current_branch) \n"
-    bind '"\eOS":"git push origin $(git_current_branch) \n"'
+    bindkey -s '^[OQ' 'git branch -a \n'
+    bindkey -s '^[OR' 'git status \n'
+    bindkey -s '^[OS' "git push origin $(git_current_branch) \n"
   fi
 
   # PACKAGE.JSON
   # ------------
-  if [[ -f package.json ]]; then
-    echo -ne "\033]1337;SetKeyLabel=F5=⚡️ npm-run\a"
-    bind '"${fnKeys[5]}":"_displayNpmScripts"'
-  fi
+  # if [[ -f package.json ]]; then
+  #   echo -ne "\033]1337;SetKeyLabel=F5=⚡️ npm-run\a"
+  #   bind '"${fnKeys[5]}":"_displayNpmScripts"'
+  # fi
 }
 
 function _displayNpmScripts() {
@@ -161,14 +157,12 @@ function _displayNpmScripts() {
   fnKeysIndex=1
   for npmScript in "$npmScripts[@]"; do
     fnKeysIndex=$((fnKeysIndex + 1))
-    # bindkey -s $fnKeys[$fnKeysIndex] "npm run $npmScript \n"
-    bind '"${fnKeys[$fnKeysIndex]}":"npm run $npmScript \n"'
+    bindkey -s $fnKeys[$fnKeysIndex] "npm run $npmScript \n"
     echo -ne "\033]1337;SetKeyLabel=F$fnKeysIndex=$npmScript\a"
   done
 
   echo -ne "\033]1337;SetKeyLabel=F1=👈 back\a"
-  # bindkey "${fnKeys[1]}" _displayDefault
-  bind '"${fnKeys[1]}":"_displayDefault"'
+  bindkey "${fnKeys[1]}" _displayDefault
 }
 
 precmd_iterm_touchbar() {
