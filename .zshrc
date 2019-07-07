@@ -92,4 +92,4 @@ setopt PUSHD_IGNORE_DUPS       # don’t push copies of the same directory onto 
 setopt PUSHD_MINUS             # `cd -3` now means "3 directory deeper in the stack"
 setopt SHARE_HISTORY           # write and import history on every command
 setopt EXTENDED_HISTORY        # write timestamps to history
-setopt CORRECT_ALL             # try to correct the spelling of commands
+# setopt CORRECT_ALL           # try to correct the spelling of commands
