@@ -43,7 +43,7 @@ __fzf_git_branch() {
 }
 
 fzf-git-branch() {
-  LBUFFER="${LBUFFER}$(__fzf_git_branch)"
+  __fzf_git_branch
   local ret=$?
   zle reset-prompt
   return $ret
