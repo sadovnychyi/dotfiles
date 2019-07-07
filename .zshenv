@@ -32,7 +32,9 @@ export PATH=$PATH:~/go_appengine
 export PATH=$PATH:~/dotfiles/bin
 export PATH=$PATH:/usr/local/sbin
 
-export PATH=$PATH:/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin
+export CLOUD_SDK_HOME=/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk
+
+export PATH=$PATH:$CLOUD_SDK_HOME
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
 export SSH_AUTH_SOCK=$HOME/.sekey/ssh-agent.ssh
