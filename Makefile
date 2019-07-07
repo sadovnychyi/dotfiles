@@ -2,6 +2,7 @@ build:
 	@ln -fs `pwd`/.bash* `pwd`/.gitconfig ~
 	@ln -fs `pwd`/.*rc ~
 	@ln -fs `pwd`/.zshrc ~
+	@ln -fs `pwd`/.zshenv ~
 	@ln -fs `pwd`/.hushlogin ~
 	@mkdir -p ~/.atom && ln -fs `pwd`/.atom/* ~/.atom
 	@tput setaf 6

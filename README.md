@@ -88,3 +88,8 @@ ALT + .                           | Last argument of previous command
 * http://www.ukuug.org/events/linux2003/papers/bash_tips/
 * https://github.com/mathiasbynens/dotfiles
 * http://wiki.bash-hackers.org/internals/shell_options
+* https://github.com/sindresorhus/pure
+* https://github.com/robbyrussell/oh-my-zsh
+* https://github.com/romkatv/dotfiles-public
+* https://github.com/bhilburn/powerlevel9k
+* https://github.com/romkatv/powerlevel10k

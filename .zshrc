@@ -1,257 +1,103 @@
-export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:$GOROOT/bin
-export PATH=$PATH:~/go_appengine
-export PATH=$PATH:/usr/local/sbin
-export PATH=$PATH:/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
+emulate zsh
 
-# Path to your oh-my-zsh installation.
-export ZSH="/Users/sadovnychyi/.oh-my-zsh"
+autoload -Uz add-zsh-hook run-help zargs zmv zcp zln
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-# ZSH_THEME="common"
+ZSH=~/dotfiles/oh-my-zsh
+ZSH_CUSTOM=$ZSH/custom
 
-# vim: filetype=sh
-
-__path_ps1() {
-  local short_path_length=30
-  local short_path_keep=3
-  local ret=""
-  local tilde="~"
-  local p="${PWD/#$HOME/$tilde}"
-  local mask="…"
-  local -i max_len=$(( ${COLUMNS:-80} * short_path_length / 100 ))
-
-  if (( ${#p} <= max_len )); then
-    ret="${p}"
-  else
-    # Len is over max len, show at least short_path_keep leading dirs and
-    # current directory
-    local tmp=${p//\//}
-    local -i delims=$(( ${#p} - ${#tmp} ))
-
-    for (( dir=0; dir < short_path_keep; dir++ )); do
-      (( dir == delims )) && break
-      local left="${p#*/}"
-      local name="${p:0:${#p} - ${#left}}"
-      p="${left}"
-      ret="${ret}${name%/}/"
-    done
-
-    if (( delims <= short_path_keep )); then
-      # No dirs between short_path_keep leading dirs and current dir
-      ret="${ret}${p##*/}"
-    else
-      local base="${p##*/}"
-
-      p="${p:0:${#p} - ${#base}}"
-
-      [[ ${ret} != "/" ]] && ret="${ret%/}" # strip trailing slash
-
-      local -i len_left=$(( max_len - ${#ret} - ${#base} - ${#mask} ))
-
-      ret="${ret}${mask}${p:${#p} - ${len_left}}${base}"
-    fi
-  fi
-  # Escape special chars
-  echo "%{$fg[blue]%}${ret//\\/\\\\}"
-}
-
-# Prompt symbol
-COMMON_PROMPT_SYMBOL="·"
-
-# Left Prompt
-PROMPT='$(prompt_host)$(__path_ps1)$(prompt_bg_jobs)$(prompt_return_status)'
-
-# Right Prompt
-RPROMPT='$(prompt_git_status)'
-
-# Host
-prompt_host() {
-  if [[ -n $SSH_CONNECTION ]]; then
-    me="%n@%m"
-  elif [[ $LOGNAME != $USER ]]; then
-    me="%n"
-  fi
-  if [[ -n $me ]]; then
-    echo "%{$fg[green]%}$me%{$reset_color%}:"
-  fi
-  if [[ $AWS_VAULT ]]; then
-    echo "%{$fg[yellow]%}$AWS_VAULT%{$reset_color%} "
-  fi
-}
-
-# Prompt symbol
-prompt_return_status() {
-  echo -n "%(?.%F{green}.%F{red})$COMMON_PROMPT_SYMBOL%f"
-}
-
-# Git status
-prompt_git_status() {
-  local message=""
-  local message_color="%F{green}"
-
-  # https://git-scm.com/docs/git-status#_short_format
-  local staged=$(git status --porcelain 2>/dev/null | grep -e "^[MADRCU]")
-  local unstaged=$(git status --porcelain 2>/dev/null | grep -e "^[MADRCU? ][MADRCU?]")
-
-  if [[ -n ${staged} ]]; then
-      message_color="%F{red}"
-  elif [[ -n ${unstaged} ]]; then
-      message_color="%F{yellow}"
-  fi
-
-  local branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
-  if [[ -n ${branch} ]]; then
-      message+="${message_color}${branch}%f"
-  fi
-
-  echo -n "${message}"
-}
-
-# Git prompt SHA
-ZSH_THEME_GIT_PROMPT_SHA_BEFORE="%{%F{green}%}"
-ZSH_THEME_GIT_PROMPT_SHA_AFTER="%{$reset_color%} "
-
-# Background Jobs
-prompt_bg_jobs() {
-  bg_status="%{$fg[yellow]%}%(1j.↓%j .)"
-  echo -n $bg_status
-}
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS=true
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
-
-# bindkey -e
-# bindkey '\e\e[C' forward-word
-# bindkey '\e\e[D' backward-word
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  git
-  osx
-  python
-  node
-  zsh-syntax-highlighting
-  zsh-autosuggestions
-  zsh-apple-touchbar
-)
-
-source $ZSH/oh-my-zsh.sh
-
-# User configuration
-
+ZSH_AUTOSUGGEST_MANUAL_REBIND=1
 ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion)
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=32
 ZSH_AUTOSUGGEST_USE_ASYNC=true
-ZSH_AUTOSUGGEST_MANUAL_REBIND=true
 
-ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=green'
-ZSH_HIGHLIGHT_STYLES[precommand]='fg=green'
-ZSH_HIGHLIGHT_STYLES[path]='fg=yellow'
+if zmodload zsh/terminfo && (( terminfo[colors] >= 256 )); then
+  # the default is hard to see
+  ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=244'
+else
+  # the default is outside of 8 color range
+  ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=005'
+fi
 
+[[ $TERM == xterm* ]] || : ${PROMPT_MODE:=portable}
 
-# export MANPATH="/usr/local/man:$MANPATH"
+source ~/dotfiles/functions.zsh
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+run-tracked source $ZSH/plugins/command-not-found/command-not-found.plugin.zsh
+# Kill bindings and widgets as we define our own in bindings.zsh. Deny random exports.
+run-tracked -bwe source $ZSH/plugins/dirhistory/dirhistory.plugin.zsh
+# Disallow `x` alias.
+run-tracked -a source $ZSH/plugins/extract/extract.plugin.zsh
+# Allow `z` alias.
+run-tracked +a source $ZSH/plugins/z/z.plugin.zsh
+run-tracked source ~/dotfiles/zsh-prompt-benchmark/zsh-prompt-benchmark.plugin.zsh
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+export DISABLE_FZF_AUTO_COMPLETION="true"
+run-tracked +b source $ZSH/plugins/fzf/fzf.plugin.zsh
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+# Bind Ctrl+B to git branch selection
+zle     -N   fco_preview
+bindkey '^B' fco_preview
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+function late-init() {
+  emulate -L zsh
+  # Must be sourced after all widgets have been defined but before zsh-autosuggestions.
+  run-tracked +w source ~/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+  ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=green'
+  ZSH_HIGHLIGHT_STYLES[precommand]='fg=green'
+  ZSH_HIGHLIGHT_STYLES[path]='fg=blue'
 
-# Reload the shell (i.e. invoke as a login shell)
-alias reload="exec $SHELL -l"
-
-alias apm="apm-beta"
-alias atom="atom-beta ."
-alias ls="ls -Falh"
-# Clear which *really* clears the terminal, instead of appending bunch of new lines
-alias clear="printf '\33c\e[3J'"
-alias lock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
-alias afk=lock
-cdf() {
-  target=`osascript -e 'tell application "Finder" to if (count of Finder windows) > 0 then get POSIX path of (target of front Finder window as text)'`
-  if [ "$target" != "" ]; then
-    cd "$target"; pwd
-  else
-    echo 'No Finder window found' >&2
-  fi
+  run-tracked source ~/dotfiles/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+  run-tracked +w _zsh_autosuggest_start
+  add-zsh-hook -d precmd late-init
 }
 
+add-zsh-hook precmd late-init
+
+run-tracked source ~/dotfiles/powerlevel10k/powerlevel10k.zsh-theme
+source ~/dotfiles/prompt.zsh
+source ~/dotfiles/history.zsh
+source ~/dotfiles/bindings.zsh
+source ~/dotfiles/completions.zsh
+
+# On every prompt, set terminal title to "cwd".
+function set-term-title() {
+  print -Pn '\e]0;%~\a'
+}
+add-zsh-hook precmd set-term-title
+
+# Disable highlighting of text pasted into the command line.
+zle_highlight=('paste:none')
+
+(( $+aliases[run-help] )) && unalias run-help
+source ~/dotfiles/aliases.zsh
+
+# TODO: fix with next version of zsh
+# https://github.com/romkatv/powerlevel10k/commit/f95a0fc3eef9a33c1a783359ea17b9486b27e30e
+# ZLE_RPROMPT_INDENT=0           # don't leave an empty space after right prompt
+READNULLCMD=$PAGER             # use the default pager instead of `more`
+WORDCHARS=''                   # only alphanums make up words in word-based zle widgets
+ZLE_REMOVE_SUFFIX_CHARS=''     # don't eat space when typing '|' after a tab completion
+
+setopt ALWAYS_TO_END           # full completions move cursor to the end
+setopt AUTO_CD                 # `dirname` is equivalent to `cd dirname`
+setopt AUTO_PUSHD              # `cd` pushes directories to the directory stack
+setopt EXTENDED_GLOB           # (#qx) glob qualifier and more
+setopt GLOB_DOTS               # glob matches files starting with dot; `*` becomes `*(D)`
+setopt HIST_EXPIRE_DUPS_FIRST  # if history needs to be trimmed, evict dups first
+setopt HIST_IGNORE_DUPS        # don't add dups to history
+setopt HIST_IGNORE_SPACE       # don't add commands starting with space to history
+setopt HIST_REDUCE_BLANKS      # remove junk whitespace from commands before adding to history
+setopt HIST_VERIFY             # if a cmd triggers history expansion, show it instead of running
+setopt INTERACTIVE_COMMENTS    # allow comments in command line
+setopt MULTIOS                 # allow multiple redirections for the same fd
+setopt NO_BANG_HIST            # disable old history syntax
+setopt PUSHD_IGNORE_DUPS       # don’t push copies of the same directory onto the directory stack
+setopt PUSHD_MINUS             # `cd -3` now means "3 directory deeper in the stack"
+setopt SHARE_HISTORY           # write and import history on every command
+setopt EXTENDED_HISTORY        # write timestamps to history
+setopt CORRECT_ALL             # try to correct the spelling of commands
+
+# TODO: configuure touchbar
 # source ~/dotfiles/touchbar.bash
 # autoload -Uz add-zsh-hook
 # add-zsh-hook precmd precmd_iterm_touchbar

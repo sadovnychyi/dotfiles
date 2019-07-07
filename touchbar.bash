@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Based on https://github.com/iam4x/zsh-iterm-touchbar
 
