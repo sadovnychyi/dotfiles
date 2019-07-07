@@ -48,6 +48,7 @@ fzf-git-branch() {
   zle reset-prompt
   return $ret
 }
+
 # Bind Ctrl+B to git branch selection
 zle     -N   fzf-git-branch
 bindkey '^B' fzf-git-branch

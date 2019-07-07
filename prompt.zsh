@@ -140,7 +140,7 @@ fi
   typeset -g POWERLEVEL9K_VCS_COMMIT_ICON='@'
   typeset -g POWERLEVEL9K_VCS_INCOMING_CHANGES_ICON=$(_pp_s '<' '⇣')
   typeset -g POWERLEVEL9K_VCS_OUTGOING_CHANGES_ICON=$(_pp_s '>' '⇡')
-  typeset -g POWERLEVEL9K_VCS_STASH_ICON='*'
+  typeset -g POWERLEVEL9K_VCS_STASH_ICON='▣'
   typeset -g POWERLEVEL9K_VCS_TAG_ICON=$'%{\b#%}'
   if (( ${PURE_POWER_USE_P10K_EXTENSIONS:-1} )); then
     typeset -g POWERLEVEL9K_VCS_{STAGED,UNSTAGED}_MAX_NUM=99
