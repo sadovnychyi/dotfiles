@@ -34,10 +34,6 @@ run-tracked source ~/dotfiles/zsh-prompt-benchmark/zsh-prompt-benchmark.plugin.z
 export DISABLE_FZF_AUTO_COMPLETION="true"
 run-tracked +b source $ZSH/plugins/fzf/fzf.plugin.zsh
 
-# Bind Ctrl+B to git branch selection
-zle     -N   fco_preview
-bindkey '^B' fco_preview
-
 function late-init() {
   emulate -L zsh
   # Must be sourced after all widgets have been defined but before zsh-autosuggestions.
@@ -58,6 +54,7 @@ source ~/dotfiles/prompt.zsh
 source ~/dotfiles/history.zsh
 source ~/dotfiles/bindings.zsh
 source ~/dotfiles/completions.zsh
+source ~/dotfiles/touchbar.zsh
 
 # On every prompt, set terminal title to "cwd".
 function set-term-title() {
@@ -96,8 +93,3 @@ setopt PUSHD_MINUS             # `cd -3` now means "3 directory deeper in the st
 setopt SHARE_HISTORY           # write and import history on every command
 setopt EXTENDED_HISTORY        # write timestamps to history
 setopt CORRECT_ALL             # try to correct the spelling of commands
-
-# TODO: configuure touchbar
-# source ~/dotfiles/touchbar.bash
-# autoload -Uz add-zsh-hook
-# add-zsh-hook precmd precmd_iterm_touchbar

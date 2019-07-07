@@ -1,5 +1,3 @@
-#!/bin/sh
-
 # Original location: https://github.com/romkatv/dotfiles-public/blob/master/.purepower.
 # If you copy this file, keep the link to the original and this sentence intact; you are encouraged
 # to change everything else.

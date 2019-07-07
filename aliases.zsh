@@ -14,7 +14,7 @@ alias ....="cd ../../.."
 alias apm="apm-beta"
 alias atom="atom-beta ."
 alias open="open ."
-alias ls="ls -Falh"
+alias ls="ls -Fah"
 
 # Remove unwanted formatting from text in the clipboard (also available as Shift + Cmd + V)
 alias pbclean='pbpaste | pbcopy'
@@ -27,7 +27,7 @@ alias clear="printf '\33c\e[3J'"
 # Set git as alias for hub
 eval "$(hub alias -s)"
 
-fco_preview() {
+__fzf_git_branch() {
   local tags branches target
   branches=$(
     git --no-pager branch --all \
@@ -36,11 +36,21 @@ fco_preview() {
   tags=$(
     git --no-pager tag | awk '{print "\x1b[35;1mtag\x1b[m\t" $1}') || return
   target=$(
-    (echo "$branches"; echo "$tags") |
+    (echo "$branches"; echo -n "$tags") |
     fzf --no-hscroll --no-multi -n 2 \
         --ansi --preview="git --no-pager log -150 --pretty=format:%s '..{2}'") || return
   git checkout $(awk '{print $2}' <<<"$target" )
 }
+
+fzf-git-branch() {
+  LBUFFER="${LBUFFER}$(__fzf_git_branch)"
+  local ret=$?
+  zle reset-prompt
+  return $ret
+}
+# Bind Ctrl+B to git branch selection
+zle     -N   fzf-git-branch
+bindkey '^B' fzf-git-branch
 
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 function upgrade() {
