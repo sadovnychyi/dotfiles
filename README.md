@@ -10,9 +10,14 @@ Dotfiles are files in your home directory that begin with a dot, by default they
 
 # Description
 
-This is based on Bash 4, includes most of features from ZSH, including right prompt. I use standard OS X terminal with [TotalTerminal](http://totalterminal.binaryage.com/) extension which allows me to call it from anywhere with a shortcut. **Works** in full screen apps.
+ZSH with powerlevel10k, prompt renders under 40ms. iTerm2 with some [custom keybindings](https://apple.stackexchange.com/questions/136928/using-alt-cmd-right-left-arrow-in-iterm), used as a hotkey window which can be called on top of any full screen app.
 
-<img width="654" alt="screen shot 2016-02-15 at 20 07 28" src="https://cloud.githubusercontent.com/assets/193864/13048285/d8ff9c0a-d41f-11e5-8d13-36aca8237331.png">
+![image](https://user-images.githubusercontent.com/193864/60770896-c0f0ca80-a112-11e9-9750-6f695f0fe084.png)
+
+### Touchbar support
+Clicking on current directory will go into interactive prompt with current directory contents, and clicking on git status will go into a prompt to change git branch (both using [fzf](https://github.com/junegunn/fzf)).
+![image](https://user-images.githubusercontent.com/193864/60770908-e41b7a00-a112-11e9-8bf4-e5c5e2a14613.png)
+
 
 
 # Installation
