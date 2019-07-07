@@ -35,10 +35,7 @@ brew install git hub zsh ngrep fzf
 chsh -s $(which zsh)
 ```
 
-# Bash Keyboard Shortcuts
-
-`bind -P` to see all current keyboard shortcuts used.
-Be sure to check `Use option as meta key` in terminal settings.
+# Keyboard Shortcuts
 
 Non-default shortcuts are highlighted in bold.
 
