@@ -21,7 +21,7 @@ export PYTHONSTARTUP="${HOME}/.pyrc"
 export PYTHONIOENCODING='UTF-8'
 export PYTHONDONTWRITEBYTECODE=true
 
-export EDITOR=nano
+export EDITOR=micro
 
 export GOPATH=$HOME/go
 export GOROOT=/usr/local/opt/go/libexec

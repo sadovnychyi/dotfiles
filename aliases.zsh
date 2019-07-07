@@ -1,6 +1,7 @@
 alias diff='diff --color=auto'
 alias grep='rg --color=auto'
 alias tree='tree -aC -I .git --dirsfirst'
+alias nano="micro"
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
