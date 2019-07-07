@@ -31,9 +31,8 @@ make
 # Requirements
 
 ```bash
-brew install git hub bash bash-completion ngrep
-sudo bash -c "echo /usr/local/bin/bash >> /etc/shells"
-chsh -s /usr/local/bin/bash
+brew install git hub zsh ngrep fzf
+chsh -s $(which zsh)
 ```
 
 # Bash Keyboard Shortcuts
