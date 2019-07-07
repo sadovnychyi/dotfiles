@@ -37,10 +37,7 @@ run-tracked +b source $ZSH/plugins/fzf/fzf.plugin.zsh
 function late-init() {
   emulate -L zsh
   # Must be sourced after all widgets have been defined but before zsh-autosuggestions.
-  run-tracked +w source ~/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
-  ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=green'
-  ZSH_HIGHLIGHT_STYLES[precommand]='fg=green'
-  ZSH_HIGHLIGHT_STYLES[path]='fg=blue'
+  run-tracked +aw source ~/dotfiles/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
   run-tracked source ~/dotfiles/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
   run-tracked +w _zsh_autosuggest_start
