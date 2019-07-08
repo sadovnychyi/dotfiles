@@ -94,3 +94,4 @@ ALT + .                           | Last argument of previous command
 * https://github.com/romkatv/dotfiles-public
 * https://github.com/bhilburn/powerlevel9k
 * https://github.com/romkatv/powerlevel10k
+* https://stackoverflow.com/a/22312856/1279005
