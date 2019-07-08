@@ -90,3 +90,6 @@ setopt PUSHD_MINUS             # `cd -3` now means "3 directory deeper in the st
 setopt SHARE_HISTORY           # write and import history on every command
 setopt EXTENDED_HISTORY        # write timestamps to history
 # setopt CORRECT_ALL           # try to correct the spelling of commands
+
+# https://github.com/robbyrussell/oh-my-zsh/issues/31
+unsetopt nomatch
