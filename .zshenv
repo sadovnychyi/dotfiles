@@ -59,8 +59,9 @@ export WAKATIME_DISABLE_OFFLINE=0
 #   -F   exit if there is less than one page of content
 #   -X   keep content on screen after exit
 #   -M   show more info at the bottom prompt line
-#   -x4  tabs are 4 instead of 8
-export LESS=-iRFXMx4
+#   -x2  tabs are 2 instead of 8
+export LESS="-iRFXMx2"
+export BAT_PAGER=0
 
 if (( $#commands[(i)lesspipe(|.sh)] )); then
   export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
