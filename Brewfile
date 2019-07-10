@@ -37,6 +37,8 @@ brew "entr"
 brew "fd"
 # Compression/decompression library aiming for high speed
 brew "snappy"
+# OCR (Optical Character Recognition) engine
+brew "tesseract"
 # Play, record, convert, and stream audio and video
 brew "ffmpeg"
 # Serialization library for C++, supporting Java, C#, and Go
@@ -61,12 +63,18 @@ brew "gron"
 brew "highlight"
 # Bash and zsh history suggest box
 brew "hstr"
+# Improved top (interactive process viewer)
+brew "htop"
+# User-friendly cURL replacement (command-line HTTP client)
+brew "httpie"
 # Add GitHub support to git on the command-line
 brew "hub"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
+# Pager program similar to more
+brew "less"
 # Key-value storage library with ordered mapping
 brew "leveldb"
 # GNOME XML library
@@ -81,6 +89,8 @@ brew "maven"
 brew "micro"
 # Fast, highly customisable system info script
 brew "neofetch"
+# Network grep
+brew "ngrep"
 # Platform built on V8 to build network applications
 brew "node"
 # Read-write NTFS driver for FUSE

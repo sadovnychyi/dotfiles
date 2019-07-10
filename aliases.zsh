@@ -117,7 +117,7 @@ alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes
                   sudo rm -rfv /private/var/log/asl/*.asl"
 
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS
-  do alias "$method"="curl -X'$method'"
+  do alias "$method"="http $method"
 done
 
 # Reload the shell (i.e. invoke as a login shell)
