@@ -16,3 +16,6 @@
 [submodule "fast-syntax-highlighting"]
 	path = fast-syntax-highlighting
 	url = https://github.com/zdharma/fast-syntax-highlighting.git
+[submodule "enhancd"]
+	path = enhancd
+	url = https://github.com/b4b4r07/enhancd.git
