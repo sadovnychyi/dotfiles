@@ -117,13 +117,11 @@ alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes
                   sudo rm -rfv /private/var/log/asl/*.asl"
 
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS
-  do alias "$method"="lwp-request -m '$method'"
+  do alias "$method"="curl -X'$method'"
 done
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
-
-alias vi=pyvim
 
 # alias drmi="docker rmi -f $(docker images | grep "<none>" | awk "{print \$3}")"
 
@@ -134,10 +132,6 @@ cdf() {
   else
     echo 'No Finder window found' >&2
   fi
-}
-
-update_macos_notes() {
-  brew list -l > ~/dotfiles/.macos && brew cask list -l >> ~/dotfiles/.macos
 }
 
 

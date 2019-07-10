@@ -51,8 +51,6 @@ path=($HOME/bin $HOME/.local/bin $HOME/.cargo/bin ${path[@]})
 export FZF_DEFAULT_OPTS="--height=50% --min-height=15 --reverse"
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 
-export WAKATIME_DISABLE_OFFLINE=0
-
 # This affects every invocation of `less`.
 #
 #   -i   case-insensitive search unless search string contains uppercase letters
