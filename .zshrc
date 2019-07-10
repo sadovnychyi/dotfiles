@@ -30,7 +30,6 @@ run-tracked -a source $ZSH/plugins/extract/extract.plugin.zsh
 # Allow `z` alias.
 run-tracked +a source $ZSH/plugins/z/z.plugin.zsh
 run-tracked source ~/dotfiles/zsh-prompt-benchmark/zsh-prompt-benchmark.plugin.zsh
-run-tracked source ~/dotfiles/enhancd/init.sh
 run-tracked source ~/.iterm2_shell_integration.zsh
 
 export DISABLE_FZF_AUTO_COMPLETION="true"
@@ -40,6 +39,8 @@ function late-init() {
   emulate -L zsh
   # Must be sourced after all widgets have been defined but before zsh-autosuggestions.
   run-tracked +aw source ~/dotfiles/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+
+  run-tracked +a -b source ~/dotfiles/enhancd/init.sh
 
   run-tracked source ~/dotfiles/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
   run-tracked +w _zsh_autosuggest_start
