@@ -31,6 +31,7 @@ run-tracked -a source $ZSH/plugins/extract/extract.plugin.zsh
 run-tracked +a source $ZSH/plugins/z/z.plugin.zsh
 run-tracked source ~/dotfiles/zsh-prompt-benchmark/zsh-prompt-benchmark.plugin.zsh
 run-tracked source ~/.iterm2_shell_integration.zsh
+if brew command command-not-found-init > /dev/null 2>&1; then eval "$(brew command-not-found-init)"; fi
 
 export DISABLE_FZF_AUTO_COMPLETION="true"
 run-tracked +b source $ZSH/plugins/fzf/fzf.plugin.zsh
