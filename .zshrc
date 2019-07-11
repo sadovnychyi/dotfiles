@@ -40,7 +40,7 @@ function late-init() {
   # Must be sourced after all widgets have been defined but before zsh-autosuggestions.
   run-tracked +aw source ~/dotfiles/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
-  run-tracked +ae -b source ~/dotfiles/enhancd/init.sh
+  run-tracked +aeb source ~/dotfiles/enhancd/init.sh
 
   run-tracked source ~/dotfiles/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
   run-tracked +w _zsh_autosuggest_start
