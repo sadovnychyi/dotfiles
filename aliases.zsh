@@ -3,7 +3,7 @@ alias grep='rg --color=auto'
 alias tree='tree -aC -I .git --dirsfirst'
 alias nano="micro"
 alias cat="bat"
-alias top="htop"
+alias top="gotop"
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '

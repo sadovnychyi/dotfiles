@@ -1,4 +1,5 @@
 tap "caryll/tap"
+tap "cjbassi/gotop"
 tap "getantibody/tap"
 tap "go-delve/delve"
 tap "homebrew/bundle"
@@ -30,6 +31,8 @@ brew "ccache"
 brew "cmake"
 # Debugger for the Go programming language.
 brew "delve"
+# Good-lookin' diffs with diff-highlight and more
+brew "diff-so-fancy"
 # Distributed search & analytics engine
 brew "elasticsearch"
 # Run arbitrary commands when files change
@@ -160,6 +163,8 @@ brew "zsh"
 brew "zsh-autosuggestions"
 # Parses & writes SFNT structures.
 brew "caryll/tap/otfcc-mac64"
+# A terminal based graphical activity monitor inspired by gtop and vtop
+brew "cjbassi/gotop/gotop"
 # The fastest shell plugin manager
 brew "getantibody/tap/antibody"
 # A fork of `sudo` with Touch ID support.

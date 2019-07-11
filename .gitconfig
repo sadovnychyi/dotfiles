@@ -3,11 +3,12 @@
 	email = git@dmit.ro
 	signingkey = E9E324CD
 [color]
-	ui = 1
+	ui = true
 [push]
 	default = simple
 [core]
 	editor = nano
+	pager = diff-so-fancy | less --tabs=4 -RFX
 [help]
 	autocorrect = 1
 [filter "hawser"]
@@ -35,3 +36,15 @@
 	diff = false
 [branch]
 	autosetuprebase = always
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = 11
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
