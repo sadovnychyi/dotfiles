@@ -7,7 +7,3 @@ action "Draft Release" {
   uses = "toolmantim/release-drafter@v5.2.0"
   secrets = ["GITHUB_TOKEN"]
 }
-
-workflow "New workflow" {
-  on = "push"
-}
