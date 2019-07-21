@@ -113,7 +113,7 @@ fi
 
   typeset -g POWERLEVEL9K_HOME_FOLDER_ABBREVIATION="~"
   typeset -g POWERLEVEL9K_DIR_OMIT_FIRST_CHARACTER=true
-  typeset -g POWERLEVEL9K_DIR_PATH_SEPARATOR="%F{232}/"
+  typeset -g POWERLEVEL9K_DIR_PATH_SEPARATOR="%F{0}/"
   # Enable special styling for non-writable directories. If set to false,
   # POWERLEVEL9K_DIR_NOT_WRITABLE_VISUAL_IDENTIFIER_EXPANSION defined below won't have effect.
   typeset -g POWERLEVEL9K_DIR_SHOW_WRITABLE=true
@@ -128,7 +128,7 @@ fi
   # Replace removed segment suffixes with this symbol.
   typeset -g POWERLEVEL9K_SHORTEN_DELIMITER=
   # Color of the shortened directory segments.
-  typeset -g POWERLEVEL9K_DIR_SHORTENED_FOREGROUND=38
+  typeset -g POWERLEVEL9K_DIR_SHORTENED_FOREGROUND=24
   # Color of the anchor directory segments. Anchor segments are never shortened. The first
   # segment is always an anchor.
   # typeset -g POWERLEVEL9K_DIR_ANCHOR_FOREGROUND=
@@ -141,12 +141,12 @@ fi
   # Shorten directory if it's longer than this even if there is space for it. The value can
   # be either absolute (e.g., '80') or a percentage of terminal width (e.g, '50%'). If empty,
   # directory will be shortened only when prompt doesn't fit.
-  typeset -g POWERLEVEL9K_DIR_MAX_LENGTH=27%
+  typeset -g POWERLEVEL9K_DIR_MAX_LENGTH=25%
   # If set to true, embed a hyperlink into the directory. Useful for quickly
   # opening a directory in the file manager simply by clicking the link.
   # Can also be handy when the directory is shortened, as it allows you to see
   # the full directory that was used in previous commands.
-  typeset -g POWERLEVEL9K_DIR_HYPERLINK=false
+  typeset -g POWERLEVEL9K_DIR_HYPERLINK=true
 
   # Git status: feature:master#tag ⇣42⇡42 *42 merge ~42 +42 !42 ?42.
   # We are using parameters defined by the gitstatus plugin. See reference:
