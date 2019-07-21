@@ -227,7 +227,7 @@ fi
   typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FORMAT='H:M:S'
   # Remove trailing "s". Details:
   # https://github.com/romkatv/powerlevel10k/commit/c4d3ec2cc5b146a277118ab5abddf8d904bad011#r34384749
-  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_CONTENT_EXPANSION='${${P9K_CONTENT#s}//[a-z]}'
+  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_CONTENT_EXPANSION='${P9K_CONTENT%s}'
 
   # Don't show the number of background jobs.
   typeset -g POWERLEVEL9K_BACKGROUND_JOBS_VERBOSE=false
