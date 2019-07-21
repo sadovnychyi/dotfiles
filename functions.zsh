@@ -186,7 +186,7 @@ function run-tracked() {
     fi
 
     local _startupTime=$((EPOCHREALTIME*1000-_start))
-    if (( _startupTime > 200 )); then
+    if (( _startupTime > 999 )); then
       echo -E "${(%):-%F{red\}}[WARNING]: ${(@q-)cmd} took $((_startupTime))ms to load." >&2
     fi
 

@@ -99,6 +99,6 @@ unsetopt nomatch
 
 local _startupTime=$((EPOCHREALTIME*1000-_start))
 
-if (( _startupTime > 999 )); then
+if (( _startupTime > 2048 )); then
   echo -E "${(%):-%F{red\}}[WARNING]: .zshrc took $((_startupTime))ms to load." >&2
 fi
