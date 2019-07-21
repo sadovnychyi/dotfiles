@@ -18,8 +18,6 @@ else
   ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=005'
 fi
 
-[[ $TERM == xterm* ]] || : ${PROMPT_MODE:=portable}
-
 source ~/dotfiles/functions.zsh
 
 run-tracked source $ZSH/plugins/command-not-found/command-not-found.plugin.zsh
