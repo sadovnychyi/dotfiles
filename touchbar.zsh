@@ -12,13 +12,31 @@ function displayDefault() {
   create_key 1 $(echo $(print -rD $PWD)) 'fzf-file-widget'
 
   function _prompt_segment() {
-    colorRe="%?{*}"
-    stripRe="{#%}"
-    clean9=${9//${~stripRe}/}
-    clean10=${10//${~colorRe}/}
-    clean11=${11//${~colorRe}/}
-    clean12=${12//${~colorRe}/}
-    create_key 2 "$(echo "⎇ $8 $VCS_STATUS_TAG $clean10 $clean11 $clean12")" 'fzf-git-branch'
+    local vcs=""
+    # 'feature' or '@72f5c8a' if not on a branch.
+    vcs+="${${VCS_STATUS_LOCAL_BRANCH//\%/%%}:-@${VCS_STATUS_COMMIT[1,8]}}"
+    # ':master' if the tracking branch name differs from local branch.
+    vcs+="${${VCS_STATUS_REMOTE_BRANCH:#$VCS_STATUS_LOCAL_BRANCH}:+:${VCS_STATUS_REMOTE_BRANCH//\%/%%}}"
+    # '#tag' if on a tag.
+    vcs+="${VCS_STATUS_TAG:+#${VCS_STATUS_TAG//\%/%%}}"
+    # ⇣42 if behind the remote.
+    vcs+="${${VCS_STATUS_COMMITS_BEHIND:#0}:+ ⇣${VCS_STATUS_COMMITS_BEHIND}}"
+    # ⇡42 if ahead of the remote; no leading space if also behind the remote: ⇣42⇡42.
+    # If you want '⇣42 ⇡42' instead, replace '${${(M)VCS_STATUS_COMMITS_BEHIND:#0}:+ }' with ' '.
+    vcs+="${${VCS_STATUS_COMMITS_AHEAD:#0}:+${${(M)VCS_STATUS_COMMITS_BEHIND:#0}:+ }⇡${VCS_STATUS_COMMITS_AHEAD}}"
+    # *42 if have stashes.
+    vcs+="${${VCS_STATUS_STASHES:#0}:+ *${VCS_STATUS_STASHES}}"
+    # 'merge' if the repo is in an unusual state.
+    vcs+="${VCS_STATUS_ACTION:+ ${VCS_STATUS_ACTION//\%/%%}}"
+    # ~42 if have merge conflicts.
+    vcs+="${${VCS_STATUS_NUM_CONFLICTED:#0}:+ ~${VCS_STATUS_NUM_CONFLICTED}}"
+    # +42 if have staged changes.
+    vcs+="${${VCS_STATUS_NUM_STAGED:#0}:+ +${VCS_STATUS_NUM_STAGED}}"
+    # !42 if have unstaged changes.
+    vcs+="${${VCS_STATUS_NUM_UNSTAGED:#0}:+ !${VCS_STATUS_NUM_UNSTAGED}}"
+    # ?42 if have untracked files.
+    vcs+="${${VCS_STATUS_NUM_UNTRACKED:#0}:+ ?${VCS_STATUS_NUM_UNTRACKED}}"
+    create_key 2 "$(echo "⎇ $vcs")" 'fzf-git-branch'
   }
   prompt_vcs
 
