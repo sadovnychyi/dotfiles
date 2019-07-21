@@ -71,6 +71,7 @@ function run-tracked() {
   local traps1 traps2
 
   {
+    local _start=$((EPOCHREALTIME*1000))
     local opt
     local -A flags
     while getopts "wfeoabt" opt; do
@@ -182,6 +183,11 @@ function run-tracked() {
         echo -E "${(%):-%F{red\}}[WARNING]: traps changed by: ${(@q-)cmd}${(%):-%f}" >&2
         command diff $traps1 $traps2 | command awk '{print "  " $0}'
       fi
+    fi
+
+    local _startupTime=$((EPOCHREALTIME*1000-_start))
+    if (( _startupTime > 200 )); then
+      echo -E "${(%):-%F{red\}}[WARNING]: ${(@q-)cmd} took $((_startupTime))ms to load." >&2
     fi
 
     finished=1

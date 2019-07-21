@@ -1,5 +1,8 @@
 emulate zsh
 
+zmodload zsh/datetime
+local _start=$((EPOCHREALTIME*1000))
+
 autoload -Uz add-zsh-hook run-help zargs zmv zcp zln
 
 ZSH=~/dotfiles/oh-my-zsh
@@ -20,7 +23,6 @@ fi
 
 source ~/dotfiles/functions.zsh
 
-run-tracked source $ZSH/plugins/command-not-found/command-not-found.plugin.zsh
 # Kill bindings and widgets as we define our own in bindings.zsh. Deny random exports.
 run-tracked -bwe source $ZSH/plugins/dirhistory/dirhistory.plugin.zsh
 # Disallow `x` alias.
@@ -48,11 +50,11 @@ function late-init() {
 add-zsh-hook precmd late-init
 
 run-tracked source ~/dotfiles/powerlevel10k/powerlevel10k.zsh-theme
-source ~/dotfiles/prompt.zsh
-source ~/dotfiles/history.zsh
-source ~/dotfiles/bindings.zsh
-source ~/dotfiles/completions.zsh
-source ~/dotfiles/touchbar.zsh
+run-tracked source ~/dotfiles/prompt.zsh
+run-tracked source ~/dotfiles/history.zsh
+run-tracked +b source ~/dotfiles/bindings.zsh
+run-tracked +bw source ~/dotfiles/completions.zsh
+run-tracked source ~/dotfiles/touchbar.zsh
 
 # On every prompt, set terminal title to "cwd".
 function set-term-title() {
@@ -64,7 +66,7 @@ add-zsh-hook precmd set-term-title
 zle_highlight=('paste:none')
 
 (( $+aliases[run-help] )) && unalias run-help
-source ~/dotfiles/aliases.zsh
+run-tracked +ab source ~/dotfiles/aliases.zsh
 
 # TODO: fix with next version of zsh
 # https://github.com/romkatv/powerlevel10k/commit/f95a0fc3eef9a33c1a783359ea17b9486b27e30e
@@ -94,3 +96,9 @@ setopt EXTENDED_HISTORY        # write timestamps to history
 
 # https://github.com/robbyrussell/oh-my-zsh/issues/31
 unsetopt nomatch
+
+local _startupTime=$((EPOCHREALTIME*1000-_start))
+
+if (( _startupTime > 999 )); then
+  echo -E "${(%):-%F{red\}}[WARNING]: .zshrc took $((_startupTime))ms to load." >&2
+fi
