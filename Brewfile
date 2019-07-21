@@ -29,6 +29,8 @@ brew "boost"
 brew "ccache"
 # Cross-platform make
 brew "cmake"
+# Console Matrix
+brew "cmatrix"
 # Debugger for the Go programming language.
 brew "delve"
 # Good-lookin' diffs with diff-highlight and more

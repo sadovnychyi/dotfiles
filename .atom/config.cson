@@ -201,7 +201,8 @@
     autofix:
       fixOnSave: true
   "linter-flake8":
-    executablePath: "/Users/sadovnychyi/.local/share/virtualenvs/docflow-1ZrSR1c2/bin/flake8;$PROJECT/env/bin/flake8;/usr/local/bin/flake8"
+    executablePath: "$PROJECT/.venv/bin/flake8;/usr/local/bin/flake8"
+    hangClosing: true
     ignoreErrorCodes: [
       "E111"
       "E114"
