@@ -1,82 +1,94 @@
+# Macbook Pro touchbar support for powerlevel10k prompt elements
+#
+# Requirements:
+#   * MBP with touchbar
+#   * iTerm2 with shell integrations: `source ~/.iterm2_shell_integration.zsh`
+#   * zsh-apple-touchbar plugin
+#
+# Usage:
+#   Set prompt elements you would like to appear on touchbar using:
+#
+#     typeset -g POWERLEVEL9K_TOUCHBAR_ELEMENTS=(
+#       dir
+#       vcs
+#     )
+#
+#   You can configure an action for each button by using one of:
+#
+#     typeset -g POWERLEVEL9K_{ELEMENT}_TOUCHBAR_CMD='ls'
+#     typeset -g POWERLEVEL9K_{ELEMENT}_TOUCHBAR_WIDGET='widget'
+#
+#   For example, to open git branch chooser when pressing on VCS button
+#   (note that you need to have this widget available):
+#
+#     typeset -g POWERLEVEL9K_VCS_TOUCHBAR_WIDGET='fzf-git-branch'
+#
+#   Or to run a `git status` command:
+#
+#     typeset -g POWERLEVEL9K_VCS_TOUCHBAR_CMD='git status'
+#
+# Icons are likely to be broken unless they are in plain text with default font.
+# zsh-apple-touchbar has a limit of 12 buttons, which most likely can be
+# extended.
+
+
 source ~/dotfiles/zsh-apple-touchbar/functions.zsh
 
-touchBarState=''
-npmScripts=()
-lastPackageJsonPath=''
-
-function displayDefault() {
-  remove_and_unbind_keys
-
-  touchBarState=''
-
-  create_key 1 $(echo $(print -rD $PWD)) 'fzf-file-widget'
-
-  function _prompt_segment() {
-    local vcs=""
-    # 'feature' or '@72f5c8a' if not on a branch.
-    vcs+="${${VCS_STATUS_LOCAL_BRANCH//\%/%%}:-@${VCS_STATUS_COMMIT[1,8]}}"
-    # ':master' if the tracking branch name differs from local branch.
-    vcs+="${${VCS_STATUS_REMOTE_BRANCH:#$VCS_STATUS_LOCAL_BRANCH}:+:${VCS_STATUS_REMOTE_BRANCH//\%/%%}}"
-    # '#tag' if on a tag.
-    vcs+="${VCS_STATUS_TAG:+#${VCS_STATUS_TAG//\%/%%}}"
-    # ⇣42 if behind the remote.
-    vcs+="${${VCS_STATUS_COMMITS_BEHIND:#0}:+ ⇣${VCS_STATUS_COMMITS_BEHIND}}"
-    # ⇡42 if ahead of the remote; no leading space if also behind the remote: ⇣42⇡42.
-    # If you want '⇣42 ⇡42' instead, replace '${${(M)VCS_STATUS_COMMITS_BEHIND:#0}:+ }' with ' '.
-    vcs+="${${VCS_STATUS_COMMITS_AHEAD:#0}:+${${(M)VCS_STATUS_COMMITS_BEHIND:#0}:+ }⇡${VCS_STATUS_COMMITS_AHEAD}}"
-    # *42 if have stashes.
-    vcs+="${${VCS_STATUS_STASHES:#0}:+ *${VCS_STATUS_STASHES}}"
-    # 'merge' if the repo is in an unusual state.
-    vcs+="${VCS_STATUS_ACTION:+ ${VCS_STATUS_ACTION//\%/%%}}"
-    # ~42 if have merge conflicts.
-    vcs+="${${VCS_STATUS_NUM_CONFLICTED:#0}:+ ~${VCS_STATUS_NUM_CONFLICTED}}"
-    # +42 if have staged changes.
-    vcs+="${${VCS_STATUS_NUM_STAGED:#0}:+ +${VCS_STATUS_NUM_STAGED}}"
-    # !42 if have unstaged changes.
-    vcs+="${${VCS_STATUS_NUM_UNSTAGED:#0}:+ !${VCS_STATUS_NUM_UNSTAGED}}"
-    # ?42 if have untracked files.
-    vcs+="${${VCS_STATUS_NUM_UNTRACKED:#0}:+ ?${VCS_STATUS_NUM_UNTRACKED}}"
-    create_key 2 "$(echo "⎇ $vcs")" 'fzf-git-branch'
-  }
-  prompt_vcs
-
-  # PACKAGE.JSON
-  # ------------
-  # if [[ -f package.json ]]; then
-  #   echo -ne "\033]1337;SetKeyLabel=F5=⚡️ npm-run\a"
-  #   bind '"${fnKeys[5]}":"_displayNpmScripts"'
-  # fi
-}
-
-# function _displayNpmScripts() {
-#   # find available npm run scripts only if new directory
-#   if [[ $lastPackageJsonPath != $(echo "$(pwd)/package.json") ]]; then
-#     lastPackageJsonPath=$(echo "$(pwd)/package.json")
-#     npmScripts=($(node -e "console.log(Object.keys($(npm run --json)).filter(name => !name.includes(':')).sort((a, b) => a.localeCompare(b)).filter((name, idx) => idx < 12).join(' '))"))
-#   fi
-#
-#   clearTouchbar
-#   unbindTouchbar
-#
-#   touchBarState='npm'
-#
-#   fnKeysIndex=1
-#   for npmScript in "$npmScripts[@]"; do
-#     fnKeysIndex=$((fnKeysIndex + 1))
-#     bindkey -s $fnKeys[$fnKeysIndex] "npm run $npmScript \n"
-#     echo -ne "\033]1337;SetKeyLabel=F$fnKeysIndex=$npmScript\a"
-#   done
-#
-#   echo -ne "\033]1337;SetKeyLabel=F1=👈 back\a"
-#   bindkey "${fnKeys[1]}" displayDefault
-# }
+set_default POWERLEVEL9K_TOUCHBAR_ELEMENTS
+set_default POWERLEVEL9K_TOUCHBAR_MAX_ELEMENTS 12
+set_default POWERLEVEL9K_DIR_TOUCHBAR_CMD 'ls'
 
 precmd_touchbar() {
-  if [[ $touchBarState == 'npm' ]]; then
-    _displayNpmScripts
-  else
-    displayDefault
-  fi
+  remove_and_unbind_keys
+
+  _touchbar_key_n=1
+  for element in $POWERLEVEL9K_TOUCHBAR_ELEMENTS; do
+    function touchbar_prompt_segment() {
+      local icon=""
+      if [[ "$4" && "$4" != 0 ]]; then
+        icon="$4"
+      else
+        icon="$5"
+      fi
+
+      local powerlevel_icon=$(print_icon $icon)
+      if [[ "$powerlevel_icon" != "" ]]; then
+        icon=$powerlevel_icon
+      fi
+
+      local label=$(print -P "$7" "$8")
+      # strip colors
+      label=$(echo $label | sed $'s,\x1b\\[[0-9;]*[a-zA-Z],,g')
+      # remove trailing space
+      label=${label##[[:blank:]]##}
+      # add icon
+      label="$icon $label"
+
+      local widget_var="POWERLEVEL9K_${element:u}_TOUCHBAR_WIDGET"
+      local widget_value=${(P)widget_var}
+
+      local cmd_var="POWERLEVEL9K_${element:u}_TOUCHBAR_CMD"
+      local cmd_value=${(P)cmd_var}
+
+      if [[ -n "$label" ]]; then
+        if [[ "$_touchbar_key_n" -le "$POWERLEVEL9K_TOUCHBAR_MAX_ELEMENTS" ]]; then
+          if [[ -n "$widget_value" ]]; then
+            create_key "$_touchbar_key_n" "$label" "$widget_value"
+          else
+            if [[ -n "$cmd_value" ]]; then
+              create_key "$_touchbar_key_n" "$label" "$cmd_value" '-s'
+            else
+              create_key "$_touchbar_key_n" "$label" ':' '-s'
+            fi
+          fi
+        else
+          echo -E "${(%):-%F{red\}}[WARNING]: cannot have more than $POWERLEVEL9K_TOUCHBAR_MAX_ELEMENTS touchbar elements." >&2
+        fi
+        _touchbar_key_n=$((_touchbar_key_n+1))
+      fi
+    }
+    prompt_$element touchbar
+  done
 }
 
 autoload -Uz add-zsh-hook

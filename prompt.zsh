@@ -49,6 +49,14 @@ fi
     vcs                     # git status
   )
 
+  typeset -g POWERLEVEL9K_TOUCHBAR_ELEMENTS=(
+    dir
+    vcs
+  )
+
+  typeset -g POWERLEVEL9K_DIR_TOUCHBAR_WIDGET='fzf-file-widget'
+  typeset -g POWERLEVEL9K_VCS_TOUCHBAR_WIDGET='fzf-git-branch'
+
   # Basic style options that define the overall look of your prompt.
   typeset -g POWERLEVEL9K_BACKGROUND=                            # transparent background
   typeset -g POWERLEVEL9K_{LEFT,RIGHT}_{LEFT,RIGHT}_WHITESPACE=  # no surrounding whitespace
@@ -146,11 +154,12 @@ fi
   # opening a directory in the file manager simply by clicking the link.
   # Can also be handy when the directory is shortened, as it allows you to see
   # the full directory that was used in previous commands.
-  typeset -g POWERLEVEL9K_DIR_HYPERLINK=true
+  typeset -g POWERLEVEL9K_DIR_HYPERLINK=false
 
   # Git status: feature:master#tag ⇣42⇡42 *42 merge ~42 +42 !42 ?42.
   # We are using parameters defined by the gitstatus plugin. See reference:
   # https://github.com/romkatv/gitstatus/blob/master/gitstatus.plugin.zsh.
+  # TODO: this is currently disabled to support touchbaar
   local vcs=''
   # 'feature' or '@72f5c8a' if not on a branch.
   vcs+='%76F${${VCS_STATUS_LOCAL_BRANCH//\%/%%}:-%f@%76F${VCS_STATUS_COMMIT[1,8]}}'
@@ -179,9 +188,9 @@ fi
   vcs="\${P9K_CONTENT:-$vcs}"
 
   # Disable the default Git status formatting.
-  typeset -g POWERLEVEL9K_VCS_DISABLE_GITSTATUS_FORMATTING=true
+  typeset -g POWERLEVEL9K_VCS_DISABLE_GITSTATUS_FORMATTING=false
   # Install our own Git status formatter.
-  typeset -g POWERLEVEL9K_VCS_{CLEAN,UNTRACKED,MODIFIED}_CONTENT_EXPANSION=$vcs
+  # typeset -g POWERLEVEL9K_VCS_{CLEAN,UNTRACKED,MODIFIED}_CONTENT_EXPANSION=$vcs
   # When Git status is being refreshed asynchronously, display the last known repo status in grey.
   typeset -g POWERLEVEL9K_VCS_LOADING_CONTENT_EXPANSION=${${vcs//\%f}//\%<->F}
   typeset -g POWERLEVEL9K_VCS_LOADING_FOREGROUND=244
@@ -208,6 +217,7 @@ fi
   typeset -g POWERLEVEL9K_VCS_UNSTAGED_ICON=$'%{\b!%}'
   typeset -g POWERLEVEL9K_VCS_STAGED_ICON=$'%{\b+%}'
   typeset -g POWERLEVEL9K_VCS_BRANCH_ICON=
+  typeset -g POWERLEVEL9K_VCS_GIT_GITHUB_ICON='⎇'
 
   # Don't show status on success.
   typeset -g POWERLEVEL9K_STATUS_OK=false
