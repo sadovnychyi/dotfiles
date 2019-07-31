@@ -129,6 +129,7 @@
       "one-dark-ui"
       "Chromodynamics"
     ]
+    titleBar: "hidden"
     useTreeSitterParsers: true
   editor:
     backUpBeforeSaving: true
