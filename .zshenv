@@ -54,7 +54,7 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 export ENHANCD_DISABLE_DOT=1
 export ENHANCD_COMPLETION_BEHAVIOR=list
 
-export PIPENV_VENV_IN_PROJECT=1
+# export PIPENV_VENV_IN_PROJECT=1
 
 # This affects every invocation of `less`.
 #
