@@ -36,7 +36,7 @@
     python:
       default_beautifier: "black"
       formatter: "yapf"
-      indent_size: 2
+      indent_size: 4
       max_line_length: 80
       style_config: "chromium"
     scss:
@@ -111,6 +111,7 @@
       "ide-typescript"
       "language-javascript"
       "language-python"
+      "linter-pylint"
     ]
     followSymlinks: true
     ignoredNames: [
@@ -363,8 +364,8 @@
 ".python.regexp.source":
   editor:
     autoIndentOnPaste: true
-    tabLength: 2
+    tabLength: 4
 ".python.source":
   editor:
     autoIndentOnPaste: true
-    tabLength: 2
+    tabLength: 4
