@@ -56,6 +56,8 @@
     Down          "$terminfo[kcud1]"
     Right         "$terminfo[kcuf1]"
     ShiftTab      "$terminfo[kcbt]"
+    CMDLeft       '^X\x7f'
+    CMDShiftZ     '^X^_'
   )
 
   local -a bindings=(
@@ -63,6 +65,8 @@
     Down      down-line-or-beginning-search  # next command in history
     ShiftTab  reverse-menu-complete          # previous in completion menu
     Tab       expand-or-complete-with-dots   # show '...' while completing
+    CMDLeft   backward-kill-line             # delete all to the left
+    CMDShiftZ redo
   )
 
   local key widget
