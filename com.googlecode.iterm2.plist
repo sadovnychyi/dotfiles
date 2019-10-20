@@ -1007,7 +1007,7 @@
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>155 594 592 584 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>826 -800 795 777 341 -800 1280 777 </string>
+	<string>826 -800 795 777 341 -800 1280 800 </string>
 	<key>NeverWarnAboutShortLivedSessions_7C28858C-C5B4-4FBC-A578-5376E403E8C5</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_7C28858C-C5B4-4FBC-A578-5376E403E8C5_selection</key>
@@ -1989,7 +1989,7 @@
 					<key>action</key>
 					<string>ScriptTrigger</string>
 					<key>parameter</key>
-					<string>wakatime --entity Terminal --entity-type app --plugin "iterm2-wakatime/0.0.1" --project "&lt;&lt;LAST_PROJECT&gt;&gt;"</string>
+					<string>wakatime --entity Terminal --entity-type app --plugin "iterm2-wakatime/0.0.1" --project "&lt;&lt;LAST_PROJECT&gt;&gt;" --language sh</string>
 					<key>partial</key>
 					<true/>
 					<key>regex</key>
@@ -2039,9 +2039,10 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
+		<string>3.3.2</string>
 		<string>3.2.9</string>
-		<string>3.3.0</string>
 		<string>3.3.1</string>
+		<string>3.3.0</string>
 	</array>
 	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
 	<true/>
@@ -2061,7 +2062,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>0836F094-6CF5-4D56-A616-65171D319184</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>8</integer>
+	<integer>9</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -2502,6 +2503,14 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+				<string>number</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
 				<string>currentTab.currentSession.hostname</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
@@ -2756,6 +2765,7 @@
 	</dict>
 	<key>NoSyncSearchHistory</key>
 	<array>
+		<string>0xc000152070</string>
 		<string>this is</string>
 		<string>thisi</string>
 		<string>got </string>
@@ -2765,7 +2775,15 @@
 		<string>stripe</string>
 		<string>.py'</string>
 		<string>urllib3</string>
-		<string>WANT</string>
+	</array>
+	<key>NoSyncSearchHistory2</key>
+	<array>
+		<string>queue</string>
+		<string>for intro</string>
+		<string>for title</string>
+		<string>null</string>
+		<string>-run</string>
+		<string>level</string>
 	</array>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>517341902.59477502</real>
@@ -2813,7 +2831,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-08-17T11:48:25Z</date>
+	<date>2019-08-31T05:33:49Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
@@ -2881,7 +2899,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.3.1</string>
+	<string>3.3.2</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
