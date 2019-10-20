@@ -19,3 +19,6 @@
 [submodule "enhancd"]
 	path = enhancd
 	url = https://github.com/b4b4r07/enhancd.git
+[submodule "wakatime-zsh-plugin"]
+	path = wakatime-zsh-plugin
+	url = https://github.com/sobolevn/wakatime-zsh-plugin

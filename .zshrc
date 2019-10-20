@@ -55,6 +55,7 @@ run-tracked source ~/dotfiles/history.zsh
 run-tracked +b source ~/dotfiles/bindings.zsh
 run-tracked +bw source ~/dotfiles/completions.zsh
 run-tracked source ~/dotfiles/touchbar.zsh
+run-tracked source ~/dotfiles/wakatime-zsh-plugin/wakatime.plugin.zsh
 
 # On every prompt, set terminal title to "cwd".
 function set-term-title() {
