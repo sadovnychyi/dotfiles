@@ -49,7 +49,7 @@ __fzf_git_branch() {
   branches=$(
     git --no-pager branch --all \
       --format="%(if)%(HEAD)%(then)%(else)%(if:equals=HEAD)%(refname:strip=3)%(then)%(else)%1B[0;34;1mbranch%09%1B[m%(refname:short)%(end)%(end)" \
-    | sed '/^$/d') || return
+    | sed '/^$/d' | sed 's@origin/@@' | awk '!a[$0]++') || return
   tags=$(
     git --no-pager tag | awk '{print "\x1b[35;1mtag\x1b[m\t" $1}') || return
   target=$(
