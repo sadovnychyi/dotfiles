@@ -1,3 +1,9 @@
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+source ~/dotfiles/powerlevel10k/powerlevel10k.zsh-theme
+
 emulate zsh
 
 zmodload zsh/datetime
@@ -49,7 +55,6 @@ function late-init() {
 
 add-zsh-hook precmd late-init
 
-run-tracked source ~/dotfiles/powerlevel10k/powerlevel10k.zsh-theme
 run-tracked source ~/dotfiles/prompt.zsh
 run-tracked source ~/dotfiles/history.zsh
 run-tracked +b source ~/dotfiles/bindings.zsh

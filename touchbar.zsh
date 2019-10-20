@@ -34,9 +34,9 @@
 
 source ~/dotfiles/zsh-apple-touchbar/functions.zsh
 
-set_default POWERLEVEL9K_TOUCHBAR_ELEMENTS
-set_default POWERLEVEL9K_TOUCHBAR_MAX_ELEMENTS 12
-set_default POWERLEVEL9K_DIR_TOUCHBAR_CMD 'ls'
+POWERLEVEL9K_TOUCHBAR_ELEMENTS=${POWERLEVEL9K_TOUCHBAR_ELEMENTS:-())}
+POWERLEVEL9K_TOUCHBAR_MAX_ELEMENTS=${POWERLEVEL9K_TOUCHBAR_MAX_ELEMENTS:-12)}
+POWERLEVEL9K_DIR_TOUCHBAR_CMD=${POWERLEVEL9K_DIR_TOUCHBAR_CMD:-'ls')}
 
 precmd_touchbar() {
   remove_and_unbind_keys
@@ -87,7 +87,8 @@ precmd_touchbar() {
         _touchbar_key_n=$((_touchbar_key_n+1))
       fi
     }
-    prompt_$element touchbar
+    # TODO: could be fixed
+    # prompt_$element touchbar
   done
 }
 
