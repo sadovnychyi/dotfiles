@@ -103,15 +103,15 @@
       "metrics"
       "welcome"
       "spell-check"
-      "linter"
-      "linter-ui-default"
       "go-debug"
       "go-signature-statusbar"
-      "hyperclick"
       "ide-typescript"
       "language-javascript"
       "language-python"
       "linter-pylint"
+      "sadovnychyi"
+      "linter"
+      "linter-ui-default"
     ]
     followSymlinks: true
     ignoredNames: [
@@ -182,6 +182,9 @@
     goPath: "~/go"
     guru:
       highlightIdentifiers: false
+    lint:
+      args: "--fast"
+      tool: "golangci-lint"
     panel:
       currentHeight: "16.083333333333332vh"
       displayMode: "closed"
@@ -235,8 +238,7 @@
     rcFile: "%p/.pylintrc"
   "linter-ui-default":
     decorateOnTreeView: "None"
-    panelHeight: 217
-    showPanel: true
+    panelHeight: 220
     statusBarPosition: "Right"
     statusBarRepresents: "Current File"
   metrics:
@@ -317,8 +319,6 @@
     markerType: "dot"
   "project-manager": {}
   "python-black":
-    binPath: "cblack"
-    fmtOnSave: false
     lineLength: 80
     showErrors: "flash"
     skipStringNormalization: true
