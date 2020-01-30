@@ -109,7 +109,6 @@
     "search.enableSearchEditorPreview": true,
     "vscode-home-assistant.hostUrl": "http://home.local:8123",
     "vscode-home-assistant.ignoreCertificates": true,
-    "vscode-home-assistant.longLivedAccessToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiI0NTIwYTVjODZiZjY0NWI2YTYzNTI4MmQxNGEzZGI0NCIsImlhdCI6MTU3OTAxNzk4MSwiZXhwIjoxODk0Mzc3OTgxfQ.W-b4GB7vrhA1dSe1OatscXLFWGOmUhGbSEVZysubsNc",
     "go.useLanguageServer": true,
     "workbench.activityBar.visible": true,
     "go.buildOnSave": "off",
