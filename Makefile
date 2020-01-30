@@ -5,6 +5,8 @@ build:
 	@ln -fs `pwd`/.zshenv ~
 	@ln -fs `pwd`/.hushlogin ~
 	@mkdir -p ~/.atom && ln -fs `pwd`/.atom/* ~/.atom
+	@ln -h vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+	@ln -h vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
 	@tput setaf 6
 	@echo "Successfully created symbolic links in home directory."
 	@tput sgr0
