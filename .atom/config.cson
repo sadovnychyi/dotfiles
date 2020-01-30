@@ -134,8 +134,7 @@
     useTreeSitterParsers: true
   editor:
     backUpBeforeSaving: true
-    fontFamily: "PragmataPro"
-    fontSize: 13
+    fontFamily: "PragmataPro Mono Liga"
     invisibles:
       cr: " "
       eol: " "
@@ -206,26 +205,7 @@
     autofix:
       fixOnSave: true
   "linter-flake8":
-    executablePath: "$PROJECT/.venv/bin/flake8;/usr/local/bin/flake8"
-    hangClosing: true
-    ignoreErrorCodes: [
-      "E111"
-      "E114"
-      "E121"
-      "E131"
-      "E129"
-      "E402"
-      "E501"
-      "E711"
-      "E712"
-      "E731"
-      "H101"
-      "H405"
-      "H404"
-      "H306"
-      "H301"
-      "W503"
-    ]
+    executablePath: "/usr/local/bin/flake8"
   "linter-golinter":
     executablePath: "/Users/sadovnychyi/go/bin/golint"
   "linter-js-standard":
