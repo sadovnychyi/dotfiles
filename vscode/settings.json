@@ -20,8 +20,8 @@
         "tab.inactiveBackground": "#131313",
         "editorBracketMatch.border": "#ffffff00",
         "editorBracketMatch.background": "#f0f0f352",
-        "editor.selectionBackground": "#888",
-        "editor.selectionHighlightBackground": "#555",
+        "editor.selectionBackground": "#666",
+        "editor.selectionHighlightBackground": "#333",
         "editor.selectionHighlightBorder": "#ffffff00"
     },
     "editor.tokenColorCustomizations": {
@@ -40,7 +40,6 @@
     "editor.links": false,
     "editor.wordWrap": "on",
     "gitlens.codeLens.enabled": false,
-    "search.location": "panel",
     "editor.rulers": [
         80
     ],
@@ -55,9 +54,7 @@
         "/usr/local/google_appengine/lib/webapp2-2.5.2",
         "${workspaceFolder}/lib"
     ],
-    "python.testing.pytestEnabled": true,
     "atomKeymap.promptV3Features": true,
-    "editor.formatOnPaste": true,
     "workbench.iconTheme": "file-icons",
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
@@ -106,14 +103,13 @@
     "editor.codeLens": false,
     "python.dataScience.addGotoCodeLenses": false,
     "python.dataScience.enableCellCodeLens": false,
-    "search.enableSearchEditorPreview": true,
     "vscode-home-assistant.hostUrl": "http://home.local:8123",
     "vscode-home-assistant.ignoreCertificates": true,
     "go.useLanguageServer": true,
-    "workbench.activityBar.visible": true,
+    "workbench.activityBar.visible": false,
     "go.buildOnSave": "off",
     "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true,
+        "source.fixAll.eslint": true
     },
     "git.suggestSmartCommit": false,
     "scm.diffDecorationsGutterWidth": 2,
@@ -127,7 +123,7 @@
     "python.venvPath": "~/.local/share/virtualenvs",
     "python.pythonPath": "/usr/local/opt/python/libexec/bin/python",
     "python.dataScience.sendSelectionToInteractiveWindow": false,
-    "workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreview": true,
     "python.linting.flake8Path": "/usr/local/bin/flake8",
     "python.formatting.blackArgs": [
         "--line-length=80",
@@ -136,11 +132,20 @@
     "python.formatting.blackPath": "/usr/local/bin/black",
     "eslint.format.enable": true,
     "[javascript]": {
-        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+        "editor.formatOnSave": true
     },
-    "editor.formatOnSave": true,
     "[python]": {
-        "editor.formatOnPaste": false
+        "editor.formatOnPaste": false,
+        "editor.formatOnSave": true
     },
-    "editor.formatOnSaveTimeout": 1000
+    "editor.formatOnSaveTimeout": 2500,
+    "extensions.ignoreRecommendations": true,
+    "extensions.showRecommendationsOnlyOnDemand": true,
+    "files.defaultLanguage": "${activeEditorLanguage}",
+    "html.mirrorCursorOnMatchingTag": true,
+    "editor.semanticHighlighting.enabled": true,
+    "search.smartCase": true,
+    "search.enableSearchEditorPreview": true,
+    "workbench.editor.highlightModifiedTabs": true
 }
