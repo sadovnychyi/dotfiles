@@ -8,6 +8,8 @@
 	<true/>
 	<key>AppleAntiAliasingThreshold</key>
 	<integer>1</integer>
+	<key>ApplePressAndHoldEnabled</key>
+	<false/>
 	<key>AppleScrollAnimationEnabled</key>
 	<integer>0</integer>
 	<key>AppleSmoothFixedFontsSizeThreshold</key>
@@ -1001,7 +1003,7 @@
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>336 -152 400 129 336 -800 1280 777 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>666 -512 620 392 336 -800 1280 777 </string>
+	<string>650 288 620 392 0 0 1920 777 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>527 -722 606 469 341 -800 1280 777 </string>
 	<key>NSWindow Frame SharedPreferences</key>
@@ -3082,13 +3084,15 @@
 	<key>NoSyncAllAppVersions</key>
 	<array>
 		<string>3.3.6</string>
-		<string>3.3.4</string>
+		<string>3.3.8</string>
+		<string>3.3.2</string>
 		<string>3.3.1</string>
 		<string>3.3.5</string>
 		<string>3.3.7</string>
-		<string>3.3.0</string>
-		<string>3.3.2</string>
+		<string>3.3.9</string>
 		<string>3.2.9</string>
+		<string>3.3.0</string>
+		<string>3.3.4</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
@@ -3115,7 +3119,7 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1920, 800}}</string>
 		<key>topLeft</key>
-		<string>{100, 733}</string>
+		<string>{67, 710}</string>
 	</dict>
 	<key>NoSyncHaveUsedCopyMode</key>
 	<true/>
@@ -3126,7 +3130,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>0836F094-6CF5-4D56-A616-65171D319184</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>70</integer>
+	<integer>97</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -3851,31 +3855,6 @@
 			</dict>
 		</array>
 	</dict>
-	<key>NoSyncSearchHistory</key>
-	<array>
-		<string>0xc000152070</string>
-		<string>this is</string>
-		<string>thisi</string>
-		<string>got </string>
-		<string>methods</string>
-		<string>about</string>
-		<string>constants.py</string>
-		<string>stripe</string>
-		<string>.py'</string>
-		<string>urllib3</string>
-	</array>
-	<key>NoSyncSearchHistory2</key>
-	<array>
-		<string>junit</string>
-		<string>jest did</string>
-		<string>cryptog</string>
-		<string>has not</string>
-		<string>getNodeAttrs b</string>
-		<string>sprintf</string>
-		<string>tags</string>
-		<string>power':</string>
-		<string>miioo</string>
-	</array>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>517341902.59477502</real>
 	<key>OnlyWhenMoreTabs</key>
@@ -3912,7 +3891,7 @@
 	<key>ProfilesWindowJoinsActiveSpace</key>
 	<true/>
 	<key>PromptOnQuit</key>
-	<true/>
+	<false/>
 	<key>RememberWindowPositions</key>
 	<false/>
 	<key>SUEnableAutomaticChecks</key>
@@ -3924,11 +3903,13 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-02-03T09:58:35Z</date>
+	<date>2020-03-16T11:43:16Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
+	<key>SUUpdateGroupIdentifier</key>
+	<integer>3905731710</integer>
 	<key>SUUpdateRelaunchingMarker</key>
-	<true/>
+	<false/>
 	<key>SeparateStatusBarsPerPane</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -3936,7 +3917,7 @@
 	<key>ShowFullScreenTabBar</key>
 	<false/>
 	<key>ShowMetalFPSmeter</key>
-	<false/>
+	<true/>
 	<key>ShowNewOutputIndicator</key>
 	<true/>
 	<key>ShowPaneTitles</key>
@@ -3976,7 +3957,7 @@
 	<key>UseLionStyleFullscreen</key>
 	<true/>
 	<key>UseMetal</key>
-	<false/>
+	<true/>
 	<key>VisualIndicatorForEsc</key>
 	<true/>
 	<key>WindowNumber</key>
@@ -3984,7 +3965,7 @@
 	<key>WordCharacters</key>
 	<string></string>
 	<key>disableMetalWhenUnplugged</key>
-	<false/>
+	<true/>
 	<key>findIgnoreCase_iTerm</key>
 	<true/>
 	<key>findMode_iTerm</key>
@@ -3992,7 +3973,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.3.7</string>
+	<string>3.3.9</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>

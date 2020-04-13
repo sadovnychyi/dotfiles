@@ -29,7 +29,6 @@
             "comments": "#747475"
         }
     },
-    "editor.minimap.enabled": false,
     "editor.renderIndentGuides": false,
     "editor.renderLineHighlight": "all",
     "editor.renderWhitespace": "boundary",
@@ -46,16 +45,14 @@
     "files.trimTrailingWhitespace": true,
     "files.trimFinalNewlines": true,
     "files.insertFinalNewline": true,
-    "scm.diffDecorations": "gutter",
     "editor.multiCursorModifier": "ctrlCmd",
     "javascript.preferences.importModuleSpecifier": "non-relative",
     "python.autoComplete.extraPaths": [
-        "/usr/local/google_appengine",
-        "/usr/local/google_appengine/lib/webapp2-2.5.2",
+        "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/platform/google_appengine",
+        "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/platform/google_appengine/lib/webapp2-2.5.2",
         "${workspaceFolder}/lib"
     ],
     "atomKeymap.promptV3Features": true,
-    "workbench.iconTheme": "file-icons",
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "terminal.explorerKind": "external",
@@ -87,7 +84,6 @@
     "editor.fontSize": 14,
     "git.confirmSync": false,
     "git.autofetch": true,
-    "breadcrumbs.enabled": false,
     "workbench.sideBar.location": "left",
     "workbench.enableExperiments": false,
     "telemetry.enableCrashReporter": false,
@@ -106,7 +102,6 @@
     "vscode-home-assistant.hostUrl": "http://home.local:8123",
     "vscode-home-assistant.ignoreCertificates": true,
     "go.useLanguageServer": true,
-    "workbench.activityBar.visible": false,
     "go.buildOnSave": "off",
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": true
@@ -143,9 +138,24 @@
     "extensions.ignoreRecommendations": true,
     "extensions.showRecommendationsOnlyOnDemand": true,
     "files.defaultLanguage": "${activeEditorLanguage}",
-    "html.mirrorCursorOnMatchingTag": true,
+    "editor.renameOnType": true,
     "editor.semanticHighlighting.enabled": true,
     "search.smartCase": true,
     "search.enableSearchEditorPreview": true,
-    "workbench.editor.highlightModifiedTabs": true
+    "workbench.editor.highlightModifiedTabs": true,
+    "workbench.activityBar.visible": false,
+    "breadcrumbs.enabled": false,
+    "editor.minimap.enabled": false,
+    "activitusbar.activeColour": "white",
+    "activitusbar.searchViewInPanel": false,
+    "python.analysis.disabled": [
+        "unresolved-import",
+        "variable-not-defined-globally",
+        "return-in-init"
+    ],
+    "cloudcode.autoDependencies": "off",
+    "todo-tree.tree.showScanModeButton": false,
+    "timeline.showView": true,
+    "githubPullRequests.showInSCM": true,
+    "githubPullRequests.telemetry.enabled": false,
 }
