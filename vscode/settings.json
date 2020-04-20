@@ -21,8 +21,8 @@
         "editorBracketMatch.border": "#ffffff00",
         "editorBracketMatch.background": "#f0f0f352",
         "editor.selectionBackground": "#666",
-        "editor.selectionHighlightBackground": "#333",
-        "editor.selectionHighlightBorder": "#ffffff00"
+        "editor.selectionHighlightBackground": "#33333300",
+        "editor.selectionHighlightBorder": "#ffffffa2",
     },
     "editor.tokenColorCustomizations": {
         "[Chromodynamics]": {
@@ -32,7 +32,6 @@
     "editor.renderIndentGuides": false,
     "editor.renderLineHighlight": "all",
     "editor.renderWhitespace": "boundary",
-    "editor.roundedSelection": false,
     "editor.tabSize": 2,
     "gitlens.advanced.telemetry.enabled": false,
     "gitlens.currentLine.enabled": false,
@@ -58,7 +57,7 @@
     "terminal.explorerKind": "external",
     "debug.internalConsoleOptions": "neverOpen",
     "window.zoomLevel": 0,
-    "diffEditor.ignoreTrimWhitespace": true,
+    "diffEditor.ignoreTrimWhitespace": false,
     "terminal.integrated.fontSize": 14,
     "files.exclude": {
         "**/.classpath": true,
@@ -158,4 +157,9 @@
     "timeline.showView": true,
     "githubPullRequests.showInSCM": true,
     "githubPullRequests.telemetry.enabled": false,
+    "editor.columnSelection": false,
+    "editor.acceptSuggestionOnCommitCharacter": false,
+    "editor.roundedSelection": false,
+    "editor.suggest.shareSuggestSelections": true,
+    "editor.cursorStyle": "line-thin",
 }

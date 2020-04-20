@@ -67,6 +67,9 @@ export ENHANCD_COMPLETION_BEHAVIOR=list
 export LESS="-iRFXMx2"
 export BAT_PAGER=0
 
+# Do not limit outputs from jest
+export DEBUG_PRINT_LIMIT=100000
+
 if (( $#commands[(i)lesspipe(|.sh)] )); then
   export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
 fi
