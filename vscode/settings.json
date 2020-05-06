@@ -88,6 +88,20 @@
     "telemetry.enableCrashReporter": false,
     "javascript.validate.enable": false,
     "python.linting.flake8Enabled": true,
+    "go.useLanguageServer": true,
+    "[go]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true,
+        },
+    },
+    "[go.mod]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true,
+        },
+    },
+    "go.buildOnSave": "off",
     "go.autocompleteUnimportedPackages": true,
     "go.formatTool": "gofmt",
     "editor.fontLigatures": true,
@@ -100,8 +114,6 @@
     "python.dataScience.enableCellCodeLens": false,
     "vscode-home-assistant.hostUrl": "http://home.local:8123",
     "vscode-home-assistant.ignoreCertificates": true,
-    "go.useLanguageServer": true,
-    "go.buildOnSave": "off",
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": true
     },
@@ -145,12 +157,13 @@
     "workbench.activityBar.visible": false,
     "breadcrumbs.enabled": false,
     "editor.minimap.enabled": false,
-    "activitusbar.activeColour": "white",
-    "activitusbar.searchViewInPanel": false,
+    "activitusbar.activeColour": "#fff6f6",
+    "activitusbar.searchViewInPanel": true,
     "python.analysis.disabled": [
         "unresolved-import",
         "variable-not-defined-globally",
-        "return-in-init"
+        "return-in-init",
+        "inherit-non-class"
     ],
     "cloudcode.autoDependencies": "off",
     "todo-tree.tree.showScanModeButton": false,
@@ -162,4 +175,37 @@
     "editor.roundedSelection": false,
     "editor.suggest.shareSuggestSelections": true,
     "editor.cursorStyle": "line-thin",
+    "vsonline.authentication.accountProvider": "Microsoft",
+    "cloudcode.gke": {
+        "projectIds": [
+            "lawinsidercontracts"
+        ]
+    },
+    "activitusbar.views": [
+        {
+            "name": "explorer",
+            "codicon": "files"
+        },
+        {
+            "name": "search",
+            "codicon": "search"
+        },
+        {
+            "name": "scm",
+            "codicon": "source-control"
+        },
+        {
+            "name": "debug",
+            "codicon": "debug"
+        },
+        {
+            "name": "extensions",
+            "codicon": "extensions"
+        }
+    ],
+    "activitusbar.inactiveColour": "#a8a8a8",
+    "chat.autoLaunchLiveShareChat": false,
+    "liveshare.allowInvites": "all",
+    "currentFilePath.defaultPathStartsFrom": "workSpace",
+    "editor.snippetSuggestions": "bottom",
 }
