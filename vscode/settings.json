@@ -23,6 +23,7 @@
         "editor.selectionBackground": "#666",
         "editor.selectionHighlightBackground": "#33333300",
         "editor.selectionHighlightBorder": "#ffffffa2",
+        "statusBar.debuggingBackground": "#612400",
     },
     "editor.tokenColorCustomizations": {
         "[Chromodynamics]": {
@@ -57,7 +58,7 @@
     "terminal.explorerKind": "external",
     "debug.internalConsoleOptions": "neverOpen",
     "window.zoomLevel": 0,
-    "diffEditor.ignoreTrimWhitespace": false,
+    "diffEditor.ignoreTrimWhitespace": true,
     "terminal.integrated.fontSize": 14,
     "files.exclude": {
         "**/.classpath": true,
@@ -161,7 +162,8 @@
         "unresolved-import",
         "variable-not-defined-globally",
         "return-in-init",
-        "inherit-non-class"
+        "inherit-non-class",
+        "undefined-variable"
     ],
     "cloudcode.autoDependencies": "off",
     "todo-tree.tree.showScanModeButton": false,
@@ -205,4 +207,8 @@
     "liveshare.allowInvites": "all",
     "currentFilePath.defaultPathStartsFrom": "workSpace",
     "editor.snippetSuggestions": "bottom",
+    "vsonline.accountProvider": "Microsoft",
+    "workbench.startupEditor": "newUntitledFile",
+    "git.autoStash": true,
+    "codespaces.accountProvider": "Microsoft",
 }

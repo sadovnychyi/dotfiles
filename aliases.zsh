@@ -16,6 +16,7 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias apm="apm-beta"
 alias atom="atom-beta ."
+alias code="code ."
 alias open="open ."
 alias ls="ls -Fah"
 
