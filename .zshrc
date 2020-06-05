@@ -1,7 +1,11 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+source ~/dotfiles/prompt.zsh
 source ~/dotfiles/powerlevel10k/powerlevel10k.zsh-theme
 
 emulate zsh
@@ -55,7 +59,6 @@ function late-init() {
 
 add-zsh-hook precmd late-init
 
-run-tracked source ~/dotfiles/prompt.zsh
 run-tracked source ~/dotfiles/history.zsh
 run-tracked +b source ~/dotfiles/bindings.zsh
 run-tracked +bw source ~/dotfiles/completions.zsh
