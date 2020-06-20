@@ -1,0 +1,4 @@
+#!/bin/bash
+# Turn off bluetooth so it can work in a bootcamp.
+/usr/local/bin/blueutil --power=0
+osascript -e 'tell app "System Events" to restart'
