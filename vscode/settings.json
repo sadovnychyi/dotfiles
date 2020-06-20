@@ -16,7 +16,7 @@
         "statusBar.foreground": "#a8a8a8",
         "editorRuler.foreground": "#ffffff1f",
         "editorGroupHeader.tabsBackground": "#131313",
-        "tab.border": "#131313",
+        "tab.border": "#000000",
         "tab.inactiveBackground": "#131313",
         "editorBracketMatch.border": "#ffffff00",
         "editorBracketMatch.background": "#f0f0f352",
@@ -58,7 +58,7 @@
     "terminal.explorerKind": "external",
     "debug.internalConsoleOptions": "neverOpen",
     "window.zoomLevel": 0,
-    "diffEditor.ignoreTrimWhitespace": true,
+    "diffEditor.ignoreTrimWhitespace": false,
     "terminal.integrated.fontSize": 14,
     "files.exclude": {
         "**/.classpath": true,
@@ -71,7 +71,6 @@
     "terminal.integrated.drawBoldTextInBrightColors": false,
     "diffEditor.renderSideBySide": false,
     "python.workspaceSymbols.enabled": false,
-    "python.jediEnabled": false,
     "workbench.editor.closeEmptyGroups": false,
     "workbench.editor.focusRecentEditorAfterClose": false,
     "workbench.settings.enableNaturalLanguageSearch": false,
@@ -211,4 +210,6 @@
     "workbench.startupEditor": "newUntitledFile",
     "git.autoStash": true,
     "codespaces.accountProvider": "Microsoft",
+    "scm.inputFontFamily": "editor",
+    "python.languageServer": "Microsoft",
 }
