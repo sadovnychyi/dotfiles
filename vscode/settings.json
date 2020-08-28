@@ -209,7 +209,19 @@
     "vsonline.accountProvider": "Microsoft",
     "workbench.startupEditor": "newUntitledFile",
     "git.autoStash": true,
-    "codespaces.accountProvider": "Microsoft",
+    "codespaces.accountProvider": "GitHub",
     "scm.inputFontFamily": "editor",
-    "python.languageServer": "Microsoft",
+    "python.languageServer": "Pylance",
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportUnboundVariable": "none"
+    },
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "python.analysis.extraPaths": [
+        "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/platform/google_appengine",
+        "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/platform/google_appengine/lib/webapp2-2.5.2",
+        "${workspaceFolder}/lib"
+    ],
 }
