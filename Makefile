@@ -11,3 +11,4 @@ build:
 	@echo "Successfully created symbolic links in home directory."
 	@tput sgr0
 	@exec /usr/local/bin/bash -l
+	@ln -fh nginx.conf /usr/local/etc/nginx/nginx.conf
