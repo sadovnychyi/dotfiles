@@ -18,6 +18,8 @@
 	<string>manual</string>
 	<key>AutoCommandHistory</key>
 	<false/>
+	<key>BootstrapDaemon</key>
+	<false/>
 	<key>CheckTestRelease</key>
 	<false/>
 	<key>Control</key>
@@ -1001,7 +1003,7 @@
 	<key>NSWindow Frame ProfilesPanel</key>
 	<string>416 430 735 382 0 0 1920 1178 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
-	<string>336 -152 400 129 336 -800 1280 777 </string>
+	<string>760 486 400 129 0 0 1920 777 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>650 288 620 392 0 0 1920 777 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
@@ -1012,6 +1014,10 @@
 	<string>155 594 592 584 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>757 -800 795 777 336 -800 1280 800 </string>
+	<key>NeverWarnAboutShortLivedSessions_650E6A48-FDE2-4BB9-A5C0-86D9B2D65A0E</key>
+	<true/>
+	<key>NeverWarnAboutShortLivedSessions_650E6A48-FDE2-4BB9-A5C0-86D9B2D65A0E_selection</key>
+	<integer>0</integer>
 	<key>NeverWarnAboutShortLivedSessions_7C28858C-C5B4-4FBC-A578-5376E403E8C5</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_7C28858C-C5B4-4FBC-A578-5376E403E8C5_selection</key>
@@ -3085,6 +3091,7 @@
 	<array>
 		<string>3.3.6</string>
 		<string>3.3.8</string>
+		<string>3.3.11</string>
 		<string>3.3.2</string>
 		<string>3.3.1</string>
 		<string>3.3.5</string>
@@ -3103,6 +3110,10 @@
 	</array>
 	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
 	<true/>
+	<key>NoSyncConfirmRunOpenFile</key>
+	<true/>
+	<key>NoSyncConfirmRunOpenFile_selection</key>
+	<integer>0</integer>
 	<key>NoSyncDoNotWarnBeforeMultilinePaste</key>
 	<true/>
 	<key>NoSyncDoNotWarnBeforeMultilinePaste_selection</key>
@@ -3119,7 +3130,7 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1920, 800}}</string>
 		<key>topLeft</key>
-		<string>{67, 710}</string>
+		<string>{67, 712}</string>
 	</dict>
 	<key>NoSyncHaveUsedCopyMode</key>
 	<true/>
@@ -3130,7 +3141,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>0836F094-6CF5-4D56-A616-65171D319184</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>97</integer>
+	<integer>153</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -3903,11 +3914,11 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-03-16T11:43:16Z</date>
+	<date>2020-06-20T06:49:24Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateGroupIdentifier</key>
-	<integer>3905731710</integer>
+	<integer>1114670807</integer>
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>SeparateStatusBarsPerPane</key>
@@ -3973,7 +3984,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.3.9</string>
+	<string>3.3.11</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
