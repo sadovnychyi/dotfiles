@@ -1,7 +1,7 @@
 [user]
 	name = Dmytro Sadovnychyi
 	email = git@dmit.ro
-	signingkey = E9E324CD
+	signingkey = 59F3FE6BDE45B45A
 [color]
 	ui = true
 [push]
@@ -31,7 +31,7 @@
 [fetch]
 	prune = true
 [commit]
-	gpgsign = false
+	gpgsign = true
 [pager]
 	diff = false
 [branch]
@@ -48,3 +48,5 @@
 	old = red bold
 	new = green bold
 	whitespace = red reverse
+[gpg]
+	program = /usr/local/bin/gpg
