@@ -1,6 +1,5 @@
 {
-    "editor.fontFamily": "PragmataPro Mono Liga",
-    "workbench.colorTheme": "Chromodynamics",
+    "editor.fontFamily": "\"PragmataPro Mono Liga\", Monaco, Menlo, Consolas, \"Droid Sans Mono\", \"Inconsolata\", \"Courier New\"",
     "telemetry.enableTelemetry": false,
     "gitlens.advanced.messages": {
         "suppressLineUncommittedWarning": true,
@@ -224,4 +223,13 @@
         "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/platform/google_appengine/lib/webapp2-2.5.2",
         "${workspaceFolder}/lib"
     ],
+    "stylelint.autoFixOnSave": true,
+    "stylelint.useLocal": true,
+    "python.showStartPage": false,
+    "editor.formatOnSave": true,
+    "git.enableCommitSigning": true,
+    "editor.find.cursorMoveOnType": false,
+    "debug.console.fontFamily": "\"PragmataPro Mono Liga\", Monaco, Menlo, Consolas, \"Droid Sans Mono\", \"Inconsolata\", \"Courier New\"",
+    "workbench.colorTheme": "Chromodynamics",
+    "codespaces.enableSubmoduleCloning": true,
 }
