@@ -23,6 +23,7 @@
         "editor.selectionHighlightBackground": "#33333300",
         "editor.selectionHighlightBorder": "#ffffffa2",
         "statusBar.debuggingBackground": "#612400",
+        "editorGutter.commentRangeForeground": "#c5c5c540",
     },
     "editor.tokenColorCustomizations": {
         "[Chromodynamics]": {
@@ -109,8 +110,6 @@
         "--fast"
     ],
     "editor.codeLens": false,
-    "python.dataScience.addGotoCodeLenses": false,
-    "python.dataScience.enableCellCodeLens": false,
     "vscode-home-assistant.hostUrl": "http://home.local:8123",
     "vscode-home-assistant.ignoreCertificates": true,
     "editor.codeActionsOnSave": {
@@ -127,7 +126,6 @@
     "python.testing.promptToConfigure": false,
     "python.venvPath": "~/.local/share/virtualenvs",
     "python.pythonPath": "/usr/local/opt/python/libexec/bin/python",
-    "python.dataScience.sendSelectionToInteractiveWindow": false,
     "workbench.editor.enablePreview": true,
     "python.linting.flake8Path": "/usr/local/bin/flake8",
     "python.formatting.blackArgs": [
@@ -165,7 +163,6 @@
     ],
     "cloudcode.autoDependencies": "off",
     "todo-tree.tree.showScanModeButton": false,
-    "githubPullRequests.showInSCM": true,
     "githubPullRequests.telemetry.enabled": false,
     "editor.columnSelection": false,
     "editor.acceptSuggestionOnCommitCharacter": false,
@@ -232,4 +229,13 @@
     "debug.console.fontFamily": "\"PragmataPro Mono Liga\", Monaco, Menlo, Consolas, \"Droid Sans Mono\", \"Inconsolata\", \"Courier New\"",
     "workbench.colorTheme": "Chromodynamics",
     "codespaces.enableSubmoduleCloning": true,
+    "jupyter.addGotoCodeLenses": false,
+    "jupyter.enableCellCodeLens": false,
+    "jupyter.sendSelectionToInteractiveWindow": false,
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
 }
