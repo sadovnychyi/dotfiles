@@ -40,7 +40,7 @@ run-tracked -a source $ZSH/plugins/extract/extract.plugin.zsh
 # Allow `z` alias.
 run-tracked +a source $ZSH/plugins/z/z.plugin.zsh
 run-tracked source ~/dotfiles/zsh-prompt-benchmark/zsh-prompt-benchmark.plugin.zsh
-run-tracked source ~/.iterm2_shell_integration.zsh
+run-tracked +a source ~/.iterm2_shell_integration.zsh
 
 export DISABLE_FZF_AUTO_COMPLETION="true"
 run-tracked +b source $ZSH/plugins/fzf/fzf.plugin.zsh
@@ -111,3 +111,4 @@ local _startupTime=$((EPOCHREALTIME*1000-_start))
 if (( _startupTime > 2048 )); then
   echo -E "${(%):-%F{red\}}[WARNING]: .zshrc took $((_startupTime))ms to load." >&2
 fi
+export PATH="/usr/local/opt/python@3.7/bin:$PATH"
