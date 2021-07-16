@@ -50,3 +50,5 @@
 	whitespace = red reverse
 [gpg]
 	program = /usr/local/bin/gpg
+[pull]
+	ff = only
