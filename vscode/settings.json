@@ -1,5 +1,5 @@
 {
-    "editor.fontFamily": "\"PragmataPro Mono Liga\", Monaco, Menlo, Consolas, \"Droid Sans Mono\", \"Inconsolata\", \"Courier New\"",
+    "editor.fontFamily": "\"PragmataPro Liga\", Monaco, Menlo, Consolas, \"Droid Sans Mono\", \"Inconsolata\", \"Courier New\"",
     "telemetry.enableTelemetry": false,
     "gitlens.advanced.messages": {
         "suppressLineUncommittedWarning": true,
@@ -57,7 +57,6 @@
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "terminal.explorerKind": "external",
     "debug.internalConsoleOptions": "neverOpen",
-    "window.zoomLevel": 0,
     "diffEditor.ignoreTrimWhitespace": false,
     "terminal.integrated.fontSize": 14,
     "files.exclude": {
@@ -76,7 +75,6 @@
     "workbench.settings.enableNaturalLanguageSearch": false,
     "window.restoreFullscreen": true,
     "window.newWindowDimensions": "fullscreen",
-    "explorer.decorations.badges": false,
     "outline.problems.colors": false,
     "search.showLineNumbers": true,
     "search.useGlobalIgnoreFiles": true,
@@ -104,7 +102,7 @@
     "go.buildOnSave": "off",
     "go.autocompleteUnimportedPackages": true,
     "go.formatTool": "gofmt",
-    "editor.fontLigatures": true,
+    "editor.fontLigatures": "'git tree'",
     "go.lintTool": "golangci-lint",
     "go.lintFlags": [
         "--fast"
@@ -112,9 +110,6 @@
     "editor.codeLens": false,
     "vscode-home-assistant.hostUrl": "http://home.local:8123",
     "vscode-home-assistant.ignoreCertificates": true,
-    "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
-    },
     "git.suggestSmartCommit": false,
     "scm.diffDecorationsGutterWidth": 2,
     "python.testing.autoTestDiscoverOnSaveEnabled": false,
@@ -135,22 +130,27 @@
     "python.formatting.blackPath": "/usr/local/bin/black",
     "eslint.format.enable": true,
     "[javascript]": {
+        "editor.codeActionsOnSave": {
+            "source.fixAll.eslint": true
+        },
         "editor.defaultFormatter": "dbaeumer.vscode-eslint",
         "editor.formatOnSave": true
     },
     "[python]": {
         "editor.formatOnPaste": false,
-        "editor.formatOnSave": true
+        "editor.formatOnSave": true,
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4
+    },
+    "[yaml]": {
+        "editor.formatOnSave": false,
     },
     "extensions.ignoreRecommendations": true,
-    "extensions.showRecommendationsOnlyOnDemand": true,
     "files.defaultLanguage": "${activeEditorLanguage}",
-    "editor.renameOnType": true,
+    "editor.linkedEditing": true,
     "editor.semanticHighlighting.enabled": true,
     "search.smartCase": true,
-    "workbench.editor.highlightModifiedTabs": true,
     "workbench.activityBar.visible": false,
-    "breadcrumbs.enabled": false,
     "editor.minimap.enabled": false,
     "activitusbar.activeColour": "#fff6f6",
     "activitusbar.searchViewInPanel": true,
@@ -207,12 +207,12 @@
     "git.autoStash": true,
     "codespaces.accountProvider": "GitHub",
     "scm.inputFontFamily": "editor",
-    "python.languageServer": "Pylance",
     "[javascriptreact]": {
         "editor.defaultFormatter": "dbaeumer.vscode-eslint"
     },
     "python.analysis.diagnosticSeverityOverrides": {
-        "reportUnboundVariable": "none"
+        "reportUnboundVariable": "none",
+        "reportMissingImports": "none"
     },
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "python.analysis.extraPaths": [
@@ -226,16 +226,48 @@
     "editor.formatOnSave": true,
     "git.enableCommitSigning": true,
     "editor.find.cursorMoveOnType": false,
-    "debug.console.fontFamily": "\"PragmataPro Mono Liga\", Monaco, Menlo, Consolas, \"Droid Sans Mono\", \"Inconsolata\", \"Courier New\"",
+    "debug.console.fontFamily": "\"PragmataPro Liga\", Monaco, Menlo, Consolas, \"Droid Sans Mono\", \"Inconsolata\", \"Courier New\"",
     "workbench.colorTheme": "Chromodynamics",
     "codespaces.enableSubmoduleCloning": true,
     "jupyter.addGotoCodeLenses": false,
     "jupyter.enableCellCodeLens": false,
     "jupyter.sendSelectionToInteractiveWindow": false,
-    "workbench.editorAssociations": [
-        {
-            "viewType": "jupyter.notebook.ipynb",
-            "filenamePattern": "*.ipynb"
-        }
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "spellright.configurationScope": "user",
+    "stylelint.config": {
+        "syntax": "scss"
+    },
+    "todo-tree.general.tags": [
+        "BUG",
+        "HACK",
+        "FIXME",
+        "TODO",
+        "XXX",
+        "[ ]",
+        "[x]"
     ],
+    "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+    "go.toolsManagement.autoUpdate": true,
+    "breadcrumbs.enabled": false,
+    "workbench.settings.useSplitJSON": true,
+    "workbench.editor.highlightModifiedTabs": true,
+    "workbench.editor.decorations.badges": false,
+    "explorer.decorations.badges": false,
+    "git.pruneOnFetch": true,
+    "python.globalModuleInstallation": true,
+    "yaml.format.bracketSpacing": false,
+    "yaml.format.singleQuote": true,
+    "cloudcode.yaml.format.bracketSpacing": false,
+    "cloudcode.yaml.format.singleQuote": true,
+    "yaml.format.enable": false,
+    "redhat.telemetry.enabled": false,
+    "editor.inlineSuggest.enabled": true,
+    "github.copilot.enable": {
+        "*": true,
+        "yaml": true,
+        "plaintext": false,
+        "markdown": true
+    },
 }
