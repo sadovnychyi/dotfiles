@@ -175,5 +175,6 @@ vpn_down() {
 # Requires ripgrep and entr.
 run() {
   _cmd="printf '\33c\e[3J' && echo $@ && $@"
+  # Use ripgrep to detect list of files that are not ignored by git.
   rg --files | entr -s "$_cmd"
 }
