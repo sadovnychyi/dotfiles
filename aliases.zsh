@@ -174,6 +174,6 @@ vpn_down() {
 # changes. Clears terminal after each run. Useful for tests.
 # Requires ripgrep and entr.
 run() {
-  _cmd="printf '\33c\e[3J' && $@"
+  _cmd="printf '\33c\e[3J' && echo $@ && $@"
   rg --files | entr -s "$_cmd"
 }
