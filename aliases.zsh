@@ -169,3 +169,11 @@ vpn_down() {
   scutil --nc stop VPN
   gcloud compute instances stop vpn --project=sadovnychyi --zone=asia-east1-c
 }
+
+# Watch current directory for changes and re-run given commands once something
+# changes. Clears terminal after each run. Useful for tests.
+# Requires ripgrep and entr.
+run() {
+  _cmd="printf '\33c\e[3J' && $@"
+  rg --files | entr -s "$_cmd"
+}
