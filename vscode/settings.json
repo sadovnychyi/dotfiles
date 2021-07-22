@@ -119,7 +119,7 @@
     "python.experiments.enabled": false,
     "python.formatting.provider": "black",
     "python.testing.promptToConfigure": false,
-    "python.venvPath": "~/.local/share/virtualenvs",
+    "python.venvPath": "/Users/sadovnychyi/.local/share/virtualenvs",
     "python.pythonPath": "/usr/local/opt/python/libexec/bin/python",
     "workbench.editor.enablePreview": true,
     "python.linting.flake8Path": "/usr/local/bin/flake8",
@@ -269,5 +269,5 @@
         "yaml": true,
         "plaintext": false,
         "markdown": true
-    },
+    }
 }
