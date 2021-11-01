@@ -205,7 +205,7 @@
     "vsonline.accountProvider": "Microsoft",
     "workbench.startupEditor": "newUntitledFile",
     "git.autoStash": true,
-    "codespaces.accountProvider": "GitHub",
+    "codespaces.accountProvider": "Uninitialized",
     "scm.inputFontFamily": "editor",
     "[javascriptreact]": {
         "editor.defaultFormatter": "dbaeumer.vscode-eslint"
@@ -227,13 +227,12 @@
     "git.enableCommitSigning": true,
     "editor.find.cursorMoveOnType": false,
     "debug.console.fontFamily": "\"PragmataPro Liga\", Monaco, Menlo, Consolas, \"Droid Sans Mono\", \"Inconsolata\", \"Courier New\"",
-    "workbench.colorTheme": "Chromodynamics",
     "codespaces.enableSubmoduleCloning": true,
     "jupyter.addGotoCodeLenses": false,
     "jupyter.enableCellCodeLens": false,
     "jupyter.sendSelectionToInteractiveWindow": false,
     "workbench.editorAssociations": {
-        "*.ipynb": "jupyter.notebook.ipynb"
+        "*.ipynb": "jupyter-notebook"
     },
     "spellright.configurationScope": "user",
     "stylelint.config": {
@@ -267,7 +266,24 @@
     "github.copilot.enable": {
         "*": true,
         "yaml": true,
-        "plaintext": false,
+        "plaintext": true,
         "markdown": true
-    }
+    },
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "editor.bracketPairColorization.enabled": true,
+    "javascript.inlayHints.enumMemberValues.enabled": true,
+    "javascript.inlayHints.parameterNames.enabled": "literals",
+    "typescript.inlayHints.enumMemberValues.enabled": true,
+    "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+    "typescript.inlayHints.parameterNames.enabled": "literals",
+    "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+    "typescript.inlayHints.variableTypes.enabled": true,
+    "typescript.inlayHints.parameterTypes.enabled": true,
+    "workbench.colorTheme": "Chromodynamics",
+    "git.allowNoVerifyCommit": true,
+    "git.enableStatusBarSync": false,
+    "git.fetchOnPull": true
 }
