@@ -84,12 +84,6 @@ function upgrade() {
   gcloud components --quiet update
 }
 
-# IP addresses
-alias ip="echo 'Local:'
-          ipconfig getifaddr en0
-          echo 'External:'
-          dig +short +time=1 +tries=1 +retry=0 myip.opendns.com"
-
 alias lock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 alias afk=lock
 
