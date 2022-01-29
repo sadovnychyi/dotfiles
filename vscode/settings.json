@@ -5,6 +5,7 @@
         "suppressLineUncommittedWarning": true,
         "suppressShowKeyBindingsNotice": true
     },
+    "workbench.experimental.sidePanel.enabled": true,
     "workbench.colorCustomizations": {
         "sideBar.background": "#131313",
         "input.background": "#131313",
@@ -47,11 +48,7 @@
     "files.insertFinalNewline": true,
     "editor.multiCursorModifier": "ctrlCmd",
     "javascript.preferences.importModuleSpecifier": "non-relative",
-    "python.autoComplete.extraPaths": [
-        "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/platform/google_appengine",
-        "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/platform/google_appengine/lib/webapp2-2.5.2",
-        "${workspaceFolder}/lib"
-    ],
+    "python.autoComplete.extraPaths": [],
     "atomKeymap.promptV3Features": true,
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
@@ -215,11 +212,6 @@
         "reportMissingImports": "none"
     },
     "workbench.editor.enablePreviewFromQuickOpen": false,
-    "python.analysis.extraPaths": [
-        "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/platform/google_appengine",
-        "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/platform/google_appengine/lib/webapp2-2.5.2",
-        "${workspaceFolder}/lib"
-    ],
     "stylelint.autoFixOnSave": true,
     "stylelint.useLocal": true,
     "python.showStartPage": false,
@@ -235,9 +227,6 @@
         "*.ipynb": "jupyter-notebook"
     },
     "spellright.configurationScope": "user",
-    "stylelint.config": {
-        "syntax": "scss"
-    },
     "todo-tree.general.tags": [
         "BUG",
         "HACK",
@@ -285,5 +274,12 @@
     "workbench.colorTheme": "Chromodynamics",
     "git.allowNoVerifyCommit": true,
     "git.enableStatusBarSync": false,
-    "git.fetchOnPull": true
+    "git.fetchOnPull": true,
+    "python.analysis.extraPaths": [],
+    "stylelint.validate": [
+        "css",
+        "less",
+        "postcss",
+        "scss"
+    ]
 }
