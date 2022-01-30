@@ -23,5 +23,3 @@ compinit
     zcompile $zcompdump
   fi
 }
-
-source "${CLOUD_SDK_HOME}/completion.zsh.inc"
