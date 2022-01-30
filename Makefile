@@ -1,6 +1,6 @@
 build:
 	@ln -fs `pwd`/.gitconfig ~
-	@ln -fs `pwd`/.*rc ~
+	@ln -fs `pwd`/.pyrc ~
 	@ln -fs `pwd`/.zshrc ~
 	@ln -fs `pwd`/.zshenv ~
 	@ln -fs `pwd`/.hushlogin ~
