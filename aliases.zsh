@@ -5,9 +5,6 @@ alias nano="micro"
 alias cat="bat"
 alias top="gotop"
 
-# Enable aliases to be sudo’ed
-alias sudo='sudo '
-
 # Folders sorted by disk space usage
 alias folders='find . -maxdepth 1 -type d -print0 | xargs -0 du -sk | sort -rn'
 
@@ -27,9 +24,6 @@ alias timer="echo 'Timer started. Stop with Ctrl-D.' && date && time cat && date
 
 # Clear which *really* clears the terminal, instead of appending bunch of new lines
 alias clear="printf '\33c\e[3J'"
-
-# Set git as alias for hub
-eval "$(hub alias -s)"
 
 chrome-history() {
   local cols sep

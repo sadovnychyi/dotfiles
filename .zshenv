@@ -21,25 +21,17 @@ export PYTHONDONTWRITEBYTECODE=true
 
 export EDITOR=micro
 
-export PATH=/usr/local/bin:$PATH
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 export PATH=$PATH:~/dotfiles/bin
-export PATH=$PATH:/usr/local/sbin
-
-export CLOUD_SDK_HOME=/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk
-
-export PATH=$PATH:$CLOUD_SDK_HOME
-export PATH=$PATH:$CLOUD_SDK_HOME/bin
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
 export SSH_AUTH_SOCK=$HOME/.sekey/ssh-agent.ssh
-export PATH="$HOME/.cargo/bin:$PATH"
 
 export JAVA_HOME="$(/usr/libexec/java_home)"
 
 export PAGER=less
 
 typeset -gaU cdpath fpath mailpath path
-path=($HOME/bin $HOME/.local/bin $HOME/.cargo/bin ${path[@]})
 
 export FZF_DEFAULT_OPTS="--height=50% --min-height=15 --reverse"
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
