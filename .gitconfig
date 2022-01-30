@@ -1,7 +1,7 @@
 [user]
 	name = Dmytro Sadovnychyi
 	email = git@dmit.ro
-	signingkey = 59F3FE6BDE45B45A
+	signingkey = 2B0AD8CADA975F3B
 [color]
 	ui = true
 [push]
@@ -15,8 +15,8 @@
 	clean = git hawser clean %f
 	smudge = git hawser smudge %f
 	required = true
-#[url "ssh://git@github.com/"]
-#	insteadOf = https://github.com/
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
 [alias]
 	status = status -sb
 	log = log --all --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
@@ -49,6 +49,6 @@
 	new = green bold
 	whitespace = red reverse
 [gpg]
-	program = /usr/local/bin/gpg
+	program = /opt/homebrew/bin/gpg
 [pull]
 	ff = only
