@@ -120,17 +120,12 @@ C_BG_LIGHTGRAY="\[\033[47m\]"
 
 PATH_IN_TITLE="\[\033]0;\w\007\]"
 
-source ~/dotfiles/touchbar.bash
-
 __prompt() {
   current_short_path=$(__path_ps1)
 
   history -a
 
   PS1="${PATH_IN_TITLE}${C_BLUE}${current_short_path}${C_GREEN}·${C_DEFAULT}"
-
-  # TODO: async
-  precmd_iterm_touchbar
 }
 
 PROMPT_COMMAND=__prompt

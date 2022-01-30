@@ -89,14 +89,6 @@ fi
     vcs                     # git status
   )
 
-  typeset -g POWERLEVEL9K_TOUCHBAR_ELEMENTS=(
-    dir
-    vcs
-  )
-
-  typeset -g POWERLEVEL9K_DIR_TOUCHBAR_WIDGET='fzf-file-widget'
-  typeset -g POWERLEVEL9K_VCS_TOUCHBAR_WIDGET='fzf-git-branch'
-
   # Basic style options that define the overall look of your prompt.
   typeset -g POWERLEVEL9K_BACKGROUND=                            # transparent background
   typeset -g POWERLEVEL9K_{LEFT,RIGHT}_{LEFT,RIGHT}_WHITESPACE=  # no surrounding whitespace

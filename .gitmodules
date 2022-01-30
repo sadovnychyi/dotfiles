@@ -10,9 +10,6 @@
 [submodule "zsh-prompt-benchmark"]
 	path = zsh-prompt-benchmark
 	url = https://github.com/romkatv/zsh-prompt-benchmark.git
-[submodule "zsh-apple-touchbar"]
-	path = zsh-apple-touchbar
-	url = https://github.com/zsh-users/zsh-apple-touchbar
 [submodule "fast-syntax-highlighting"]
 	path = fast-syntax-highlighting
 	url = https://github.com/zdharma/fast-syntax-highlighting.git

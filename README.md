@@ -14,12 +14,6 @@ ZSH with powerlevel10k, prompt renders under 40ms. iTerm2 with some [custom keyb
 
 ![image](https://user-images.githubusercontent.com/193864/60770896-c0f0ca80-a112-11e9-9750-6f695f0fe084.png)
 
-### Touchbar support
-Clicking on current directory will go into interactive prompt with current directory contents, and clicking on git status will go into a prompt to change git branch (both using [fzf](https://github.com/junegunn/fzf)).
-![image](https://user-images.githubusercontent.com/193864/60770908-e41b7a00-a112-11e9-8bf4-e5c5e2a14613.png)
-
-
-
 # Installation
 
 You only need to execute a makefile which will symlink all files in your home directory **replacing any existing files**.
