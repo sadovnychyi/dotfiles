@@ -48,7 +48,10 @@
 	old = red bold
 	new = green bold
 	whitespace = red reverse
+	func = 146 bold
 [gpg]
 	program = /opt/homebrew/bin/gpg
 [pull]
 	ff = only
+[interactive]
+	diffFilter = diff-so-fancy --patch
