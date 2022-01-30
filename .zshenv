@@ -15,20 +15,13 @@ export LC_ALL=en_US.UTF-8
 export CLICOLOR=1
 export GIT_PS1_SHOWDIRTYSTATE=1
 
-export APPENGINE_LIB='/usr/local/google_appengine'
-
 export PYTHONSTARTUP="${HOME}/.pyrc"
 export PYTHONIOENCODING='UTF-8'
 export PYTHONDONTWRITEBYTECODE=true
 
 export EDITOR=micro
 
-export GOPATH=$HOME/go
-export GOROOT=/usr/local/opt/go/libexec
 export PATH=/usr/local/bin:$PATH
-export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:$GOROOT/bin
-export PATH=$PATH:~/go_appengine
 export PATH=$PATH:~/dotfiles/bin
 export PATH=$PATH:/usr/local/sbin
 
@@ -54,7 +47,7 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 export ENHANCD_DISABLE_DOT=1
 export ENHANCD_COMPLETION_BEHAVIOR=list
 
-# export PIPENV_VENV_IN_PROJECT=1
+export PIPENV_VENV_IN_PROJECT=1
 
 # This affects every invocation of `less`.
 #
