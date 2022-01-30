@@ -1,3 +1,0 @@
-#!/bin/bash
-# Make sure bluetooth is enabled.
-/usr/local/bin/blueutil --power=1
