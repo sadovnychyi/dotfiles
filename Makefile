@@ -1,5 +1,5 @@
 build:
-	@ln -fs `pwd`/.bash* `pwd`/.gitconfig ~
+	@ln -fs `pwd`/.gitconfig ~
 	@ln -fs `pwd`/.*rc ~
 	@ln -fs `pwd`/.zshrc ~
 	@ln -fs `pwd`/.zshenv ~
