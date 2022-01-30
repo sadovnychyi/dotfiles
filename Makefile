@@ -9,5 +9,5 @@ build:
 	@tput setaf 6
 	@echo "Successfully created symbolic links in home directory."
 	@tput sgr0
-	@exec /usr/local/bin/zsh -l
-	@ln -fh nginx.conf /usr/local/etc/nginx/nginx.conf
+	@exec /opt/homebrew/bin/zsh -l
+	@ln -fh nginx.conf /opt/homebrew/etc/nginx/nginx.conf
