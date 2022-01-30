@@ -1,9 +1,10 @@
 import string
 import re
+
 try:
-  from cStringIO import StringIO
+    from cStringIO import StringIO
 except ImportError:
-  from io import StringIO
+    from io import StringIO
 import datetime
 import collections
 from pprint import pprint
@@ -13,10 +14,11 @@ import functools
 import os
 import glob
 import shutil
+
 try:
-  import cPickle as pickle
+    import cPickle as pickle
 except ImportError:
-  import pickle
+    import pickle
 import csv
 import hashlib
 import pdb
@@ -25,17 +27,17 @@ import trace
 import sys
 
 try:
-  from jedi.utils import setup_readline
-  setup_readline()
-except ImportError:
-  # Fallback to the stdlib readline completer if it is installed.
-  # Taken from http://docs.python.org/2/library/rlcompleter.html
-  print("Jedi is not installed, falling back to readline")
-  try:
-    import readline
-    import rlcompleter
-    readline.parse_and_bind("tab: complete")
-  except ImportError:
-    print("Readline is not installed either. No tab completion is enabled.")
+    from jedi.utils import setup_readline
 
-#readline.parse_and_bind('bind ^I rl_complete')
+    setup_readline()
+except ImportError:
+    # Fallback to the stdlib readline completer if it is installed.
+    # Taken from http://docs.python.org/2/library/rlcompleter.html
+    print("Jedi is not installed, falling back to readline")
+    try:
+        import readline
+        import rlcompleter
+
+        readline.parse_and_bind("tab: complete")
+    except ImportError:
+        print("Readline is not installed either. No tab completion is enabled.")
