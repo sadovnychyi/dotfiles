@@ -52,5 +52,3 @@
 	program = /opt/homebrew/bin/gpg
 [pull]
 	ff = only
-[diff]
-	ignoreSubmodules = dirty
