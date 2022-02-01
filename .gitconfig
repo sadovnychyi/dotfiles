@@ -15,8 +15,6 @@
 	clean = git hawser clean %f
 	smudge = git hawser smudge %f
 	required = true
-[url "ssh://git@github.com/"]
-	insteadOf = https://github.com/
 [alias]
 	status = status -sb
 	log = log --all --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
