@@ -22,6 +22,8 @@ export PYTHONDONTWRITEBYTECODE=true
 export EDITOR=micro
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
+export CPATH=$CPATH:$HOMEBREW_PREFIX/include
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOMEBREW_PREFIX/lib
 
 export PATH=$PATH:~/dotfiles/bin
 
