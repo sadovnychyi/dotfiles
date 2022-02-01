@@ -77,9 +77,7 @@ zle_highlight=('paste:none')
 (( $+aliases[run-help] )) && unalias run-help
 run-tracked +ab source ~/dotfiles/aliases.zsh
 
-# TODO: fix with next version of zsh
-# https://github.com/romkatv/powerlevel10k/commit/f95a0fc3eef9a33c1a783359ea17b9486b27e30e
-# ZLE_RPROMPT_INDENT=0           # don't leave an empty space after right prompt
+ZLE_RPROMPT_INDENT=0           # don't leave an empty space after right prompt
 READNULLCMD=$PAGER             # use the default pager instead of `more`
 WORDCHARS=''                   # only alphanums make up words in word-based zle widgets
 ZLE_REMOVE_SUFFIX_CHARS=''     # don't eat space when typing '|' after a tab completion
