@@ -5,24 +5,17 @@ alias nano="micro"
 alias cat="bat"
 alias top="gotop"
 
-# Folders sorted by disk space usage
-alias folders='find . -maxdepth 1 -type d -print0 | xargs -0 du -sk | sort -rn'
+# Folders sorted by disk space usage.
+alias folders='find . -maxdepth 1 -type d -print0 | xargs -0 du -skh | sort -rn'
 
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
-alias apm="apm-beta"
-alias atom="atom-beta ."
 alias code="code ."
 alias open="open ."
 alias ls="ls -Fah"
 
-# Remove unwanted formatting from text in the clipboard (also available as Shift + Cmd + V)
-alias pbclean='pbpaste | pbcopy'
-
-alias timer="echo 'Timer started. Stop with Ctrl-D.' && date && time cat && date"
-
-# Clear which *really* clears the terminal, instead of appending bunch of new lines
+# Clear which *really* clears the terminal, instead of appending bunch of new lines.
 alias clear="printf '\33c\e[3J'"
 
 chrome-history() {
@@ -65,7 +58,8 @@ fzf-git-branch() {
 zle     -N   fzf-git-branch
 bindkey '^B' fzf-git-branch
 
-# Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
+# Get macOS Software Updates, and update installed Ruby gems, Homebrew, npm,
+# and their installed packages.
 function upgrade() {
   sudo softwareupdate -i -a
   brew update
@@ -78,41 +72,17 @@ function upgrade() {
   gcloud components --quiet update
 }
 
-alias lock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
-alias afk=lock
+# View HTTP traffic.
+alias sniff="sudo ngrep -d 'en0' -t '^(GET|POST) ' 'tcp and port 80'"
 
-# Flush Directory Service cache
-alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
-
-# Clean up LaunchServices to remove duplicates in the “Open With” menu
-alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
-
-# View HTTP traffic
-alias sniff="ngrep -d 'en0' -t '^(GET|POST) ' 'tcp and port 80'"
-
-# Canonical hex dump; some systems have this symlinked
-command -v hd > /dev/null || alias hd="hexdump -C"
-
-# OS X has no `md5sum`, so use `md5` as a fallback
+# macOS has no `md5sum`, so use `md5` as a fallback
 command -v md5sum > /dev/null || alias md5sum="md5"
 
-# OS X has no `sha1sum`, so use `shasum` as a fallback
+# macOS has no `sha1sum`, so use `shasum` as a fallback
 command -v sha1sum > /dev/null || alias sha1sum="shasum"
 
-# Empty the Trash on all mounted volumes and the main HDD
-# Also, clear Apple’s System Logs to improve shell startup speed
-alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes
-                  sudo rm -rfv ~/.Trash
-                  sudo rm -rfv /private/var/log/asl/*.asl"
-
-for method in GET HEAD POST PUT DELETE TRACE OPTIONS
-  do alias "$method"="http $method"
-done
-
-# Reload the shell (i.e. invoke as a login shell)
+# Reload the shell (i.e. invoke as a login shell).
 alias reload="exec $SHELL -l"
-
-# alias drmi="docker rmi -f $(docker images | grep "<none>" | awk "{print \$3}")"
 
 cdf() {
   target=`osascript -e 'tell application "Finder" to if (count of Finder windows) > 0 then get POSIX path of (target of front Finder window as text)'`
