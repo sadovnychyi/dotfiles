@@ -119,6 +119,10 @@ export PATH="$HOME/.pyenv/versions/3.7.12/bin:$PATH"
 
 export OPENBLAS="$(brew --prefix openblas)"
 
+# http://eradman.com/entrproject/limits.html
+ulimit -n 200000
+ulimit -u 2048
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc' ]; then . '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'; fi
 
