@@ -9,3 +9,7 @@ build:
 	@tput sgr0
 	@exec /opt/homebrew/bin/zsh -l
 	@ln -fh nginx.conf /opt/homebrew/etc/nginx/nginx.conf
+
+sync:
+	@cp ~/Library/Application\ Support/Code/User/settings.json vscode/settings.json
+	@cp ~/Library/Application\ Support/Code/User/keybindings.json vscode/keybindings.json
