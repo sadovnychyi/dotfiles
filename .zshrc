@@ -117,6 +117,8 @@ export PATH="/opt/homebrew/opt/python@3.9/bin:$PATH"
 export PATH="/opt/homebrew/opt/python@3.8/bin:$PATH"
 export PATH="$HOME/.pyenv/versions/3.7.12/bin:$PATH"
 
+export OPENBLAS="$(brew --prefix openblas)"
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc' ]; then . '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'; fi
 
