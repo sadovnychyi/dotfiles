@@ -29,7 +29,7 @@ export PATH=$PATH:~/dotfiles/bin
 
 export SSH_AUTH_SOCK=$HOME/.sekey/ssh-agent.ssh
 
-export JAVA_HOME="$(/usr/libexec/java_home)"
+export JAVA_HOME="$(brew --prefix openjdk)/libexec/openjdk.jdk/Contents/Home"
 
 export PAGER=less
 
