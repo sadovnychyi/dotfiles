@@ -132,7 +132,7 @@ vpn_down() {
 # changes. Clears terminal after each run. Useful for tests.
 # Requires ripgrep and entr.
 run() {
-  _cmd="printf '\33c\e[3J' && echo $@ && $@"
+  _cmd="echo $@ && $@"
   # Use ripgrep to detect list of files that are not ignored by git.
-  rg --files | entr -s "$_cmd"
+  rg --files | entr -ccs "$_cmd"
 }
