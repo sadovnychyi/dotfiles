@@ -34,6 +34,7 @@
     "editor.rulers": [
         80
     ],
+    "editor.guides.indentation": false,
     "files.trimTrailingWhitespace": true,
     "files.trimFinalNewlines": true,
     "files.insertFinalNewline": true,
