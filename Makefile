@@ -1,13 +1,15 @@
 build:
-	@ln -fs `pwd`/.bash* `pwd`/.gitconfig ~
-	@ln -fs `pwd`/.*rc ~
+	@ln -fs `pwd`/.gitconfig ~
+	@ln -fs `pwd`/.pyrc ~
 	@ln -fs `pwd`/.zshrc ~
-	@ln -fs `pwd`/.zshenv ~
 	@ln -fs `pwd`/.hushlogin ~
-	@ln -fh vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
-	@ln -fh vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
+	@ln -fs `pwd`/.mackup.cfg ~
 	@tput setaf 6
 	@echo "Successfully created symbolic links in home directory."
 	@tput sgr0
-	@exec /usr/local/bin/zsh -l
-	@ln -fh nginx.conf /usr/local/etc/nginx/nginx.conf
+	@exec /opt/homebrew/bin/zsh -l
+	@ln -fh nginx.conf /opt/homebrew/etc/nginx/nginx.conf
+
+sync:
+	@cp ~/Library/Application\ Support/Code/User/settings.json vscode/settings.json
+	@cp ~/Library/Application\ Support/Code/User/keybindings.json vscode/keybindings.json

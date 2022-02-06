@@ -1,11 +1,6 @@
 {
     "editor.fontFamily": "\"PragmataPro Liga\", Monaco, Menlo, Consolas, \"Droid Sans Mono\", \"Inconsolata\", \"Courier New\"",
-    "telemetry.enableTelemetry": false,
-    "gitlens.advanced.messages": {
-        "suppressLineUncommittedWarning": true,
-        "suppressShowKeyBindingsNotice": true
-    },
-    "workbench.experimental.sidePanel.enabled": true,
+    "telemetry.telemetryLevel": "off",
     "workbench.colorCustomizations": {
         "sideBar.background": "#131313",
         "input.background": "#131313",
@@ -31,25 +26,21 @@
             "comments": "#747475"
         }
     },
-    "editor.renderIndentGuides": false,
     "editor.renderLineHighlight": "all",
     "editor.renderWhitespace": "boundary",
     "editor.tabSize": 2,
-    "gitlens.advanced.telemetry.enabled": false,
-    "gitlens.currentLine.enabled": false,
     "editor.links": false,
     "editor.wordWrap": "on",
-    "gitlens.codeLens.enabled": false,
     "editor.rulers": [
         80
     ],
+    "editor.guides.indentation": false,
     "files.trimTrailingWhitespace": true,
     "files.trimFinalNewlines": true,
     "files.insertFinalNewline": true,
     "editor.multiCursorModifier": "ctrlCmd",
     "javascript.preferences.importModuleSpecifier": "non-relative",
     "python.autoComplete.extraPaths": [],
-    "atomKeymap.promptV3Features": true,
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "terminal.explorerKind": "external",
@@ -66,7 +57,6 @@
     "terminal.integrated.copyOnSelection": true,
     "terminal.integrated.drawBoldTextInBrightColors": false,
     "diffEditor.renderSideBySide": false,
-    "python.workspaceSymbols.enabled": false,
     "workbench.editor.closeEmptyGroups": false,
     "workbench.editor.focusRecentEditorAfterClose": false,
     "workbench.settings.enableNaturalLanguageSearch": false,
@@ -78,9 +68,7 @@
     "editor.fontSize": 14,
     "git.confirmSync": false,
     "git.autofetch": true,
-    "workbench.sideBar.location": "left",
     "workbench.enableExperiments": false,
-    "telemetry.enableCrashReporter": false,
     "javascript.validate.enable": false,
     "python.linting.flake8Enabled": true,
     "go.useLanguageServer": true,
@@ -110,21 +98,18 @@
     "git.suggestSmartCommit": false,
     "scm.diffDecorationsGutterWidth": 2,
     "python.testing.autoTestDiscoverOnSaveEnabled": false,
-    "python.analysis.memory.keepLibraryLocalVariables": true,
-    "python.analysis.memory.keepLibraryAst": true,
-    "python.analysis.openFilesOnly": false,
     "python.experiments.enabled": false,
     "python.formatting.provider": "black",
     "python.testing.promptToConfigure": false,
-    "python.venvPath": "/Users/sadovnychyi/.local/share/virtualenvs",
-    "python.pythonPath": "/usr/local/opt/python/libexec/bin/python",
+    "python.venvPath": "~/.local/share/virtualenvs",
+    "python.pythonPath": "/opt/homebrew/bin/python3",
     "workbench.editor.enablePreview": true,
-    "python.linting.flake8Path": "/usr/local/bin/flake8",
+    "python.linting.flake8Path": "/opt/homebrew/bin/flake8",
     "python.formatting.blackArgs": [
         "--line-length=80",
         "--skip-string-normalization"
     ],
-    "python.formatting.blackPath": "/usr/local/bin/black",
+    "python.formatting.blackPath": "/opt/homebrew/bin/black",
     "eslint.format.enable": true,
     "[javascript]": {
         "editor.codeActionsOnSave": {
@@ -150,28 +135,12 @@
     "workbench.activityBar.visible": false,
     "editor.minimap.enabled": false,
     "activitusbar.activeColour": "#fff6f6",
-    "activitusbar.searchViewInPanel": true,
-    "python.analysis.disabled": [
-        "unresolved-import",
-        "variable-not-defined-globally",
-        "return-in-init",
-        "inherit-non-class",
-        "undefined-variable"
-    ],
     "cloudcode.autoDependencies": "off",
-    "todo-tree.tree.showScanModeButton": false,
-    "githubPullRequests.telemetry.enabled": false,
     "editor.columnSelection": false,
     "editor.acceptSuggestionOnCommitCharacter": false,
     "editor.roundedSelection": false,
     "editor.suggest.shareSuggestSelections": true,
     "editor.cursorStyle": "line-thin",
-    "vsonline.authentication.accountProvider": "Microsoft",
-    "cloudcode.gke": {
-        "projectIds": [
-            "lawinsidercontracts"
-        ]
-    },
     "activitusbar.views": [
         {
             "name": "explorer",
@@ -195,14 +164,11 @@
         }
     ],
     "activitusbar.inactiveColour": "#a8a8a8",
-    "chat.autoLaunchLiveShareChat": false,
     "liveshare.allowInvites": "all",
     "currentFilePath.defaultPathStartsFrom": "workSpace",
     "editor.snippetSuggestions": "bottom",
-    "vsonline.accountProvider": "Microsoft",
     "workbench.startupEditor": "newUntitledFile",
     "git.autoStash": true,
-    "codespaces.accountProvider": "Uninitialized",
     "scm.inputFontFamily": "editor",
     "[javascriptreact]": {
         "editor.defaultFormatter": "dbaeumer.vscode-eslint"
@@ -212,9 +178,6 @@
         "reportMissingImports": "none"
     },
     "workbench.editor.enablePreviewFromQuickOpen": false,
-    "stylelint.autoFixOnSave": true,
-    "stylelint.useLocal": true,
-    "python.showStartPage": false,
     "editor.formatOnSave": true,
     "git.enableCommitSigning": true,
     "editor.find.cursorMoveOnType": false,
@@ -226,17 +189,9 @@
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter-notebook"
     },
-    "spellright.configurationScope": "user",
-    "todo-tree.general.tags": [
-        "BUG",
-        "HACK",
-        "FIXME",
-        "TODO",
-        "XXX",
-        "[ ]",
-        "[x]"
-    ],
-    "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+    "stylelint.config": {
+        "syntax": "scss"
+    },
     "go.toolsManagement.autoUpdate": true,
     "breadcrumbs.enabled": false,
     "workbench.settings.useSplitJSON": true,
@@ -276,10 +231,5 @@
     "git.enableStatusBarSync": false,
     "git.fetchOnPull": true,
     "python.analysis.extraPaths": [],
-    "stylelint.validate": [
-        "css",
-        "less",
-        "postcss",
-        "scss"
-    ]
+    "security.workspace.trust.untrustedFiles": "open"
 }
