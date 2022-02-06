@@ -138,6 +138,12 @@ export PATH=$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH
 export PATH=$HOMEBREW_PREFIX/opt/findutils/libexec/gnubin:$PATH
 export PATH=$HOMEBREW_PREFIX/opt/gnu-sed/libexec/gnubin:$PATH
 
+export PATH=$HOMEBREW_PREFIX/opt/python@3.10/bin:$PATH
+export PATH=$HOMEBREW_PREFIX/opt/python@3.9/bin:$PATH
+export PATH=$HOMEBREW_PREFIX/opt/python@3.8/bin:$PATH
+# To replace `python` with default python3 from homebrew:
+# ln -f $HOMEBREW_PREFIX/bin/python3 $HOMEBREW_PREFIX/bin/python
+
 export OPENBLAS=$HOMEBREW_PREFIX/opt/openblas
 
 # Do not limit outputs from jest.
