@@ -99,10 +99,7 @@ setopt PUSHD_IGNORE_DUPS       # don’t push copies of the same directory onto 
 setopt PUSHD_MINUS             # `cd -3` now means "3 directory deeper in the stack"
 setopt SHARE_HISTORY           # write and import history on every command
 setopt EXTENDED_HISTORY        # write timestamps to history
-# setopt CORRECT_ALL           # try to correct the spelling of commands
-
-# https://github.com/robbyrussell/oh-my-zsh/issues/31
-unsetopt nomatch
+setopt CORRECT_ALL             # try to correct the spelling of commands
 
 local _startupTime=$((EPOCHREALTIME*1000-_start))
 
@@ -110,21 +107,24 @@ if (( _startupTime > 2048 )); then
   echo -E "${(%):-%F{red\}}[WARNING]: .zshrc took $((_startupTime))ms to load." >&2
 fi
 
+# Use GNU core utilities (those that come with macOS are outdated).
+export PATH=$HOMEBREW_PREFIX/coreutils/libexec/gnubin:$PATH
+export PATH=$HOMEBREW_PREFIX/findutils/libexec/gnubin:$PATH
+export PATH=$HOMEBREW_PREFIX/gnu-sed/libexec/gnubin:$PATH
 # python and python3 will point at python3.7, others are available at specific
 # versions (e.g. python3.9).
-export PATH="/opt/homebrew/opt/python@3.10/bin:$PATH"
-export PATH="/opt/homebrew/opt/python@3.9/bin:$PATH"
-export PATH="/opt/homebrew/opt/python@3.8/bin:$PATH"
-export PATH="$HOME/.pyenv/versions/3.7.12/bin:$PATH"
+export PATH=$HOMEBREW_PREFIX/python@3.10/bin:$PATH
+export PATH=$HOMEBREW_PREFIX/python@3.9/bin:$PATH
+export PATH=$HOMEBREW_PREFIX/python@3.8/bin:$PATH
 
-export OPENBLAS="$(brew --prefix openblas)"
+export OPENBLAS=$HOMEBREW_PREFIX/openblas
 
 # http://eradman.com/entrproject/limits.html
 ulimit -n 200000
 ulimit -u 2048
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc' ]; then . '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '$HOMEBREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc' ]; then . '$HOMEBREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc' ]; then . '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '$HOMEBREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc' ]; then . '$HOMEBREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'; fi

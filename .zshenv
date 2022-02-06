@@ -29,7 +29,7 @@ export PATH=$PATH:~/dotfiles/bin
 
 export SSH_AUTH_SOCK=$HOME/.sekey/ssh-agent.ssh
 
-export JAVA_HOME="$(brew --prefix openjdk)/libexec/openjdk.jdk/Contents/Home"
+export JAVA_HOME=$HOMEBREW_PREFIX/openjdk/libexec/openjdk.jdk/Contents/Home
 
 export PAGER=less
 
@@ -40,8 +40,6 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 
 export ENHANCD_DISABLE_DOT=1
 export ENHANCD_COMPLETION_BEHAVIOR=list
-
-export PIPENV_VENV_IN_PROJECT=1
 
 # This affects every invocation of `less`.
 #
