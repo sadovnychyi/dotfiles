@@ -134,29 +134,22 @@ fi
 
 export PATH=$PATH:~/dotfiles/bin
 # Use GNU core utilities (those that come with macOS are outdated).
-export PATH=$HOMEBREW_PREFIX/coreutils/libexec/gnubin:$PATH
-export PATH=$HOMEBREW_PREFIX/findutils/libexec/gnubin:$PATH
-export PATH=$HOMEBREW_PREFIX/gnu-sed/libexec/gnubin:$PATH
-# python and python3 will point at python3.7, others are available at specific
-# versions (e.g. python3.9).
-export PATH=$HOMEBREW_PREFIX/python@3.10/bin:$PATH
-export PATH=$HOMEBREW_PREFIX/python@3.9/bin:$PATH
-export PATH=$HOMEBREW_PREFIX/python@3.8/bin:$PATH
+export PATH=$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH
+export PATH=$HOMEBREW_PREFIX/opt/findutils/libexec/gnubin:$PATH
+export PATH=$HOMEBREW_PREFIX/opt/gnu-sed/libexec/gnubin:$PATH
 
-export OPENBLAS=$HOMEBREW_PREFIX/openblas
+export OPENBLAS=$HOMEBREW_PREFIX/opt/openblas
 
 # Do not limit outputs from jest.
 export DEBUG_PRINT_LIMIT=100000
 
 export PYTHONSTARTUP=$HOME/.pyrc
-export PYTHONIOENCODING='UTF-8'
-export PYTHONDONTWRITEBYTECODE=true
 
 export EDITOR=micro
 export CPATH=$CPATH:$HOMEBREW_PREFIX/include
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOMEBREW_PREFIX/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOMEBREW_PREFIX/opt/lib
 export SSH_AUTH_SOCK=$HOME/.sekey/ssh-agent.ssh
-export JAVA_HOME=$HOMEBREW_PREFIX/openjdk/libexec/openjdk.jdk/Contents/Home
+export JAVA_HOME=$HOMEBREW_PREFIX/opt/openjdk/libexec/openjdk.jdk/Contents/Home
 export PAGER=less
 # This affects every invocation of `less`.
 #
