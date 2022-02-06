@@ -2,7 +2,6 @@ build:
 	@ln -fs `pwd`/.gitconfig ~
 	@ln -fs `pwd`/.pyrc ~
 	@ln -fs `pwd`/.zshrc ~
-	@ln -fs `pwd`/.zshenv ~
 	@ln -fs `pwd`/.hushlogin ~
 	@tput setaf 6
 	@echo "Successfully created symbolic links in home directory."
