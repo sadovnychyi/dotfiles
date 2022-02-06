@@ -2,7 +2,6 @@ tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
 tap "homebrew/services"
-tap "romkatv/powerlevel10k"
 # AWS SDK for C++
 brew "aws-sdk-cpp"
 # Generic-purpose lossless compression algorithm by Google
@@ -49,6 +48,8 @@ brew "bazelisk"
 brew "boost"
 # Object-file caching compiler wrapper
 brew "ccache"
+# Statistics utility to count lines of code
+brew "cloc"
 # Cross-platform make
 brew "cmake"
 # GNU File, Shell, and Text utilities
