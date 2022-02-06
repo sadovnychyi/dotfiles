@@ -3,6 +3,7 @@ build:
 	@ln -fs `pwd`/.pyrc ~
 	@ln -fs `pwd`/.zshrc ~
 	@ln -fs `pwd`/.hushlogin ~
+	@ln -fs `pwd`/.mackup.cfg ~
 	@tput setaf 6
 	@echo "Successfully created symbolic links in home directory."
 	@tput sgr0
