@@ -124,6 +124,7 @@ setopt PUSHD_IGNORE_DUPS       # don’t push copies of the same directory onto 
 setopt PUSHD_MINUS             # `cd -3` now means "3 directory deeper in the stack"
 setopt SHARE_HISTORY           # write and import history on every command
 setopt EXTENDED_HISTORY        # write timestamps to history
+setopt +o NOMATCH              # don't complain about glob expansions within commands
 
 local _startupTime=$((EPOCHREALTIME*1000-_start))
 
