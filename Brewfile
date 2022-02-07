@@ -160,12 +160,9 @@ cask "iterm2"
 cask "licecap"
 # Tool to control external monitor brightness & volume
 cask "monitorcontrol"
-# QuickLook plug-in that renders source code with syntax highlighting
-cask "qlcolorcode"
 # QuickLook generator for Markdown files
 cask "qlmarkdown"
 cask "qlstephen"
-cask "quicklook-json"
 # Video game digital distribution service
 cask "steam"
 # Quicklook extension for source files
