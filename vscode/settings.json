@@ -132,7 +132,6 @@
     "editor.linkedEditing": true,
     "editor.semanticHighlighting.enabled": true,
     "search.smartCase": true,
-    "workbench.activityBar.visible": false,
     "editor.minimap.enabled": false,
     "activitusbar.activeColour": "#fff6f6",
     "cloudcode.autoDependencies": "off",
@@ -231,5 +230,6 @@
     "git.enableStatusBarSync": false,
     "git.fetchOnPull": true,
     "python.analysis.extraPaths": [],
-    "security.workspace.trust.untrustedFiles": "open"
+    "security.workspace.trust.untrustedFiles": "open",
+    "workbench.activityBar.visible": false
 }

@@ -13,3 +13,4 @@ build:
 sync:
 	@cp ~/Library/Application\ Support/Code/User/settings.json vscode/settings.json
 	@cp ~/Library/Application\ Support/Code/User/keybindings.json vscode/keybindings.json
+	@code --list-extensions > vscode/extensions.txt
