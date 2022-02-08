@@ -25,7 +25,8 @@ make
 # Requirements
 
 ```bash
-brew install git hub zsh ngrep fzf
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew bundle
 chsh -s $(which zsh)
 ```
 
