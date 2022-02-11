@@ -92,7 +92,6 @@
     "go.lintFlags": [
         "--fast"
     ],
-    "editor.codeLens": false,
     "vscode-home-assistant.hostUrl": "http://home.local:8123",
     "vscode-home-assistant.ignoreCertificates": true,
     "git.suggestSmartCommit": false,

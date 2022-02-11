@@ -7,9 +7,7 @@ golang.go
 googlecloudtools.cloudcode
 Gruntfuggly.activitusbar
 IgorSbitnev.error-gutters
-lei.theme-chromodynamics
 magicstack.Chromodynamics
-magicstack.MagicPython
 ms-python.python
 ms-python.vscode-pylance
 ms-toolsai.jupyter
