@@ -141,9 +141,9 @@ export PATH=$PATH:$HOMEBREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud
 
 export PATH=$HOMEBREW_PREFIX/opt/python@3.10/bin:$PATH
 export PATH=$HOMEBREW_PREFIX/opt/python@3.9/bin:$PATH
-export PATH=$HOMEBREW_PREFIX/opt/python@3.8/bin:$PATH
 # To replace `python` with default python3 from homebrew:
 # ln -f $HOMEBREW_PREFIX/bin/python3 $HOMEBREW_PREFIX/bin/python
+# ln -f $HOMEBREW_PREFIX/bin/pip3 $HOMEBREW_PREFIX/bin/pip
 
 export OPENBLAS=$HOMEBREW_PREFIX/opt/openblas
 
