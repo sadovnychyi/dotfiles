@@ -132,7 +132,7 @@ if (( _startupTime > 2048 )); then
   echo -E "${(%):-%F{red\}}[WARNING]: .zshrc took $((_startupTime))ms to load." >&2
 fi
 
-export PATH=$PATH:~/dotfiles/bin
+export PATH=~/dotfiles/bin:$PATH
 # Use GNU core utilities (those that come with macOS are outdated).
 export PATH=$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH
 export PATH=$HOMEBREW_PREFIX/opt/findutils/libexec/gnubin:$PATH

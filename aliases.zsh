@@ -93,34 +93,6 @@ cdf() {
   fi
 }
 
-python() {
-  if [[ -d ./.venv ]] ; then
-    .venv/bin/python $@
-  else
-     /opt/homebrew/bin/python $@
-  fi
-}
-
-pytest() {
-  if [[ -d ./.venv ]] ; then
-    .venv/bin/pytest $@
-  else
-     /opt/homebrew/bin/pytest $@
-  fi
-}
-
-pip() {
-  if [[ -d ./.venv ]] ; then
-    .venv/bin/pip $@
-  else
-     /opt/homebrew/bin/pip $@
-  fi
-}
-
-docflow() {
-  .venv/bin/python -m docflow $@
-}
-
 
 function isnt_connected () {
   scutil --nc status VPN | sed -n 1p | grep -qv Connected
