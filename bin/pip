@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if [[ -d ./.venv ]] ; then
-  .venv/bin/pip $@
+  .venv/bin/pip "$@"
 else
-  $HOMEBREW_PREFIX/bin/pip $@
+  $HOMEBREW_PREFIX/bin/pip "$@"
 fi

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if [[ -d ./.venv ]] ; then
-  .venv/bin/python $@
+  .venv/bin/python "$@"
 else
-  $HOMEBREW_PREFIX/bin/python $@
+  $HOMEBREW_PREFIX/bin/python "$@"
 fi
