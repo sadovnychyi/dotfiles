@@ -132,6 +132,8 @@ if (( _startupTime > 2048 )); then
   echo -E "${(%):-%F{red\}}[WARNING]: .zshrc took $((_startupTime))ms to load." >&2
 fi
 
+export CPPFLAGS="-I$HOMEBREW_PREFIX/include -L$HOMEBREW_PREFIX/lib"
+
 export PATH=~/dotfiles/bin:$PATH
 # Use GNU core utilities (those that come with macOS are outdated).
 export PATH=$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH
