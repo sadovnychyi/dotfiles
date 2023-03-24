@@ -161,7 +161,7 @@ export SSH_AUTH_SOCK=$HOME/.sekey/ssh-agent.ssh
 export JAVA_HOME=$HOMEBREW_PREFIX/opt/openjdk/libexec/openjdk.jdk/Contents/Home
 export PAGER=less
 
-export LOLCOMMITS_DELAY=1
+export LOLCOMMITS_DELAY=2
 export LOLCOMMITS_FORK=1
 export LOLCOMMITS_STEALTH=1
 
