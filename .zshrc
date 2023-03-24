@@ -160,6 +160,11 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOMEBREW_PREFIX/opt/lib
 export SSH_AUTH_SOCK=$HOME/.sekey/ssh-agent.ssh
 export JAVA_HOME=$HOMEBREW_PREFIX/opt/openjdk/libexec/openjdk.jdk/Contents/Home
 export PAGER=less
+
+export LOLCOMMITS_DELAY=1
+export LOLCOMMITS_FORK=1
+export LOLCOMMITS_STEALTH=1
+
 # This affects every invocation of `less`.
 #
 #   -i   case-insensitive search unless search string contains uppercase letters
