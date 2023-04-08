@@ -159,6 +159,7 @@ export CPATH=$CPATH:$HOMEBREW_PREFIX/include
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOMEBREW_PREFIX/opt/lib
 export SSH_AUTH_SOCK=$HOME/.sekey/ssh-agent.ssh
 export JAVA_HOME=$HOMEBREW_PREFIX/opt/openjdk/libexec/openjdk.jdk/Contents/Home
+export ES_JAVA_HOME=$HOMEBREW_PREFIX/opt/openjdk/libexec/openjdk.jdk/Contents/Home
 export PAGER=less
 
 export LOLCOMMITS_DELAY=1
