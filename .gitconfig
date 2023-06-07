@@ -30,6 +30,8 @@
 	prune = true
 [commit]
 	gpgsign = true
+[rebase]
+    autosquash = true
 [pager]
 	diff = false
 [branch]
