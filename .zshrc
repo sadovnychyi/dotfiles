@@ -152,6 +152,9 @@ export OPENBLAS=$HOMEBREW_PREFIX/opt/openblas
 # Do not limit outputs from jest.
 export DEBUG_PRINT_LIMIT=100000
 
+# Give nodejs (a lot) more memory.
+export NODE_OPTIONS="--max-old-space-size=65536"
+
 export PYTHONSTARTUP=$HOME/.pyrc
 
 export EDITOR=micro
