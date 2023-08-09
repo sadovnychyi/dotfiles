@@ -133,6 +133,7 @@ if (( _startupTime > 2048 )); then
 fi
 
 export CPPFLAGS="-I$HOMEBREW_PREFIX/include -L$HOMEBREW_PREFIX/lib"
+export ARCHFLAGS="-arch arm64"
 
 export PATH=~/dotfiles/bin:$PATH
 # Use GNU core utilities (those that come with macOS are outdated).
