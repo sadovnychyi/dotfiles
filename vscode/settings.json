@@ -45,7 +45,6 @@
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "terminal.explorerKind": "external",
     "debug.internalConsoleOptions": "neverOpen",
-    "diffEditor.ignoreTrimWhitespace": false,
     "terminal.integrated.fontSize": 14,
     "files.exclude": {
         "**/.classpath": true,
@@ -56,7 +55,6 @@
     "terminal.integrated.cursorStyle": "line",
     "terminal.integrated.copyOnSelection": true,
     "terminal.integrated.drawBoldTextInBrightColors": false,
-    "diffEditor.renderSideBySide": false,
     "workbench.editor.closeEmptyGroups": false,
     "workbench.editor.focusRecentEditorAfterClose": false,
     "workbench.settings.enableNaturalLanguageSearch": false,
@@ -69,19 +67,17 @@
     "git.confirmSync": false,
     "git.autofetch": true,
     "workbench.enableExperiments": false,
-    "javascript.validate.enable": false,
-    "python.linting.flake8Enabled": true,
     "go.useLanguageServer": true,
     "[go]": {
         "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
-            "source.organizeImports": true,
+            "source.organizeImports": "explicit"
         },
     },
     "[go.mod]": {
         "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
-            "source.organizeImports": true,
+            "source.organizeImports": "explicit"
         },
     },
     "go.buildOnSave": "off",
@@ -98,21 +94,13 @@
     "scm.diffDecorationsGutterWidth": 2,
     "python.testing.autoTestDiscoverOnSaveEnabled": false,
     "python.experiments.enabled": false,
-    "python.formatting.provider": "black",
     "python.testing.promptToConfigure": false,
     "python.venvPath": "~/.local/share/virtualenvs",
-    "python.pythonPath": "/opt/homebrew/bin/python3",
     "workbench.editor.enablePreview": true,
-    "python.linting.flake8Path": "/opt/homebrew/bin/flake8",
-    "python.formatting.blackArgs": [
-        "--line-length=80",
-        "--skip-string-normalization"
-    ],
-    "python.formatting.blackPath": "/opt/homebrew/bin/black",
     "eslint.format.enable": true,
     "[javascript]": {
         "editor.codeActionsOnSave": {
-            "source.fixAll.eslint": true
+            "source.fixAll.eslint": "explicit"
         },
         "editor.defaultFormatter": "dbaeumer.vscode-eslint",
         "editor.formatOnSave": true
@@ -121,7 +109,13 @@
         "editor.formatOnPaste": false,
         "editor.formatOnSave": true,
         "editor.insertSpaces": true,
-        "editor.tabSize": 4
+        "editor.tabSize": 4,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.fixAll": "explicit",
+            "source.organizeImports": "explicit"
+        },
+        "editor.defaultFormatter": "charliermarsh.ruff",
     },
     "[yaml]": {
         "editor.formatOnSave": false,
@@ -145,10 +139,6 @@
             "codicon": "files"
         },
         {
-            "name": "search",
-            "codicon": "search"
-        },
-        {
             "name": "scm",
             "codicon": "source-control"
         },
@@ -159,10 +149,13 @@
         {
             "name": "extensions",
             "codicon": "extensions"
-        }
+        },
+        {
+            "name": "search",
+            "codicon": "search"
+        },
     ],
     "activitusbar.inactiveColour": "#a8a8a8",
-    "liveshare.allowInvites": "all",
     "currentFilePath.defaultPathStartsFrom": "workSpace",
     "editor.snippetSuggestions": "bottom",
     "workbench.startupEditor": "newUntitledFile",
@@ -180,10 +173,6 @@
     "git.enableCommitSigning": true,
     "editor.find.cursorMoveOnType": false,
     "debug.console.fontFamily": "\"PragmataPro Liga\", Monaco, Menlo, Consolas, \"Droid Sans Mono\", \"Inconsolata\", \"Courier New\"",
-    "codespaces.enableSubmoduleCloning": true,
-    "jupyter.addGotoCodeLenses": false,
-    "jupyter.enableCellCodeLens": false,
-    "jupyter.sendSelectionToInteractiveWindow": false,
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter-notebook"
     },
@@ -191,7 +180,6 @@
         "syntax": "scss"
     },
     "go.toolsManagement.autoUpdate": true,
-    "breadcrumbs.enabled": false,
     "workbench.settings.useSplitJSON": true,
     "workbench.editor.highlightModifiedTabs": true,
     "workbench.editor.decorations.badges": false,
@@ -207,9 +195,10 @@
     "editor.inlineSuggest.enabled": true,
     "github.copilot.enable": {
         "*": true,
-        "yaml": true,
         "plaintext": true,
-        "markdown": true
+        "markdown": true,
+        "scminput": false,
+        "yaml": true
     },
     "notebook.cellToolbarLocation": {
         "default": "right",
@@ -230,5 +219,59 @@
     "git.fetchOnPull": true,
     "python.analysis.extraPaths": [],
     "security.workspace.trust.untrustedFiles": "open",
-    "workbench.activityBar.visible": false
+    "liveshare.launcherClient": "web",
+    "git.mergeEditor": true,
+    "python.analysis.inlayHints.functionReturnTypes": true,
+    "python.analysis.inlayHints.variableTypes": true,
+    "stylelint.reportNeedlessDisables": true,
+    "stylelint.reportInvalidScopeDisables": true,
+    "scss.format.spaceAroundSelectorSeparator": true,
+    "githubPullRequests.pullBranch": "never",
+    "editor.stickyScroll.enabled": true,
+    "jupyter.interactiveWindow.textEditor.executeSelection": false,
+    "jupyter.interactiveWindow.codeLens.enable": false,
+    "jupyter.interactiveWindow.codeLens.enableGotoCell": false,
+    "ruff.path": [
+        "/opt/homebrew/bin/ruff"
+    ],
+    "ruff.interpreter": [
+        "/opt/homebrew/bin/python"
+    ],
+    "editor.inlayHints.enabled": "offUnlessPressed",
+    "editor.codeActionsOnSave": {},
+    "search.searchEditor.defaultNumberOfContextLines": null,
+    "search.searchEditor.reusePriorSearchConfiguration": true,
+    "cloudcode.project": "lawinsidercontracts",
+    "workbench.activityBar.location": "hidden",
+    "editor.multiDocumentOccurrencesHighlight": true,
+    "cloudcode.duetAI.enable": true,
+    "black-formatter.args": [
+        "--skip-string-normalization",
+        "--skip-magic-trailing-comma",
+        "--line-length=80"
+    ],
+    "cloudcode.duetAI.project": "lawinsidercontracts",
+    "git.openRepositoryInParentFolders": "never",
+    "[go][go.mod]": {
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        }
+    },
+    "diffEditor.experimental.showMoves": true,
+    "workbench.layoutControl.enabled": false,
+    "window.commandCenter": false,
+    "window.titleBarStyle": "native",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "[scss]": {
+        "editor.suggest.insertMode": "replace"
+    },
+    "scss.format.enable": false,
+    "stylelint.validate": [
+        "css",
+        "less",
+        "postcss",
+        "scss"
+    ],
+    "evenBetterToml.formatter.indentString": "  ",
+    "liveshare.accessibility.voiceEnabled": false,
 }
