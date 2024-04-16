@@ -59,16 +59,6 @@
     "command": "-workbench.action.gotoSymbol"
   },
   {
-    "key": "s",
-    "command": "git.stageSelectedRanges",
-    "when": "isInDiffEditor && editorTextFocus"
-  },
-  {
-    "key": "u",
-    "command": "git.unstageSelectedRanges",
-    "when": "isInDiffEditor && editorTextFocus"
-  },
-  {
     "key": "ctrl+shift+tab",
     "command": "workbench.action.previousEditorInGroup"
   },
@@ -83,5 +73,25 @@
   {
     "key": "cmd+k alt+cmd+right",
     "command": "-workbench.action.nextEditorInGroup"
+  },
+  {
+    "key": "shift+u",
+    "command": "git.unstageSelectedRanges",
+    "when": "isInDiffEditor"
+  },
+  {
+    "key": "cmd+k cmd+n",
+    "command": "-git.unstageSelectedRanges",
+    "when": "isInDiffEditor"
+  },
+  {
+    "key": "shift+s",
+    "command": "git.stageSelectedRanges",
+    "when": "isInDiffEditor"
+  },
+  {
+    "key": "cmd+k alt+cmd+s",
+    "command": "-git.stageSelectedRanges",
+    "when": "isInDiffEditor"
   }
 ]
