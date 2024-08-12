@@ -149,6 +149,8 @@ export PATH=$HOMEBREW_PREFIX/opt/python@3.9/bin:$PATH
 # ln -f $HOMEBREW_PREFIX/bin/pip3 $HOMEBREW_PREFIX/bin/pip
 
 export OPENBLAS=$HOMEBREW_PREFIX/opt/openblas
+export LDFLAGS="-L$HOMEBREW_PREFIX/opt/libomp/lib"
+export CPPFLAGS="-I$HOMEBREW_PREFIX/opt/libomp/include"
 
 # Do not limit outputs from jest.
 export DEBUG_PRINT_LIMIT=100000
