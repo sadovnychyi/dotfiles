@@ -141,6 +141,7 @@ export PATH=$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH
 export PATH=$HOMEBREW_PREFIX/opt/findutils/libexec/gnubin:$PATH
 export PATH=$HOMEBREW_PREFIX/opt/gnu-sed/libexec/gnubin:$PATH
 export PATH=$PATH:$HOMEBREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin
+export PATH=$PATH:$HOMEBREW_PREFIX/lib/ruby/gems/3.3.0/bin
 
 export PATH=$HOMEBREW_PREFIX/opt/python@3.10/bin:$PATH
 export PATH=$HOMEBREW_PREFIX/opt/python@3.9/bin:$PATH
