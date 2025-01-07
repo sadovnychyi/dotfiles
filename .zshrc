@@ -143,11 +143,7 @@ export PATH=$HOMEBREW_PREFIX/opt/gnu-sed/libexec/gnubin:$PATH
 export PATH=$PATH:$HOMEBREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin
 export PATH=$PATH:$HOMEBREW_PREFIX/lib/ruby/gems/3.3.0/bin
 
-export PATH=$HOMEBREW_PREFIX/opt/python@3.10/bin:$PATH
-export PATH=$HOMEBREW_PREFIX/opt/python@3.9/bin:$PATH
-# To replace `python` with default python3 from homebrew:
-# ln -f $HOMEBREW_PREFIX/bin/python3 $HOMEBREW_PREFIX/bin/python
-# ln -f $HOMEBREW_PREFIX/bin/pip3 $HOMEBREW_PREFIX/bin/pip
+export PATH=$HOMEBREW_PREFIX/opt/python@3.12/libexec/bin:$PATH
 
 export OPENBLAS=$HOMEBREW_PREFIX/opt/openblas
 export LDFLAGS="-L$HOMEBREW_PREFIX/opt/libomp/lib"
