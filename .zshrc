@@ -135,7 +135,6 @@ fi
 export CPPFLAGS="-I$HOMEBREW_PREFIX/include -L$HOMEBREW_PREFIX/lib"
 export ARCHFLAGS="-arch arm64"
 
-export PATH=~/dotfiles/bin:$PATH
 # Use GNU core utilities (those that come with macOS are outdated).
 export PATH=$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH
 export PATH=$HOMEBREW_PREFIX/opt/findutils/libexec/gnubin:$PATH
@@ -144,6 +143,8 @@ export PATH=$PATH:$HOMEBREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud
 export PATH=$PATH:$HOMEBREW_PREFIX/lib/ruby/gems/3.3.0/bin
 
 export PATH=$HOMEBREW_PREFIX/opt/python@3.12/libexec/bin:$PATH
+
+export PATH=~/dotfiles/bin:$PATH
 
 export OPENBLAS=$HOMEBREW_PREFIX/opt/openblas
 export LDFLAGS="-L$HOMEBREW_PREFIX/opt/libomp/lib"
