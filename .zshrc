@@ -169,6 +169,7 @@ export PAGER=less
 export LOLCOMMITS_DELAY=1
 export LOLCOMMITS_FORK=1
 export LOLCOMMITS_STEALTH=1
+export LOLCOMMITS_ANIMATE=2
 
 # This affects every invocation of `less`.
 #
