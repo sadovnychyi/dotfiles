@@ -142,9 +142,14 @@ export PATH=$HOMEBREW_PREFIX/opt/gnu-sed/libexec/gnubin:$PATH
 export PATH=$PATH:$HOMEBREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin
 export PATH=$PATH:$HOMEBREW_PREFIX/lib/ruby/gems/3.3.0/bin
 
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
+
 export PATH=$HOMEBREW_PREFIX/opt/python@3.12/libexec/bin:$PATH
 
 export PATH=~/dotfiles/bin:$PATH
+export PATH=~/contracts/bin:$PATH
 
 export OPENBLAS=$HOMEBREW_PREFIX/opt/openblas
 export LDFLAGS="-L$HOMEBREW_PREFIX/opt/libomp/lib"
@@ -169,7 +174,7 @@ export PAGER=less
 export LOLCOMMITS_DELAY=1
 export LOLCOMMITS_FORK=1
 export LOLCOMMITS_STEALTH=1
-export LOLCOMMITS_ANIMATE=2
+# export LOLCOMMITS_ANIMATE=2
 
 # This affects every invocation of `less`.
 #
@@ -191,3 +196,4 @@ if [ -f '$HOMEBREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path
 if [ -f '$HOMEBREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc' ]; then . '$HOMEBREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'; fi
 
 eval "$(github-copilot-cli alias -- "$0")"
+export PATH="$HOME/.local/bin:$PATH"
