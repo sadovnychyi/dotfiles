@@ -148,7 +148,7 @@ eval "$(pyenv init - zsh)"
 
 export PATH=$HOMEBREW_PREFIX/opt/python@3.12/libexec/bin:$PATH
 
-export PATH=$HOMEBREW_PREFIX/opt/ruby/bin:$PATH
+export PATH=$HOMEBREW_PREFIX/opt/ruby@3.4/bin:$PATH
 export PATH="$(gem environment gemdir)/bin:$PATH"
 
 export PATH=~/dotfiles/bin:$PATH
