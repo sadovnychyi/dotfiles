@@ -140,7 +140,6 @@ export PATH=$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH
 export PATH=$HOMEBREW_PREFIX/opt/findutils/libexec/gnubin:$PATH
 export PATH=$HOMEBREW_PREFIX/opt/gnu-sed/libexec/gnubin:$PATH
 export PATH=$PATH:$HOMEBREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin
-export PATH=$PATH:$HOMEBREW_PREFIX/lib/ruby/gems/3.3.0/bin
 
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
@@ -148,8 +147,7 @@ eval "$(pyenv init - zsh)"
 
 export PATH=$HOMEBREW_PREFIX/opt/python@3.12/libexec/bin:$PATH
 
-export PATH=$HOMEBREW_PREFIX/opt/ruby@3.4/bin:$PATH
-export PATH="$(gem environment gemdir)/bin:$PATH"
+eval "$(rbenv init - zsh)"
 
 export PATH=~/dotfiles/bin:$PATH
 export PATH=~/contracts/bin:$PATH
