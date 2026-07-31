@@ -1,0 +1,20 @@
+#!/bin/sh
+
+git_dir=${GIT_DIR-$(git rev-parse --git-dir)}
+if [ -d "$git_dir/rebase-merge" ] || [ "${LOLCOMMITS_CAPTURE_DISABLED:-}" = "true" ]; then
+    exit 0
+fi
+
+script_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+PATH="$HOME/.rbenv/shims:$PATH"
+if [ -n "${HOMEBREW_PREFIX:-}" ]; then
+    PATH="$HOMEBREW_PREFIX/bin:$PATH"
+fi
+export PATH
+
+# Non-interactive callers may terminate background hook processes when they exit.
+if [ ! -t 1 ]; then
+    unset LOLCOMMITS_FORK
+fi
+
+RUBYOPT="-r$script_dir/worktree.rb${RUBYOPT:+ $RUBYOPT}" lolcommits --capture

@@ -1,0 +1,61 @@
+#!/bin/sh
+
+# Usage: lolcommits/install [repository]
+
+set -eu
+
+if [ "$#" -gt 1 ]; then
+    echo "Usage: $0 [repository]" >&2
+    exit 2
+fi
+
+repository=${1:-.}
+hook=$(git -C "$repository" rev-parse --path-format=absolute --git-path hooks/post-commit)
+script_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+capture=$script_dir/capture
+begin='### managed lolcommits hook (begin) ###'
+end='### managed lolcommits hook (end) ###'
+
+if [ -L "$hook" ]; then
+    echo "Refusing to replace existing hook symlink: $hook -> $(readlink "$hook")" >&2
+    exit 1
+fi
+if [ -s "$hook" ] && ! head -n 1 "$hook" | grep -q '^#!'; then
+    echo "Refusing to modify hook without a shebang: $hook" >&2
+    exit 1
+fi
+
+mkdir -p "$(dirname "$hook")"
+temporary=$(mktemp "${TMPDIR:-/tmp}/lolcommits-hook.XXXXXX")
+trap 'rm -f "$temporary"' EXIT HUP INT TERM
+
+if [ -e "$hook" ]; then
+    awk -v managed_begin="$begin" -v managed_end="$end" '
+        $0 == managed_begin || $0 ~ /^###[[:space:]]+lolcommits hook \(begin\) ###$/ {
+            skip = 1
+            next
+        }
+        skip && ($0 == managed_end || $0 ~ /^###[[:space:]]+lolcommits hook \(end\) ###$/) {
+            skip = 0
+            next
+        }
+        !skip { lines[++count] = $0 }
+        END {
+            if (skip) exit 3
+            while (count && lines[count] == "") count--
+            for (i = 1; i <= count; i++) print lines[i]
+        }
+    ' "$hook" > "$temporary"
+else
+    printf '#!/bin/sh\n' > "$temporary"
+fi
+
+{
+    cat "$temporary"
+    printf '\n\n%s\n' "$begin"
+    printf '"%s"\n' "$capture"
+    printf '%s\n' "$end"
+} > "$hook"
+chmod +x "$hook"
+
+echo "Installed lolcommits hook in $hook"
