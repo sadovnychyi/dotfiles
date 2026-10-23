@@ -68,7 +68,7 @@
 # Now there are no warnings and PATH stays unchanged.
 function run-tracked() {
   local -i finished=0
-  local traps1 traps2
+  local traps_file traps1 traps2
 
   {
     local _start=$((EPOCHREALTIME*1000))
@@ -84,14 +84,20 @@ function run-tracked() {
 
     local -a cmd=("${(@)*:$OPTIND}")
 
-    local -A widgets1=(${(kv)widgets})
-    local -A functions1=(${(kv)functions})
-    local env1 && env1=$(typeset -x)                                || return
-    local opts1 && opts1=$(setopt)                                  || return
-    local aliases1 && aliases1=$(alias -rL; alias -gL; alias -sL)   || return
-    local bindings1 && bindings1=$(bindkey -L)                      || return
-    traps1=$(command mktemp "${TMPDIR:-/tmp}"/traps1.XXXXXXXXXX)    || return
-    trap >$traps1                                                   || return
+    local -A widgets1 functions1
+    local env1 opts1 aliases1 bindings1
+    [[ $flags[w] == '+' ]] || widgets1=(${(kv)widgets})
+    [[ $flags[f] == '+' ]] || functions1=(${(kv)functions})
+    [[ $flags[e] == '+' ]] || { env1=$(typeset -x) || return; }
+    [[ $flags[o] == '+' ]] || { opts1=$(setopt) || return; }
+    [[ $flags[a] == '+' ]] || { aliases1=$(alias -rL; alias -gL; alias -sL) || return; }
+    [[ $flags[b] == '+' ]] || { bindings1=$(bindkey -L) || return; }
+    if [[ $flags[t] != '+' ]]; then
+      # Command substitution can discard inherited traps; capture in this shell.
+      traps_file=$(command mktemp "${TMPDIR:-/tmp}"/traps.XXXXXXXXXX) || return
+      trap >$traps_file                                            || return
+      traps1=$(<$traps_file)
+    fi
 
     "${(@)cmd}"
     local ret=$?
@@ -175,13 +181,13 @@ function run-tracked() {
 
     if [[ $flags[t] == - ]]; then
       trap -                                                        || return
-      eval $(<$traps1)                                              || return
+      eval "$traps1"                                               || return
     elif [[ $flags[t] != '+' ]]; then
-      traps2=$(mktemp "${TMPDIR:-/tmp}"/traps2.XXXXXXXXXX)          || return
-      trap >$traps2                                                 || return
-      if ! diff -q $traps1 $traps2 &>/dev/null; then
+      trap >$traps_file                                             || return
+      traps2=$(<$traps_file)
+      if [[ $traps1 != $traps2 ]]; then
         echo -E "${(%):-%F{red\}}[WARNING]: traps changed by: ${(@q-)cmd}${(%):-%f}" >&2
-        command diff $traps1 $traps2 | command awk '{print "  " $0}'
+        command diff <(print -r -- "$traps1") <(print -r -- "$traps2") | command awk '{print "  " $0}'
       fi
     fi
 
@@ -196,8 +202,7 @@ function run-tracked() {
     if (( ! finished )); then
       echo -E "${(%):-%F{red\}}[WARNING]: run-tracked internal error: ${(@q-)*}${(%):-%f}" >&2
     fi
-    [[ -z $traps1 ]] || rm -f $traps1
-    [[ -z $traps2 ]] || rm -f $traps2
+    [[ -z $traps_file ]] || rm -f $traps_file
   }
 }
 
