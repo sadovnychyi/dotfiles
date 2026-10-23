@@ -16,10 +16,12 @@ ZSH with powerlevel10k, prompt renders under 40ms. iTerm2 with some [custom keyb
 
 # Installation
 
-You only need to execute a makefile which will symlink all files in your home directory **replacing any existing files**.
+After installing the requirements below, initialize the plugins and run the makefile. It creates symlinks in your home directory and Homebrew's nginx directory, **replacing any existing files**.
 
 ```bash
+git submodule update --init --recursive
 make
+exec zsh -l
 ```
 
 # Requirements

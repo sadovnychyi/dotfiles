@@ -20,8 +20,6 @@ export GREP_OPTIONS="--color=auto"
 export CLICOLOR=1
 export GIT_PS1_SHOWDIRTYSTATE=1
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
-
 # http://eradman.com/entrproject/limits.html
 ulimit -n 200000
 ulimit -u 2048
@@ -139,18 +137,7 @@ export ARCHFLAGS="-arch arm64"
 export PATH=$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH
 export PATH=$HOMEBREW_PREFIX/opt/findutils/libexec/gnubin:$PATH
 export PATH=$HOMEBREW_PREFIX/opt/gnu-sed/libexec/gnubin:$PATH
-export PATH=$PATH:$HOMEBREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin
-
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - zsh)"
-
-export PATH=$HOMEBREW_PREFIX/opt/python@3.12/libexec/bin:$PATH
-
 eval "$(rbenv init - zsh)"
-
-export PATH=~/dotfiles/bin:$PATH
-export PATH=~/contracts/bin:$PATH
 
 export OPENBLAS=$HOMEBREW_PREFIX/opt/openblas
 export LDFLAGS="-L$HOMEBREW_PREFIX/opt/libomp/lib"
@@ -192,9 +179,9 @@ if (( $#commands[(i)lesspipe(|.sh)] )); then
 fi
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '$HOMEBREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc' ]; then . '$HOMEBREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f "$HOMEBREW_PREFIX/share/google-cloud-sdk/path.zsh.inc" ]; then . "$HOMEBREW_PREFIX/share/google-cloud-sdk/path.zsh.inc"; fi
 # The next line enables shell command completion for gcloud.
-if [ -f '$HOMEBREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc' ]; then . '$HOMEBREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f "$HOMEBREW_PREFIX/share/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOMEBREW_PREFIX/share/google-cloud-sdk/completion.zsh.inc"; fi
 
 eval "$(github-copilot-cli alias -- "$0")"
 export PATH="$HOME/.local/bin:$PATH"

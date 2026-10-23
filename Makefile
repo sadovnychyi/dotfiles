@@ -1,17 +1,16 @@
+HOMEBREW_PREFIX ?= /opt/homebrew
+
+.PHONY: build sync
+
 build:
-	@ln -fs `pwd`/.gitconfig ~
-	@ln -fs `pwd`/.pyrc ~
-	@ln -fs `pwd`/.zshrc ~
-	@ln -fs `pwd`/.hushlogin ~
-	@ln -fs `pwd`/.mackup.cfg ~
-	@tput setaf 6
-	@echo "Successfully created symbolic links in home directory."
-	@tput sgr0
-	@exec /opt/homebrew/bin/zsh -l
-	@ln -fh nginx.conf /opt/homebrew/etc/nginx/nginx.conf
-	# To replace `python` with default python3 from homebrew:
-	ln -f $HOMEBREW_PREFIX/bin/python3 $HOMEBREW_PREFIX/bin/python
-	ln -f $HOMEBREW_PREFIX/bin/pip3 $HOMEBREW_PREFIX/bin/pip
+	@ln -sfn "$(CURDIR)/.gitconfig" "$(HOME)/.gitconfig"
+	@ln -sfn "$(CURDIR)/.pyrc" "$(HOME)/.pyrc"
+	@ln -sfn "$(CURDIR)/.zprofile" "$(HOME)/.zprofile"
+	@ln -sfn "$(CURDIR)/.zshrc" "$(HOME)/.zshrc"
+	@ln -sfn "$(CURDIR)/.hushlogin" "$(HOME)/.hushlogin"
+	@ln -sfn "$(CURDIR)/.mackup.cfg" "$(HOME)/.mackup.cfg"
+	@ln -sfn "$(CURDIR)/nginx.conf" "$(HOMEBREW_PREFIX)/etc/nginx/nginx.conf"
+	@echo "Created symbolic links. Run 'exec zsh -l' to reload your shell."
 
 sync:
 	@cp ~/Library/Application\ Support/Code/User/settings.json vscode/settings.json
