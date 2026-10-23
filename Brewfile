@@ -1,177 +1,178 @@
-tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/core"
-tap "homebrew/services"
-# AWS SDK for C++
-brew "aws-sdk-cpp"
-# Generic-purpose lossless compression algorithm by Google
+tap "blackmann/brew"
+tap "elastic/tap"
+tap "notprotonnot/notproton"
+tap "stripe/stripe-cli"
+tap "wader/tap"
 brew "brotli"
-# Asynchronous DNS library
-brew "c-ares"
-# Zstandard is a real-time compression algorithm
-brew "zstd"
-# Application-level logging library
-brew "glog"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@1.1"
-# Protocol buffers (Google's data interchange format)
-brew "protobuf"
-# Next generation open source RPC library and framework
-brew "grpc"
-# Extremely Fast Compression algorithm
 brew "lz4"
-# Optimized BLAS library
-brew "openblas"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.9"
-# Package for scientific computing with Python
-brew "numpy", link: false
-# JSON parser/generator for C++ with SAX and DOM style APIs
-brew "rapidjson"
-# Compression/decompression library aiming for high speed
-brew "snappy"
-# Framework for scalable cross-language services development
-brew "thrift"
-# Columnar in-memory analytics layer designed to accelerate big data
-brew "apache-arrow"
-# Tool for generating GNU Standards-compliant Makefiles
-brew "automake"
-# Clone of cat(1) with syntax highlighting and Git integration
-brew "bat"
-# Development kit for the Java programming language
-brew "openjdk@11"
-# Google's own build tool
-brew "bazel", link: false
-# User-friendly launcher for Bazel
-brew "bazelisk"
-# Collection of portable C++ source libraries
-brew "boost"
-# Object-file caching compiler wrapper
-brew "ccache"
-# Statistics utility to count lines of code
-brew "cloc"
-# Cross-platform make
-brew "cmake"
-# GNU File, Shell, and Text utilities
-brew "coreutils"
-# Good-lookin' diffs with diff-highlight and more
-brew "diff-so-fancy"
-# Run arbitrary commands when files change
-brew "entr"
-# Collection of GNU find, xargs, and locate
-brew "findutils"
-# Serialization library for C++, supporting Java, C#, and Go
-brew "flatbuffers"
-# Software library to render fonts
-brew "freetype"
-# Command-line fuzzy finder written in Go
-brew "fzf"
-# Distributed revision control system
-brew "git"
-# GNU implementation of the famous stream editor
-brew "gnu-sed"
-# GNU Transport Layer Security (TLS) Library
-brew "gnutls"
-# Passphrase entry dialog utilizing the Assuan protocol
-brew "pinentry"
-# GNU Pretty Good Privacy (PGP) package
-brew "gnupg"
-# Open source programming language to build simple/reliable/efficient software
-brew "go"
-# Terminal based graphical activity monitor inspired by gtop and vtop
-brew "gotop"
-# File format designed to store large amounts of data
-brew "hdf5"
-# Convert source code to formatted text with syntax highlighting
-brew "highlight"
-# Image manipulation library
-brew "jpeg"
-# Lightweight and flexible command-line JSON processor
-brew "jq"
-# TIFF library and utilities
+brew "zstd"
 brew "libtiff"
-# Color management engine supporting ICC profiles
 brew "little-cms2"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.10"
-# Next-gen compiler infrastructure
-brew "llvm"
-# Next-gen compiler infrastructure
-brew "llvm@12"
-# Keep your Mac's application settings in sync
-brew "mackup"
-# Modern and intuitive terminal-based text editor
-brew "micro"
-# High Performance, Kubernetes Native Object Storage
-brew "minio"
-# Locally trusted development certificates
-brew "mkcert"
-# HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server
-brew "nginx", restart_service: true
-# Network grep
-brew "ngrep"
-# Small build system for use with gyp or CMake
-brew "ninja"
-# Platform built on V8 to build network applications
-brew "node"
-# Development kit for the Java programming language
-brew "openjdk"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@3", link: true
-# Pinentry for GPG on Mac
-brew "pinentry-mac"
-# Framework for managing multi-language pre-commit hooks
-brew "pre-commit"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.8", link: true
-# Search tool like grep and The Silver Searcher
-brew "ripgrep"
-# Safe, concurrent, practical language
-brew "rust"
-# Display directories as trees (with optional color/HTML output)
-brew "tree"
-# Image format providing lossless and lossy compression for web images
+brew "jpeg-xl"
+brew "aom"
+brew "aws-sdk-cpp"
+brew "c-ares"
+brew "openssl@3"
+brew "grpc"
+brew "python@3.14"
+brew "snappy"
+brew "thrift"
+brew "apache-arrow"
+brew "ast-grep"
+brew "autoconf"
+brew "automake"
+brew "bash"
+brew "bat"
+brew "bazelisk"
+brew "boost"
+brew "bzip2"
+brew "freetype"
+brew "glib"
+brew "ccache"
+brew "cloc"
+brew "cmake"
+brew "cmatrix"
+brew "coreutils"
+brew "curl"
+brew "diff-so-fancy"
+brew "elasticsearch"
+brew "entr"
+brew "ffmpeg"
+brew "findutils"
+brew "flatbuffers"
+brew "fribidi"
+brew "fzf"
+brew "gcc"
+brew "libavif"
 brew "webp"
-# Internet file retriever
+brew "gh"
+brew "harfbuzz"
+brew "openjpeg"
+brew "leptonica"
+brew "tesseract"
+brew "ghostscript"
+brew "git"
+brew "git-absorb"
+brew "git-filter-repo"
+brew "git-lfs"
+brew "glog"
+brew "gnu-sed"
+brew "p11-kit"
+brew "unbound"
+brew "gnutls"
+brew "pinentry"
+brew "gnupg"
+brew "gnuplot"
+brew "go"
+brew "pkgconf"
+brew "gobject-introspection"
+brew "golangci-lint"
+brew "googletest"
+brew "gotop"
+brew "libtool"
+brew "guile"
+brew "hashcat"
+brew "hdf5"
+brew "helix"
+brew "highlight"
+brew "libheif"
+brew "python@3.12"
+brew "libraw"
+brew "imagemagick"
+brew "imagesnap"
+brew "jpeg"
+brew "jq"
+brew "libass"
+brew "libraqm"
+brew "llvm@12"
+brew "llvm@16"
+brew "mackup"
+brew "micro"
+brew "mimalloc"
+brew "mkcert"
+brew "multitime"
+brew "neovim"
+brew "nginx"
+brew "ngrep"
+brew "ninja"
+brew "node"
+brew "node@22"
+brew "nss"
+brew "openblas"
+brew "numpy", link: false
+brew "ollama"
+brew "openjdk"
+brew "openjdk@21"
+brew "openvino"
+brew "pgvector"
+brew "pinentry-mac"
+brew "pipx"
+brew "postgresql@18", link: true
+brew "pre-commit"
+brew "protobuf@3"
+brew "pwgen"
+brew "python@3.11"
+brew "qt"
+brew "rapidjson"
+brew "rbenv"
+brew "redis"
+brew "ripgrep"
+brew "ruby", link: false
+brew "ruby@3.4"
+brew "ruff"
+brew "rust"
+brew "rustup"
+brew "shellcheck"
+brew "sq"
+brew "srt"
+brew "starship"
+brew "terraform"
+brew "the_silver_searcher"
+brew "tokei"
+brew "tree"
+brew "typos-cli"
+brew "unar"
+brew "uv"
+brew "virtualenv"
 brew "wget"
-# Fast CSV toolkit written in Rust
-brew "xsv"
-# UNIX shell (command interpreter)
+brew "whisper.cpp"
+brew "xplr"
+brew "xsimd"
+brew "zlib"
 brew "zsh"
-# Password manager that keeps all passwords secure behind one password
+brew "stripe/stripe-cli/stripe", trusted: true
+brew "wader/tap/fq", trusted: true
+brew "python@3.13"
+brew "libomp"
 cask "1password"
-# Application launcher and productivity software
 cask "alfred"
-# Tool to run Windows software
+cask "android-platform-tools"
+cask "claude"
+cask "claude-code"
 cask "crossover"
-# API documentation browser and code snippet manager
 cask "dash"
-# Web browser
+cask "gcloud-cli"
+cask "gitbutler"
+cask "github"
 cask "google-chrome"
-# Set of tools to manage resources and applications hosted on Google Cloud
-cask "google-cloud-sdk"
-# Client for the Google Drive storage service
 cask "google-drive"
-# Companion app for Home Assistant home automation software
-cask "home-assistant"
-# Free and open-source media player
 cask "iina"
-# Terminal emulator as alternative to Apple's Terminal app
+cask "inkscape"
 cask "iterm2"
-# Animated screen capture application
 cask "licecap"
-# Tool to control external monitor brightness & volume
-cask "monitorcontrol"
-# QuickLook generator for Markdown files
+cask "lidanglesensor"
+cask "little-snitch"
+cask "notprotonnot/notproton/notproton", trusted: true
+cask "obsidian"
 cask "qlmarkdown"
-cask "qlstephen"
-# Video game digital distribution service
+cask "raycast"
 cask "steam"
-# Quicklook extension for source files
+cask "subler"
+cask "sublime-merge"
+cask "sublime-text"
 cask "syntax-highlight"
-# Open-source BitTorrent client
+cask "telegram"
 cask "transmission"
-# Stream media from your computer to Chromecast
-cask "videostream"
-# Open-source code editor
 cask "visual-studio-code"
+cask "vivid-app"
+cask "warp"
