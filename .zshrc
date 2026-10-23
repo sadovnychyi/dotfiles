@@ -52,12 +52,12 @@ fi
 
 source ~/dotfiles/functions.zsh
 
-# Kill bindings and widgets as we define our own in bindings.zsh. Deny random exports.
-run-tracked -bwe source $ZSH/plugins/dirhistory/dirhistory.plugin.zsh
+# Keep our own aliases, bindings and widgets. Deny random exports.
+run-tracked -abwe source $ZSH/plugins/dirhistory/dirhistory.plugin.zsh
 # Disallow `x` alias.
 run-tracked -a source $ZSH/plugins/extract/extract.plugin.zsh
-# Allow `z` alias.
-run-tracked +a source $ZSH/plugins/z/z.plugin.zsh
+# Allow `z` and its completion path; keep our key bindings.
+run-tracked +ae -b source $ZSH/plugins/z/z.plugin.zsh
 run-tracked source ~/dotfiles/zsh-prompt-benchmark/zsh-prompt-benchmark.plugin.zsh
 run-tracked +a source ~/.iterm2_shell_integration.zsh
 
