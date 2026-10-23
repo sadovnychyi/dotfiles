@@ -33,28 +33,44 @@ chrome-history() {
 }
 
 __fzf_git_branch() {
-  local tags branches target
+  local tags branches target ref worktree
   branches=$(
     git --no-pager branch --all \
-      --format="%(if)%(HEAD)%(then)%(else)%(if:equals=HEAD)%(refname:strip=3)%(then)%(else)%1B[0;34;1mbranch%09%1B[m%(refname:short)%(end)%(end)" \
-    | sed '/^$/d' | sed 's@origin/@@' | awk '!a[$0]++') || return
+      --format="%(if)%(HEAD)%(then)%(else)%(if:equals=HEAD)%(refname:strip=3)%(then)%(else)%(if)%(worktreepath)%(then)%1B[0;32;1m▣%(else)%1B[0;34;1m⎇%(end)%09%1B[m%(refname:lstrip=2)%(end)%(end)" \
+    | sed '/^$/d' | sed 's@origin/@@' | awk '!a[$2]++') || return
   tags=$(
-    git --no-pager tag | awk '{print "\x1b[35;1mtag\x1b[m\t" $1}') || return
+    git --no-pager tag | awk '{print "\x1b[35;1m◆\x1b[m\t" $1}') || return
   target=$(
     (echo "$branches"; echo -n "$tags") |
-    fzf --no-hscroll --no-multi -n 2 \
+    fzf --no-hscroll --no-multi --tabstop=2 -n 2 \
         --ansi --preview="git --no-pager log -150 --pretty=format:%s '..{2}'") || return
-  git checkout $(awk '{print $2}' <<<"$target" )
+  ref=${target#*$'\t'}
+  if [[ $target == ◆$'\t'* ]]; then
+    git checkout "refs/tags/$ref"
+    return
+  fi
+  worktree=$(git for-each-ref --format='%(worktreepath)%00' "refs/heads/$ref") || return
+  if [[ $worktree == $'\0' ]]; then
+    git switch "$ref"
+    return
+  fi
+  worktree=${worktree%$'\0'}
+  if [[ -n $worktree ]]; then
+    cd -- "$worktree"
+  else
+    git checkout "$ref"
+  fi
 }
 
 fzf-git-branch() {
   __fzf_git_branch
   local ret=$?
+  _p9k_precmd
   zle reset-prompt
   return $ret
 }
 
-# Bind Ctrl+B to git branch selection
+# Bind Ctrl+B to branch and worktree selection
 zle     -N   fzf-git-branch
 bindkey '^B' fzf-git-branch
 
