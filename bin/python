@@ -1,7 +1,16 @@
 #!/bin/sh
 
-if [[ -d ./.venv ]] ; then
-  .venv/bin/python "$@"
-else
-  $HOMEBREW_PREFIX/bin/python "$@"
+if [ -n "${VIRTUAL_ENV:-}" ]; then
+  exec "$VIRTUAL_ENV/bin/python" "$@"
 fi
+
+directory=$PWD
+while :; do
+  if [ -d "$directory/.venv" ]; then
+    exec "$directory/.venv/bin/python" "$@"
+  fi
+  [ "$directory" = / ] && break
+  directory=$(dirname "$directory")
+done
+
+exec "${HOMEBREW_PREFIX:-/opt/homebrew}/opt/python@3.13/bin/python3.13" "$@"

@@ -1,7 +1,3 @@
 #!/bin/sh
 
-if [[ -d ./.venv ]] ; then
-  .venv/bin/pip "$@"
-else
-  $HOMEBREW_PREFIX/bin/pip "$@"
-fi
+exec "$(dirname "$0")/python" -m pip "$@"

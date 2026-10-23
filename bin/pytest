@@ -1,7 +1,3 @@
 #!/bin/sh
 
-if [[ -d ./.venv ]] ; then
-  .venv/bin/pytest "$@"
-else
-  $HOMEBREW_PREFIX/bin/pytest "$@"
-fi
+exec "$(dirname "$0")/python" -m pytest "$@"

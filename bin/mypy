@@ -1,7 +1,3 @@
 #!/bin/sh
 
-if [[ -d ./.venv ]] ; then
-  .venv/bin/mypy "$@"
-else
-  $HOMEBREW_PREFIX/bin/mypy "$@"
-fi
+exec "$(dirname "$0")/python" -m mypy "$@"
