@@ -133,10 +133,6 @@ fi
 export CPPFLAGS="-I$HOMEBREW_PREFIX/include -L$HOMEBREW_PREFIX/lib"
 export ARCHFLAGS="-arch arm64"
 
-# Use GNU core utilities (those that come with macOS are outdated).
-export PATH=$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH
-export PATH=$HOMEBREW_PREFIX/opt/findutils/libexec/gnubin:$PATH
-export PATH=$HOMEBREW_PREFIX/opt/gnu-sed/libexec/gnubin:$PATH
 eval "$(rbenv init - zsh)"
 
 export OPENBLAS=$HOMEBREW_PREFIX/opt/openblas
@@ -178,10 +174,7 @@ if (( $#commands[(i)lesspipe(|.sh)] )); then
   export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
 fi
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f "$HOMEBREW_PREFIX/share/google-cloud-sdk/path.zsh.inc" ]; then . "$HOMEBREW_PREFIX/share/google-cloud-sdk/path.zsh.inc"; fi
 # The next line enables shell command completion for gcloud.
 if [ -f "$HOMEBREW_PREFIX/share/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOMEBREW_PREFIX/share/google-cloud-sdk/completion.zsh.inc"; fi
 
 eval "$(github-copilot-cli alias -- "$0")"
-export PATH="$HOME/.local/bin:$PATH"
