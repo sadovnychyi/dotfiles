@@ -8,15 +8,25 @@ base=$(git symbolic-ref --quiet refs/remotes/origin/HEAD) || {
   exit 1
 }
 default=${base#refs/remotes/origin/}
+current=$(pwd -P)
+main_worktree=$(git worktree list --porcelain | sed -n '1s/^worktree //p')
 
 candidates=$(git for-each-ref --merged="$base" \
-  --format='%(if)%(worktreepath)%(then)%(else)%(if:equals=[gone])%(upstream:track)%(then)%(refname:lstrip=2)%09%(committerdate:relative)%09%(authorname)%09%(subject)%(end)%(end)' refs/heads)
+  --format='%(if:equals=[gone])%(upstream:track)%(then)%(refname:lstrip=2)%09%(if)%(worktreepath)%(then)%(worktreepath)%(else)-%(end)%09%(committerdate:relative)%09%(authorname)%09%(subject)%(end)' refs/heads)
 branches=()
+worktrees=()
 rows=()
-while IFS=$'\t' read -r branch age author subject; do
+while IFS=$'\t' read -r branch worktree age author subject; do
   if [[ -n $branch && $branch != "$default" ]]; then
+    if [[ $worktree != - ]]; then
+      [[ $worktree != "$main_worktree" ]] || continue
+      case "$current/" in "$worktree/"*) continue ;; esac
+      status=$(git -C "$worktree" status --porcelain) || continue
+      [[ -z $status ]] || continue
+    fi
     branches+=("$branch")
-    rows+=("$branch"$'\t'"$age"$'\t'"$author"$'\t'"${subject//$'\t'/ }")
+    worktrees+=("$worktree")
+    rows+=("$branch"$'\t'"$age"$'\t'"$author"$'\t'"${subject//$'\t'/ }"$'\t'"$worktree")
   fi
 done <<< "$candidates"
 
@@ -25,10 +35,15 @@ if (( ${#branches[@]} == 0 )); then
   exit 0
 fi
 
-printf 'Merged into origin/%s, upstream gone, no worktree:\n' "$default"
-table=$(printf '%s\n' $'BRANCH\tLAST COMMIT\tAUTHOR\tSUBJECT' "${rows[@]}" | column -t -s $'\t')
+printf 'Merged into origin/%s, upstream gone (current and dirty worktrees excluded):\n' "$default"
+table=$(printf '%s\n' $'BRANCH\tLAST COMMIT\tAUTHOR\tSUBJECT\tWORKTREE' "${rows[@]}" | column -t -s $'\t')
 less -S <<< "$table"
-read -r -p "Delete these ${#branches[@]} local branches? [y/N] " answer || exit 0
+read -r -p "Delete these ${#branches[@]} local branches and their listed worktrees? [y/N] " answer || exit 0
 [[ $answer == [yY] ]] || exit 0
 
-git branch -d -- "${branches[@]}"
+for i in "${!branches[@]}"; do
+  if [[ ${worktrees[i]} != - ]]; then
+    git worktree remove -- "${worktrees[i]}" || continue
+  fi
+  git branch -d -- "${branches[i]}"
+done
