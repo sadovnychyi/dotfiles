@@ -1,3 +1,6 @@
+zmodload zsh/datetime
+typeset -F _zshrc_started=$EPOCHREALTIME
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -28,9 +31,6 @@ source ~/dotfiles/prompt.zsh
 source ~/dotfiles/powerlevel10k/powerlevel10k.zsh-theme
 
 emulate zsh
-
-zmodload zsh/datetime
-local _start=$((EPOCHREALTIME*1000))
 
 autoload -Uz add-zsh-hook run-help zargs zmv zcp zln
 
@@ -80,6 +80,12 @@ function late-init() {
   run-tracked source ~/dotfiles/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
   run-tracked +w _zsh_autosuggest_start
   add-zsh-hook -d precmd late-init
+
+  local -i _startupTime=$(( (EPOCHREALTIME-_zshrc_started)*1000 ))
+  unset _zshrc_started
+  if (( _startupTime > 2048 )); then
+    echo -E "${(%):-%F{red\}}[WARNING]: .zshrc and deferred plugins took $((_startupTime))ms to load." >&2
+  fi
 }
 
 add-zsh-hook precmd late-init
@@ -124,12 +130,6 @@ setopt PUSHD_MINUS             # `cd -3` now means "3 directory deeper in the st
 setopt SHARE_HISTORY           # write and import history on every command
 setopt EXTENDED_HISTORY        # write timestamps to history
 setopt +o NOMATCH              # don't complain about glob expansions within commands
-
-local _startupTime=$((EPOCHREALTIME*1000-_start))
-
-if (( _startupTime > 2048 )); then
-  echo -E "${(%):-%F{red\}}[WARNING]: .zshrc took $((_startupTime))ms to load." >&2
-fi
 
 export ARCHFLAGS="-arch arm64"
 
