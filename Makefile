@@ -4,6 +4,7 @@ HOMEBREW_PREFIX ?= /opt/homebrew
 
 build:
 	@ln -sfn "$(CURDIR)/.gitconfig" "$(HOME)/.gitconfig"
+	@ln -sfn "$(CURDIR)/.gitignore_global" "$(HOME)/.gitignore"
 	@ln -sfn "$(CURDIR)/.pyrc" "$(HOME)/.pyrc"
 	@ln -sfn "$(CURDIR)/.zprofile" "$(HOME)/.zprofile"
 	@ln -sfn "$(CURDIR)/.zshrc" "$(HOME)/.zshrc"
