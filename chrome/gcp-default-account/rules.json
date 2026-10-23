@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "priority": 2,
+    "action": {
+      "type": "allow"
+    },
+    "condition": {
+      "regexFilter": "^https://console\\.cloud\\.google\\.com/[^?]*\\?([^&]*&)*authuser(=|&|$)",
+      "isUrlFilterCaseSensitive": true,
+      "resourceTypes": [
+        "main_frame"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "transform": {
+          "queryTransform": {
+            "addOrReplaceParams": [
+              {
+                "key": "authuser",
+                "value": "4"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "condition": {
+      "urlFilter": "|https://console.cloud.google.com/",
+      "resourceTypes": [
+        "main_frame"
+      ],
+      "requestMethods": [
+        "get"
+      ]
+    }
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "GCP",
+  "version": "1.0.0",
+  "description": "Default account for GCP links.",
+  "permissions": [
+    "declarativeNetRequestWithHostAccess"
+  ],
+  "host_permissions": [
+    "https://console.cloud.google.com/*"
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "account",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  }
+}
