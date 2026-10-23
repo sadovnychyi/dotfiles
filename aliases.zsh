@@ -6,7 +6,7 @@ alias cat="bat"
 alias top="gotop"
 
 # Folders sorted by disk space usage.
-alias folders='find . -maxdepth 1 -type d -print0 | xargs -0 du -skh | sort -rn'
+alias folders='find . -maxdepth 1 -type d -print0 | xargs -0 du -skh | sort -hr'
 
 alias ..="cd .."
 alias ...="cd ../.."
