@@ -61,8 +61,8 @@ run-tracked +ae -b source $ZSH/plugins/z/z.plugin.zsh
 run-tracked source ~/dotfiles/zsh-prompt-benchmark/zsh-prompt-benchmark.plugin.zsh
 run-tracked +a source ~/.iterm2_shell_integration.zsh
 
-export ENHANCD_DISABLE_DOT=1
-export ENHANCD_COMPLETION_BEHAVIOR=list
+export ENHANCD_ENABLE_DOUBLE_DOT=false
+export ENHANCD_ENABLE_SINGLE_DOT=false
 
 export FZF_DEFAULT_OPTS="--height=50% --min-height=15 --reverse"
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
@@ -75,6 +75,7 @@ function late-init() {
   run-tracked +awe source ~/dotfiles/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
   run-tracked +aeb source ~/dotfiles/enhancd/init.sh
+  run-tracked +b source $ZSH/plugins/zsh-interactive-cd/zsh-interactive-cd.plugin.zsh
 
   run-tracked source ~/dotfiles/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
   run-tracked +w _zsh_autosuggest_start
