@@ -27,9 +27,6 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 ulimit -n 200000
 ulimit -u 2048
 
-source ~/dotfiles/prompt.zsh
-source ~/dotfiles/powerlevel10k/powerlevel10k.zsh-theme
-
 emulate zsh
 
 autoload -Uz add-zsh-hook run-help zargs zmv zcp zln
@@ -178,3 +175,6 @@ fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f "$HOMEBREW_PREFIX/share/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOMEBREW_PREFIX/share/google-cloud-sdk/completion.zsh.inc"; fi
+
+source ~/dotfiles/prompt.zsh
+source ~/dotfiles/powerlevel10k/powerlevel10k.zsh-theme
