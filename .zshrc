@@ -71,6 +71,7 @@ function late-init() {
   run-tracked +bef source ~/dotfiles/fzf-tab/fzf-tab.plugin.zsh
   run-tracked +beo eval "$(atuin init zsh --disable-up-arrow --disable-ai)"
   ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion)
+  run-tracked +b source ~/dotfiles/zsh-autopair/autopair.zsh
   # Must be sourced after all widgets have been defined but before zsh-autosuggestions.
   run-tracked +awe source ~/dotfiles/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 

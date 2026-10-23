@@ -22,3 +22,6 @@
 [submodule "fzf-tab"]
 	path = fzf-tab
 	url = https://github.com/Aloxaf/fzf-tab.git
+[submodule "zsh-autopair"]
+	path = zsh-autopair
+	url = https://github.com/hlissner/zsh-autopair.git
