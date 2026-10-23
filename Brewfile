@@ -104,6 +104,8 @@ brew "mackup"
 brew "micro"
 # High Performance, Kubernetes Native Object Storage
 brew "minio"
+# Locally trusted development certificates
+brew "mkcert"
 # HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server
 brew "nginx", restart_service: true
 # Network grep
