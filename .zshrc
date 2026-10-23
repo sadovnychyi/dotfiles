@@ -38,7 +38,6 @@ ZSH=~/dotfiles/oh-my-zsh
 ZSH_CUSTOM=$ZSH/custom
 
 ZSH_AUTOSUGGEST_MANUAL_REBIND=1
-ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion)
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=32
 ZSH_AUTOSUGGEST_USE_ASYNC=true
 
@@ -68,10 +67,13 @@ export FZF_DEFAULT_OPTS="--height=50% --min-height=15 --reverse"
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 export DISABLE_FZF_AUTO_COMPLETION="true"
 run-tracked +b source $ZSH/plugins/fzf/fzf.plugin.zsh
+export ATUIN_CONFIG_DIR=$HOME/dotfiles/atuin
 
 function late-init() {
   emulate -L zsh
   run-tracked +bef source ~/dotfiles/fzf-tab/fzf-tab.plugin.zsh
+  run-tracked +beo eval "$(atuin init zsh --disable-up-arrow --disable-ai)"
+  ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion)
   # Must be sourced after all widgets have been defined but before zsh-autosuggestions.
   run-tracked +awe source ~/dotfiles/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 

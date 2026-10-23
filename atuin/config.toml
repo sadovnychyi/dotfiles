@@ -1,0 +1,15 @@
+auto_sync = false
+update_check = false
+enter_accept = false
+inline_height = 15
+style = "compact"
+show_help = false
+show_tabs = false
+show_preview = false
+show_numeric_shortcuts = false
+
+[keys]
+scroll_exits = false
+
+[ui]
+columns = ["time", "command"]
