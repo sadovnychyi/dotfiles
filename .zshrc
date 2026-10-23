@@ -71,11 +71,11 @@ run-tracked +b source $ZSH/plugins/fzf/fzf.plugin.zsh
 
 function late-init() {
   emulate -L zsh
+  run-tracked +bef source ~/dotfiles/fzf-tab/fzf-tab.plugin.zsh
   # Must be sourced after all widgets have been defined but before zsh-autosuggestions.
   run-tracked +awe source ~/dotfiles/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
   run-tracked +aeb source ~/dotfiles/enhancd/init.sh
-  run-tracked +b source $ZSH/plugins/zsh-interactive-cd/zsh-interactive-cd.plugin.zsh
 
   run-tracked source ~/dotfiles/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
   run-tracked +w _zsh_autosuggest_start

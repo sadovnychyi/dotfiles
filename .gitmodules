@@ -19,3 +19,6 @@
 [submodule "fast-syntax-highlighting"]
 	path = fast-syntax-highlighting
 	url = git@github.com:zdharma-continuum/fast-syntax-highlighting.git
+[submodule "fzf-tab"]
+	path = fzf-tab
+	url = https://github.com/Aloxaf/fzf-tab.git
