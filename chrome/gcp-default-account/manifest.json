@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "GCP",
+  "name": "GCP Default Account",
   "version": "1.0.0",
   "description": "Default account for GCP links.",
   "permissions": [
