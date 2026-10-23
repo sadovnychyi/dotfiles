@@ -131,14 +131,13 @@ if (( _startupTime > 2048 )); then
   echo -E "${(%):-%F{red\}}[WARNING]: .zshrc took $((_startupTime))ms to load." >&2
 fi
 
-export CPPFLAGS="-I$HOMEBREW_PREFIX/include -L$HOMEBREW_PREFIX/lib"
 export ARCHFLAGS="-arch arm64"
 
 eval "$(rbenv init - zsh)"
 
 export OPENBLAS=$HOMEBREW_PREFIX/opt/openblas
-export LDFLAGS="-L$HOMEBREW_PREFIX/opt/libomp/lib"
-export CPPFLAGS="-I$HOMEBREW_PREFIX/opt/libomp/include"
+export LDFLAGS="-L$HOMEBREW_PREFIX/lib -L$HOMEBREW_PREFIX/opt/libomp/lib"
+export CPPFLAGS="-I$HOMEBREW_PREFIX/include -I$HOMEBREW_PREFIX/opt/libomp/include"
 
 # Do not limit outputs from jest.
 export DEBUG_PRINT_LIMIT=100000
