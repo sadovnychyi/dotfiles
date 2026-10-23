@@ -65,6 +65,8 @@
     Down      down-line-or-beginning-search  # next command in history
     ShiftTab  reverse-menu-complete          # previous in completion menu
     Tab       expand-or-complete-with-dots   # show '...' while completing
+    Delete    delete-char                    # delete forward without exiting
+    Ctrl-u    backward-kill-line             # delete all to the left
     CMDLeft   backward-kill-line             # delete all to the left
     CMDShiftZ redo
   )
