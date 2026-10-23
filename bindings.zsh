@@ -12,16 +12,6 @@
     zle redisplay
   }
 
-  local which
-  for which in up back forward; do
-    eval "function dirhistory-$which() {
-      emulate -L zsh
-      dirhistory_$which
-      powerlevel9k_refresh_prompt_inplace
-      zle .reset-prompt && zle -R
-    }"
-  done
-
   autoload -U up-line-or-beginning-search down-line-or-beginning-search
 
   zle -N up-line-or-beginning-search

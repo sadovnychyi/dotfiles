@@ -16,8 +16,6 @@
 	clean = git hawser clean %f
 	smudge = git hawser smudge %f
 	required = true
-[alias]
-	selectbranch = !git for-each-ref --format='%(refname:short)' refs/heads | fzf | xargs git checkout
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
