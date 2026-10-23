@@ -1,0 +1,34 @@
+#!/bin/bash
+set -euo pipefail
+export LC_ALL=C
+
+git fetch --prune origin
+base=$(git symbolic-ref --quiet refs/remotes/origin/HEAD) || {
+  echo 'Cannot find the default branch. Run: git remote set-head origin -a' >&2
+  exit 1
+}
+default=${base#refs/remotes/origin/}
+
+candidates=$(git for-each-ref --merged="$base" \
+  --format='%(if)%(worktreepath)%(then)%(else)%(if:equals=[gone])%(upstream:track)%(then)%(refname:lstrip=2)%09%(committerdate:relative)%09%(authorname)%09%(subject)%(end)%(end)' refs/heads)
+branches=()
+rows=()
+while IFS=$'\t' read -r branch age author subject; do
+  if [[ -n $branch && $branch != "$default" ]]; then
+    branches+=("$branch")
+    rows+=("$branch"$'\t'"$age"$'\t'"$author"$'\t'"${subject//$'\t'/ }")
+  fi
+done <<< "$candidates"
+
+if (( ${#branches[@]} == 0 )); then
+  echo 'No merged branches with gone upstreams to clean up.'
+  exit 0
+fi
+
+printf 'Merged into origin/%s, upstream gone, no worktree:\n' "$default"
+table=$(printf '%s\n' $'BRANCH\tLAST COMMIT\tAUTHOR\tSUBJECT' "${rows[@]}" | column -t -s $'\t')
+less -S <<< "$table"
+read -r -p "Delete these ${#branches[@]} local branches? [y/N] " answer || exit 0
+[[ $answer == [yY] ]] || exit 0
+
+git branch -d -- "${branches[@]}"
